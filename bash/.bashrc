@@ -121,7 +121,7 @@ export PATH=$PATH:~/opt/terraform:/opt/atom:/home/rajivg/.cargo/bin:.
 alias kubectl="microk8s kubectl"
 export RSYNC_EXCLUDE_FILES=/media/rajivg/ADATA/Work/exclude_from.txt
 . "$HOME/.cargo/env"
-export GITHUB_PAT=""
+export GITHUB_PAT=$(cat keys/github.pat)
 
 export PATH=${PATH}:/home/rajivg/anaconda3/bin/conda:.
 
