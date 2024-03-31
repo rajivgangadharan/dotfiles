@@ -17,14 +17,17 @@ import = [
   italic = { family = "JetBrains Mono", style = "Italic" }
 
   # Point size
-  size = 16.0
+  size = 15.0
 
 # Window configuration
 [window]
+  
+  startup_mode = "Windowed"
+
   # Window dimensions (changes require restart)
   [window.dimensions]
-    columns = 120
-    lines = 40
+    columns = 110 
+    lines = 30
 
   # Padding (changes require restart)
   [window.padding]
