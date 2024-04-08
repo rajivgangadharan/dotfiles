@@ -1,0 +1,40 @@
+{
+   "action": {
+      "default_icon": "icon/s2k-icon-32.png",
+      "default_popup": "send-to-kindle-popup.html",
+      "default_title": "Send to Kindle"
+   },
+   "background": {
+      "service_worker": "s2k-worker.js"
+   },
+   "content_scripts": [ {
+      "js": [ "s2k-content.js" ],
+      "matches": [ "*://*/send-to-kindle-preview.html*" ]
+   }, {
+      "js": [ "s2k-listener.js" ],
+      "matches": [ "http://*/*", "https://*/*" ]
+   } ],
+   "default_locale": "en",
+   "description": "__MSG_extensionDescription__",
+   "differential_fingerprint": "1.be579908c9f6102d3d3d56484d958ba9119299199ed8d87b349e959ffb88f43a",
+   "host_permissions": [ "*://*/*" ],
+   "icons": {
+      "128": "icon/s2k-icon-128.png",
+      "16": "icon/s2k-icon-16.png",
+      "256": "icon/s2k-icon-256.png",
+      "32": "icon/s2k-icon-32.png",
+      "48": "icon/s2k-icon-48.png",
+      "64": "icon/s2k-icon-64.png"
+   },
+   "incognito": "split",
+   "key": "MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQDSf8fZ+pIJNQRZd7VAdpLLalvCjFbPlAZo8Zh1UakSW4osZl/SKfJbPJQF4D+24kTe7jfpV0yTfotr20wXhQMA9NBQ1izaTpxWE96TSijqo2LYZ2jwAGPPbfkcGz6KFcEpsfffSMGPGansq3c8yLY2slxzDKXAcdLH4gEsWwvGsQIDAQAB",
+   "manifest_version": 3,
+   "name": "__MSG_extensionName__",
+   "permissions": [ "tabs", "activeTab", "storage", "unlimitedStorage", "alarms", "scripting", "webNavigation" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "2.1.1.7",
+   "web_accessible_resources": [ {
+      "matches": [ "http://*/*", "https://*/*" ],
+      "resources": [ "images/*", "fonts/*", "icons/*", "send-to-kindle-history.html", "send-to-kindle-preview.html", "send-to-kindle-afterSignIn.html" ]
+   } ]
+}

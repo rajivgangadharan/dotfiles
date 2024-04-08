@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmomentum=globalThis.webpackChunkmomentum||[]).push([[3635],{43635:(a,t,e)=>{async function n(a,t=!0){await a.addParticleUpdater("outModes",(async a=>{const{OutOfCanvasUpdater:t}=await e.e(2604).then(e.bind(e,52604));return new t(a)}),t)}e.d(t,{loadOutModesUpdater:()=>n})}}]);

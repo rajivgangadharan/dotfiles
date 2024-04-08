@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmomentum=globalThis.webpackChunkmomentum||[]).push([[5641],{25641:(a,e,n)=>{async function u(a,e=!0){const{SquareDrawer:u}=await n.e(1355).then(n.bind(n,21355));await a.addShape(["edge","square"],new u,e)}n.d(e,{loadSquareShape:()=>u})}}]);

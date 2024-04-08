@@ -1,0 +1,44 @@
+html, body, #s2k-preview {
+    height: 100%;
+}
+
+@font-face {
+    font-family: 'Amazon Ember';
+    src: url("/fonts/AmazonEmber_Rg.ttf");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Amazon Ember';
+    src: url("/fonts/AmazonEmber_Bd.ttf");
+    font-weight: bold;
+    font-style: normal;
+}
+
+#s2k-after-sign-in {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+}
+
+#s2k-after-sign-in-image {
+    margin: 0 auto 0 auto;
+    width: 127px;
+    height: 68px;
+    background-repeat: no-repeat;
+    background-size: 127px 68px;
+    background-image: url("/images/s2k-after-sign-in-kindle-image.png");
+}
+
+#s2k-after-sign-in-text {
+    margin: 16px auto 0 auto;
+    color: #0F1111;
+    text-align: center;
+    font-family: "Amazon Ember";
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}

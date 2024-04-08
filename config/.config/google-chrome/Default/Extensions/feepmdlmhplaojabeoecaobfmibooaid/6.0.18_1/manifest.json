@@ -1,0 +1,67 @@
+{
+   "background": {
+      "scripts": [ "background/Messaging/moment.min.js", "background/bundle.js", "background/featuredetect.js", "background/options/migration.js", "background/pdfHandler.js", "background/extension-router.js", "background/pdfHandler-vcros.js", "background/pageAction/background.js" ]
+   },
+   "browser_action": {
+      "default_icon": {
+         "19": "Chrome/Icons/orbitnote-icon-16x16.png",
+         "38": "Chrome/Icons/orbitnote-icon-32x32.png"
+      },
+      "default_title": "OrbitNote"
+   },
+   "content_scripts": [ {
+      "all_frames": true,
+      "js": [ "content-scripts/PWA/contentScript.js" ],
+      "matches": [ "https://orbit.texthelp.com/*", "https://pdf.dev.texthelp.com/*", "https://localhost:3000/*" ],
+      "run_at": "document_start"
+   }, {
+      "css": [ "content-scripts/classroom/styles.css" ],
+      "js": [ "content-scripts/classroom/contentScript.js" ],
+      "matches": [ "https://classroom.google.com/*" ],
+      "run_at": "document_end"
+   }, {
+      "all_frames": true,
+      "css": [ "content-scripts/global/styles.css" ],
+      "js": [ "content-scripts/global/contentScript.js" ],
+      "matches": [ "https://*/*.pdf", "http://*/*.pdf", "https://*/*.PDF", "http://*/*.PDF", "https://*/*.Pdf", "http://*/*.Pdf", "http://*/*.Pdf?*", "https://*/*.Pdf?*", "http://*/*.pdf?*", "https://*/*.pdf?*" ],
+      "run_at": "document_end"
+   }, {
+      "js": [ "content-scripts/schoology/contentScript.js" ],
+      "matches": [ "*://*/*" ],
+      "run_at": "document_end"
+   } ],
+   "content_security_policy": "script-src 'self' 'unsafe-eval' https://www.gstatic.com https://cdn.firebase.com https://*.firebaseio.com https://www.google-analytics.com https://www.googleapis.com https://apis.google.com chrome-extension://ckanlcmoklgdobgbkebohpficpiogcif chrome-extension://hjngolefdpdnooamgdldlkjgmdcmcjnc; object-src 'self'",
+   "description": "Create, convert, connect: take your digital documents to the next level with OrbitNote.",
+   "differential_fingerprint": "1.673642699706da4f02c85a220a27b1df299655668b61d1a819c2fa146daeb3b8",
+   "externally_connectable": {
+      "ids": [ "*" ],
+      "matches": [ "https://orbit.texthelp.com/*", "https://pdf.texthelp.com/*" ]
+   },
+   "homepage_url": "https://orbit.texthelp.com",
+   "icons": {
+      "128": "Chrome/Icons/orbitnote-icon-128x128.png",
+      "16": "Chrome/Icons/orbitnote-icon-16x16.png",
+      "48": "Chrome/Icons/orbitnote-icon-48x48.png"
+   },
+   "incognito": "split",
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAgvZwmtwoXH/vPa8qwX7HcMfjJ78K5R6EQKEkGj+YApnEkDjL2+DCj6sNvLvou/MKNnuhPSoug0WlY3hb/N7GLIyov9ADZixJEOULcIhlaPfLojtGL0XT4vm2sRWRzkLO62VwBKE1WrzxV/BCiu/YjcXgEThiUnjKsDvBYt96wUagiVCRgFNtczJPV6rLKlyJo4QzxMfoglirZfpE+CBpIxFjIEM417nf+77Va6kLPY+YFh8qzwn/Xlm21hlaQ8u7yrPOdiwxIyClzwuPZfdrTRvsHl9qgO8pPGCeWCyC1y6eOCiSeRrAtL2HPgmTTfk0GJrPUsInocbNWBtYB1ZQZQIDAQAB",
+   "manifest_version": 2,
+   "name": "OrbitNote",
+   "oauth2": {
+      "client_id": "243341882805-fav9vbuf7c132v7lkvav10h32o5gds7q.apps.googleusercontent.com",
+      "scopes": [ "https://www.googleapis.com/auth/userinfo.profile", "https://www.googleapis.com/auth/drive" ]
+   },
+   "options_page": "content-scripts/options/options.html",
+   "options_ui": {
+      "chrome_style": true,
+      "open_in_tab": false,
+      "page": "content-scripts/options/options.html"
+   },
+   "permissions": [ "https://www.google-analytics.com/", "webRequest", "webRequestBlocking", "\u003Call_urls>", "tabs", "gcm", "idle", "alarms", "webNavigation", "storage", "identity", "identity.email", "activeTab" ],
+   "storage": {
+      "managed_schema": "content-scripts/storageSchema/preferences_schema.json"
+   },
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "6.0.18",
+   "web_accessible_resources": [ "content/web/viewer.html", "content/web/index.html", "content-scripts/schoology/texthelpschoology.js", "content-scripts/schoology/css/stylesTh.css", "content-scripts/schoology/js/devHeader.js", "content-scripts/schoology/js/prodHeader.js", "content-scripts/schoology/js/axios.js", "content-scripts/web/Schoology/thIntegration.html", "content-scripts/brightspace/texthelpbrightspace.js", "content-scripts/brightspace/css/stylesTh.css", "content-scripts/global/contentScript.js", "content-scripts/global/styles.css", "Chrome/Icons/orbitnote-icon-32x32.png", "Chrome/Icons/orbitnoteLogo.svg", "src/options/options.html", "filePicker/index.html", "schoologyOpen/index.html", "schoologyHandin/index.html", "http:/*", "https:/*", "ftp:/*", "file:/*", "chrome-extension:/*", "filesystem:/*", "https://texthelp-pdf-reader.firebaseio.com/*", "https://pdfviewer-9152a.firebaseio.com/*", "https://*.firebaseio.com/*", "https://apis.google.com/js/platform.js", "drive:*" ]
+}

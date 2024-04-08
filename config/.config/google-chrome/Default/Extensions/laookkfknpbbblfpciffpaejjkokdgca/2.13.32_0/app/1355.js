@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmomentum=globalThis.webpackChunkmomentum||[]).push([[1355],{21355:(t,e,s)=>{s.d(e,{SquareDrawer:()=>u});const n=Math.sqrt(2);class u{draw(t){!function(t){const{context:e,radius:s}=t,u=s/n,a=2*u;e.rect(-u,-u,a,a)}(t)}getSidesCount(){return 4}}}}]);

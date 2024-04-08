@@ -1,0 +1,571 @@
+.th_filePicker{
+    border:1px solid #acacac;
+    width: 900px;
+    min-height:500px;
+    left: 72.5px;
+    top: 198px;
+    font-family: "Arial", sans-serif; /* Make sure to use Arial & sans-serif as fallbacks here */
+    font-size: 14px;
+    position: absolute;
+    background-color: white;
+    z-index: 99999999;
+}
+
+.th_fp_header {
+    padding: 12px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.th_fp_title {
+    padding: 5px;
+    box-sizing: border-box;
+    flex:1;
+    font-size: 20px;
+    padding: 10px;
+    color: inherit;
+    display: table-cell;
+}
+
+.th_fp_Close {
+    float: right;
+}
+
+/* Please display to show directory breadcrumbs */
+.th_fp_breadcrumb_area {
+    position: relative;
+    display: none;
+}
+
+.th_fp_breadcrumb {
+    padding-top: 8px;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 5px;
+    margin: 0;
+}
+
+.th_fp_breadcrumb ul {
+    padding: 0;
+    list-style-type: none;
+}
+
+.th_fp_breadcrumb li {
+    display: inline-block;
+}
+
+.th_fp_breadcrumb li a.active {
+    font-weight: 600;
+}
+
+.th_fp_breadcrumb li a {
+    color: #565656;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.th_fp_breadcrumb li.last {
+    display: inline-block;
+}
+
+.th_fp_breadcrumb li:after {
+    content: '→';
+    padding: 0 0.25em 0 0.5em;
+    color: #999;
+}
+
+.th_fp_breadcrumb li.last:before, .th_fp_breadcrumb li.last:after {
+    content: '';
+}
+
+button {
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    cursor: pointer;
+    background-color: #f5f5f5;
+    background-image: -webkit-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-image: -moz-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-image: -ms-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-image: -o-linear-gradient(top,#f5f5f5,#f1f1f1);
+    background-image: linear-gradient(top,#f5f5f5,#f1f1f1);
+    color: #444;
+    height: 32px;
+    min-width: 42px;
+    border: 1px solid #dcdcdc;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 2px;
+}
+
+button.search {
+    margin: 0 0 0 -7px;
+    background: blue;
+}
+
+button.close-popup {
+    position: absolute;
+    background: #fff;
+    border: none;
+    padding: 5px;
+    margin-right: 0;
+    top: 15px;
+    right: 5px;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAKCAIAAADpZ+PpAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyhpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTM4IDc5LjE1OTgyNCwgMjAxNi8wOS8xNC0wMTowOTowMSAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTcgKE1hY2ludG9zaCkiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6QjVBQTI1MzAyMUUwMTFFN0I1ODlENTNBRkREMUFEMDgiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6QjVBQTI1MzEyMUUwMTFFN0I1ODlENTNBRkREMUFEMDgiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo3M0EzN0RGNTIxRDMxMUU3QjU4OUQ1M0FGREQxQUQwOCIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo3M0EzN0RGNjIxRDMxMUU3QjU4OUQ1M0FGREQxQUQwOCIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/PoalxxIAAADSSURBVHjaXI+xDkVAEEXXWtH6ga01EhV+QMJGfKhEolAgUWhEgkKUCqXCF0iEfdfTvLwpbiZnZu+dJVLKbdvu+5Y/BQJV4zhOkkRRFM45FGgYhjRNNU2jjDFCSNM0XddhMI5jWZbXdYE/i9M05XkOW9M0l2UBCYLA87xnhnfzPGdZ9noKIVzXBaTkW8dxQN+98zzfhsKq7/uqqiillmVB67pu2xZcjaIIA3Sw8n3fMAxEruuKO5mu64gJw9BxHPjYto29oijAn4x93//+DgL9CDAAtzucXi3rX/gAAAAASUVORK5CYII=");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+}
+
+button.th_fp_select {
+    background: #4285f4;
+    color: #fff;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 30px;
+    margin-right: 12px;
+}
+
+button.th_fp_cancel {
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 30px;
+}
+
+.th_fp_Field {
+    display: flex;
+}
+
+.th_fp_SearchBox-query {
+    /* Shrink and grow as needed, but never shrink so
+       small that we can't read the placeholder */
+    flex: 1 0 8em;
+    width: 380px;
+    -webkit-border-radius: 1px;
+    -moz-border-radius: 1px;
+    border-radius: 1px;
+    border: 1px solid #d9d9d9;
+    border-top: 1px solid #c0c0c0;
+    font-size: 13px;
+    padding-left: 10px;
+    padding-right: 10px;
+    height: 32px;
+    margin-right: 10px;
+}
+
+#auto {
+    background: #fff;
+}
+
+.ui-menu {
+    position: relative;
+    list-style: none;
+    background-color: white;
+    font-family: inherit;
+    border-radius: 0;
+    z-index:10;
+    width: 214px;
+    line-height: 200%;
+    font-size: 14px;
+    padding: 2px;
+    border: solid 1px #e5e5e5;
+}
+
+.ui-menu .ui-menu-item {
+    margin: none;
+    cursor: pointer;
+    padding-left: 5px;
+    font-family: "Arial", sans-serif; /* Make sure to use Arial & sans-serif as fallbacks here */
+    font-size: 12px;
+    color: #0948cf;
+}
+
+.ui-menu .ui-menu-item:hover {
+    background-color: #eeeeee;
+}
+
+.ui-menu .ui-menu-item:before {
+    font-family: 'FontAwesome' !important;
+    font-size: 12px;
+    color: #8f8f8f;
+    content: "\f07b";
+    display: block;
+    width: 14px;
+    height: 12px;
+    float: left;
+    margin: 0 3px;
+}
+
+.th_fp_SearchBox-submitBtn {
+    /* Never shrink or grow */
+    flex: 0 0 auto;
+    padding-left: 20px;
+    padding-right: 20px;
+    background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABUAAAAVCAYAAACpF6WWAAAAoklEQVQ4y2NgGAV4gAIQOwCxATUMAxmyH4j/I+H3QJxAiYHvoQbdB+L1QHweyfACcgyFuXA+mngCksEKpIYhzIXYwHxyXOsA1bQeh3wAVL6B1PD8Dw1DbKCAHEMZkCIJPaYFkORITmLIETIf6uUCtBRBFihAS6P/kQyEBQ9ZaVYBangDFMO8jJxmyc4M+IKHpgYbUNvg89CUQTVgQG0DhwEAAEDnP3kNG62OAAAAAElFTkSuQmCC");
+    background-repeat: no-repeat;
+    background-position: 10px center;
+
+}
+
+/*.th_fp_SearchBox-submitBtn:before {*/
+    /*!*font-family: 'FontAwesome' !important;*!*/
+    /*!*font-size: 12px;*!*/
+    /*!*content: "\f002";*!*/
+    /*display: block;*/
+    /*width: 14px;*/
+    /*height: 12px;*/
+    /*float: left;*/
+    /*margin: 3px 0 0 2px;*/
+
+/*}*/
+
+.view_Btn:before {
+    font-family: 'FontAwesome' !important;
+    font-size: 12px;
+    content: "\f009";
+    display: block;
+    width: 14px;
+    height: 12px;
+    float: left;
+    margin: 3px 0 0 7px;
+}
+
+/*.close-popup:before {*/
+    /*font-family: 'FontAwesome' !important;*/
+    /*font-size: 14px;*/
+    /*content: "\f00d";*/
+    /*display: block;*/
+    /*width: 14px;*/
+    /*height: 12px;*/
+    /*float: left;*/
+    /*margin: 3px 0 0 7px;*/
+/*}*/
+
+
+.sortByButton{
+    background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz48IURPQ1RZUEUgc3ZnIFBVQkxJQyAiLS8vVzNDLy9EVEQgU1ZHIDEuMS8vRU4iICJodHRwOi8vd3d3LnczLm9yZy9HcmFwaGljcy9TVkcvMS4xL0RURC9zdmcxMS5kdGQiPjxzdmcgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgdmVyc2lvbj0iMS4xIiB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZD0iTTkuMjUsNUwxMi41LDEuNzVMMTUuNzUsNUg5LjI1TTE1Ljc1LDE5TDEyLjUsMjIuMjVMOS4yNSwxOUgxNS43NU04Ljg5LDE0LjNINkw1LjI4LDE3SDIuOTFMNiw3SDlMMTIuMTMsMTdIOS42N0w4Ljg5LDE0LjNNNi4zMywxMi42OEg4LjU2TDcuOTMsMTAuNTZMNy42Nyw5LjU5TDcuNDIsOC42M0g3LjM5TDcuMTcsOS42TDYuOTMsMTAuNThMNi4zMywxMi42OE0xMy4wNSwxN1YxNS43NEwxNy44LDguOTdWOC45MUgxMy41VjdIMjAuNzNWOC4zNEwxNi4wOSwxNVYxNS4wOEgyMC44VjE3SDEzLjA1WiIgLz48L3N2Zz4=");
+    background-repeat: no-repeat;
+    background-position: 8px center;
+}
+.sortByButton:before {
+    /*font-family: 'FontAwesome' !important;*/
+    /*font-size: 12px;*/
+    /*content: "\f15d";*/
+    display: block;
+    width: 14px;
+    height: 12px;
+    float: left;
+    margin: 3px 0 0 7px;
+
+}
+
+.th_fp_Field--is-search:before {
+    /* Don't shrink or grow and use a default size */
+    flex: 0 0 2.75em;
+}
+
+.th_fp_button_search_area {
+    background-color: #ededed;
+    border-top: 1px solid #e5e5e5;
+    border-bottom: 1px solid #e5e5e5;
+    position: relative;
+    padding: 16px;
+}
+
+.th_fp_search {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    align-items: center;
+    padding-top: 6px;
+    padding-bottom:  4px;
+}
+
+.th_fp_search_area {
+    text-align: left;
+    width: 60%;
+}
+
+.th_fp_view_area {
+    text-align: right;
+    width: 20%;
+}
+
+.th_fp_searchButton {
+    flex:1;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.1);
+    width: 22px;
+    background-image: none;
+    vertical-align: middle;
+    text-align: center;
+    margin: .3em;
+}
+
+.th_fp_view {
+    position: relative;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.1);
+    width: 22px;
+    background-image: none;
+    vertical-align: middle;
+    text-align: center;
+    margin: .3em;
+}
+
+.th_fp_sortBy {
+    flex: 1;
+    position: relative;
+    cursor: pointer;
+    border: 1px solid rgba(0,0,0,0.1);
+    width: 22px;
+    background-image: none;
+    vertical-align: middle;
+    text-align: center;
+    margin: .3em;
+}
+
+.sortBy-arrow {
+    position: relative;
+    display: inline-block;
+    top: 4px;
+    left: 2px;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    background-color: #fff;
+    min-width: 190px;
+    border: 1px solid #fff;
+    top: 54px;
+    right: 16px;
+    font-size: 13px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    cursor: pointer;
+    padding: 12px 10px;
+    border-left: 4px solid #fff;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #eeeeee;
+    border-left: 4px solid #848484;
+}
+
+.th_fp_breadcrumb li a:hover{
+    cursor: pointer;
+}
+
+/* Show the dropdown menu */
+.show {display:block;}
+
+.th_fp_selected_view:before {
+    content: "✔";
+    display: block;
+    width: 14px;
+    height: 12px;
+    float: left;
+    margin: 2px 0 0 2px;
+}
+
+.th_fp_select_button_area {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    background-color: #fff;
+    border-top: 1px solid #e5e5e5;
+    padding: 18px;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    align-items: center;
+}
+
+.th_fp_driveContents {
+    font-size: 13px;
+    padding: 12px;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    background-color: rgb(250, 250, 250);
+    border-bottom: 1px solid #e5e5e5;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    max-width: 100%;
+    align-items: center;
+}
+
+.th_fp_driveContents_title {
+    box-sizing: border-box;
+    flex: 1;
+    font-size: 14px;
+    padding: 6px 0 6px 0;
+    color: #565656;
+    display: table-cell;
+}
+
+.th_fp_driveContents_title:first-child {
+    padding-left: 7px;
+}
+
+.th_fp_files {
+    position: relative;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    min-height: 300px;
+    max-height: 300px;
+}
+.th_fp_file {
+    display: flex;
+    padding: 10px;
+    align-items: center;
+    border-bottom: 1px solid #e5e5e5;
+    border-left: 2px solid #fff;
+}
+
+.th_fp_file:hover {
+    border-left: 2px solid #4285f4;
+}
+
+.th_fp_file:last-child {
+    border-bottom: 1px solid #e5e5e5;
+}
+
+.th_fp_selected {
+    background-color: #4285f4;
+    color: #fff;
+    border-left: 2px solid #4285f4;
+}
+
+.th_fp_selected:hover {
+    border-left: 2px solid #4285f4;
+}
+
+.th_fp_fileName {
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+}
+.th_fp_files .th_fp_file .th_fp_fileName{
+    max-width: 33%;
+}
+.th_fp_name {
+    flex: 0 1 auto;
+    overflow: hidden;
+    padding-right: 8px;
+    padding-top: 1px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.th_fp_fileOwner {
+    flex: 1;
+}
+.th_fp_fileDate {
+    flex: 1;
+}
+.th_fp_fileIcon {
+    position: relative;
+    top: 0px;
+    left: 5px;
+    margin-right: 10px;
+}
+.th_fp_svg {
+    margin: 3px
+}
+
+.th_fp_searchResults{
+    width: 451px;
+    height: 200px;
+    position: absolute;
+    border: black;
+    background-color: white;
+    z-index: 9;
+    display: none;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+.th_fp_driveContents_title_sortName,.th_fp_driveContents_title_sortDate{
+    cursor: pointer;
+}
+
+.th_arrow_up{
+    transform: rotate(180deg);
+}
+
+.th_filePicker{
+    border:1px solid #acacac;
+    width: 900px;
+    min-height:500px;
+    font-family: "Arial", sans-serif; /* Make sure to use Arial & sans-serif as fallbacks here */
+    font-size: 14px;
+    position: absolute;
+    background-color: white;
+    z-index: 99999999;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100000000;
+}
+
+.th_fp_name {
+    height: 21px!important; 
+    line-height: 20px!important;
+    font-size: 14.2px;
+}
+
+.th_fp_fileOwner {
+    height: 21px!important; 
+    line-height: 20px!important;
+    font-size: 14.2px;
+}
+
+.th_fp_fileDate {
+    height: 21px!important; 
+    line-height: 20px!important;
+    font-size: 14.2px;
+}

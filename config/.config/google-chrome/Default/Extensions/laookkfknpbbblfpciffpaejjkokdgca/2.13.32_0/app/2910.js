@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmomentum=globalThis.webpackChunkmomentum||[]).push([[2910],{82910:(e,t,a)=>{a.d(t,{ShapeManager:()=>n});const r=new Map;class n{constructor(e){this._engine=e}addShapeGenerator(e,t){this.getShapeGenerator(e)||r.set(e,t)}getShapeGenerator(e){return r.get(e)}getSupportedShapeGenerators(){return r.keys()}}}}]);

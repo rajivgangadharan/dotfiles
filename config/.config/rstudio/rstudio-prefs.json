@@ -1,0 +1,10 @@
+{
+    "initial_working_directory": "~",
+    "font_size_points": 14,
+    "editor_theme": "Cobalt",
+    "python_type": "virtualenv",
+    "python_version": "3.11.5",
+    "python_path": "~/Code/app-python/MLPython/mlpython-env/bin/python3",
+    "pdf_previewer": "none",
+    "posix_terminal_shell": "bash"
+}

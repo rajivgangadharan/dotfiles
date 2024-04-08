@@ -1,0 +1,502 @@
+{
+   "A11yAlert": {
+      "description": "A11y text for Alert container",
+      "message": "تنبيه"
+   },
+   "A11yAlertAnalyzingMessage": {
+      "description": "Voice Over read out text for message of analyzing alert",
+      "message": "تحليل محتوى الموقع الإلكتروني"
+   },
+   "A11yAlertLoadingPreviewMessage": {
+      "description": "Voice Over read out text for message of loading preview alert",
+      "message": "جارٍ تحميل معاينة محتوى الموقع الإلكتروني"
+   },
+   "A11yAlertSendingToKindleMessage": {
+      "description": "Voice Over read out text for message of sending to kindle alert",
+      "message": "إرسال المحتوى إلى جهاز Kindle الخاص بك"
+   },
+   "A11yDeviceList": {
+      "description": "A11y text for device list container",
+      "message": "قائمة الجهاز"
+   },
+   "A11yFeedbackCurrentRating": {
+      "description": "A11y text for feedback rating",
+      "message": "التقييم الحالي: "
+   },
+   "A11yFeedbackRating": {
+      "description": "A11y text for feedback rating action",
+      "message": "تصنيف كـ"
+   },
+   "A11yFeedbackStar": {
+      "description": "A11y text for feedback star icon",
+      "message": "نجمة"
+   },
+   "A11yHistoryDelete": {
+      "description": "A11y text for History list delete icon",
+      "message": "حذف"
+   },
+   "A11yHistoryList": {
+      "description": "A11y text for History list container",
+      "message": "قائمة السجل"
+   },
+   "A11yIconBack": {
+      "description": "A11y text for back icon",
+      "message": "رجوع"
+   },
+   "A11yIconClose": {
+      "description": "A11y text for close icon",
+      "message": "إغلاق"
+   },
+   "A11yIconSpinner": {
+      "description": "A11y text for loading spinner",
+      "message": "جارٍ التحميل"
+   },
+   "A11yPopupSettingsError": {
+      "description": "A11y text for setting button with error icon in corner",
+      "message": "زر الإعداد، خطأ الإعداد"
+   },
+   "A11yPreviewAuthor": {
+      "description": "A11y text for edit area of author in preview page",
+      "message": "المؤلف: "
+   },
+   "A11yPreviewTitle": {
+      "description": "A11y text for edit area of title in preview page",
+      "message": "العنوان: "
+   },
+   "AfterSignInText": {
+      "description": "Text for after sign-in page",
+      "message": "لقد سجّلت الدخول إلى حساب أمازون الخاص بك بنجاح."
+   },
+   "alertAnalyzingMessage": {
+      "description": "Text for message of analyzing alert",
+      "message": "تحليل الموقع الإلكتروني"
+   },
+   "alertButtonCancel": {
+      "description": "Text for cancel button of alert",
+      "message": "إلغاء"
+   },
+   "alertButtonCancelSending": {
+      "description": "Text for cancel sending button of alert",
+      "message": "إلغاء الإرسال"
+   },
+   "alertButtonNevermind": {
+      "description": "Text for never mind button of alert",
+      "message": "موافق"
+   },
+   "alertButtonOK": {
+      "description": "Text for OK button of alert",
+      "message": "موافق"
+   },
+   "alertButtonSendAnyway": {
+      "description": "Text for send anyway button of alert",
+      "message": "إرسال على أي حال"
+   },
+   "alertButtonSignIn": {
+      "description": "Text for sign in button of alert",
+      "message": "تسجيل الدخول"
+   },
+   "alertButtonSubmit": {
+      "description": "Text for submit button of alert",
+      "message": "إرسال"
+   },
+   "alertCancelSendingMessage": {
+      "description": "Text for message of cancel sending alert",
+      "message": "سيؤدي إغلاق صفحة الويب هذه إلى إلغاء الإرسال. لن يتم إرسال أي تقدم تم إحرازه."
+   },
+   "alertCancelSendingTitle": {
+      "description": "Text for title of cancel sending alert",
+      "message": "إلغاء الإرسال؟"
+   },
+   "alertFeedbackFinishMessage": {
+      "description": "Text for message of feedback alert after user submit a feedback",
+      "message": "شكرًا لمشاركة ملاحظاتك."
+   },
+   "alertFeedbackInputMessage": {
+      "description": "Text for message of feedback alert to ask user to input feedback",
+      "message": "كيف كانت معاينة صفحة الويب الخاصة بك؟"
+   },
+   "alertFeedbackTitle": {
+      "description": "Text for title of feedback alert",
+      "message": "تقييم معاينتك"
+   },
+   "alertLoadingPreviewMessage": {
+      "description": "Text for message of loading preview alert",
+      "message": "جارٍ تحميل المعاينة"
+   },
+   "alertLowQualityMessage": {
+      "description": "Text for message of low quality alert",
+      "message": "لا يتم تحميل محتوى هذه الصفحة بشكل صحيح ولا يمكن إرساله. يمكنك محاولة إرسال تحديدات نصية كبديل."
+   },
+   "alertLowQualityTitle": {
+      "description": "Text for title of low quality alert",
+      "message": "يتعذر إرسال المحتوى"
+   },
+   "alertPreviewErrorTitle": {
+      "description": "Text for title of preview failed alert",
+      "message": "تعذّرت المعاينة"
+   },
+   "alertPreviewExtractionErrorMessage": {
+      "description": "Text for message of extraction error alert",
+      "message": "لم نتمكن من تحميل معاينة لمحتواك. يُرجى المحاولة مرة أخرى لاحقًا."
+   },
+   "alertPreviewGeneralErrorMessage": {
+      "description": "Text for message of general preview error alert",
+      "message": "لم نتمكن من تحميل معاينة لمحتواك."
+   },
+   "alertSendingErrorTitle": {
+      "description": "Text for title of sending failed alert",
+      "message": "تعذّر الإرسال"
+   },
+   "alertSendingGeneralErrorMessage": {
+      "description": "Text for message of general sending error alert",
+      "message": "لم نتمكن من إرسال المحتوى الخاص بك. يرجى المحاولة مرة أخرى لاحقًا."
+   },
+   "alertSendingMessage": {
+      "description": "Text for message of sending alert",
+      "message": "قد يستغرق الأمر بضع دقائق للوصول إلى مكتبة Kindle الخاصة بك."
+   },
+   "alertSendingNetworkErrorMessage": {
+      "description": "Text for message of network sending error alert",
+      "message": "لم نتمكن من إرسال المحتوى الخاص بك. يُرجى التحقق من اتصالك بشبكة الإنترنت، ثم المحاولة مرة أخرى."
+   },
+   "alertSendingNoAuthErrorMessage": {
+      "description": "Text for message of sending error alert when user try to send with invalid authentication status",
+      "message": "يرجى تسجيل الدخول قبل إرسال صفحة الويب الخاصة بك."
+   },
+   "alertSendingTitle": {
+      "description": "Text for title of sending alert",
+      "message": "المحتوى الخاص بك في طريقه"
+   },
+   "alertSendingToKindleMessage": {
+      "description": "Text for message of sending to kindle alert",
+      "message": "الإرسال إلى Kindle"
+   },
+   "ctxSendToKindle": {
+      "description": "Context menu text for S2K",
+      "message": "Send to Kindle"
+   },
+   "extensionDescription": {
+      "description": "Extension description for extension UI and download.",
+      "message": "أصبح إرسال محتوى الويب وقراءته مثل المقالات الإخبارية ومنشورات المدونات إلى جهاز Kindle أو تطبيق القراءة أسهل من أي وقت مضى."
+   },
+   "extensionName": {
+      "description": "Extension Name",
+      "message": "تطبيق Send to Kindle لـ Google Chrome™"
+   },
+   "history": {
+      "description": "Title for history view",
+      "message": "Send to Kindle: السّجل"
+   },
+   "historyClearAll": {
+      "description": "Action to clear history.",
+      "message": "مسح السجل"
+   },
+   "historyClose": {
+      "description": "Action to close history.",
+      "message": "إغلاق"
+   },
+   "historyDaysAgo": {
+      "description": "Timespan 'n Days Ago'",
+      "message": " أيام مضت"
+   },
+   "historyNoData": {
+      "description": "Message for empty history.",
+      "message": "لا توجد سلع مرسلة من الثلاثين يومًا الماضية."
+   },
+   "historyTableHeader": {
+      "description": "Table header for S2K History",
+      "message": "السجل"
+   },
+   "historyTagSelection": {
+      "description": "The tag in history page to show the item is from `send selection` option",
+      "message": "(تحديد)"
+   },
+   "historyToday": {
+      "description": "Timespan 'today'",
+      "message": "اليوم"
+   },
+   "historyYesterday": {
+      "description": "Timespan 'Yesterday'",
+      "message": "أمس"
+   },
+   "kbsAlt": {
+      "description": "Name for alt. key.",
+      "message": "ALT"
+   },
+   "kbsArrowDown": {
+      "description": "Name for down arrow.",
+      "message": "سهم لأسفل"
+   },
+   "kbsArrowLeft": {
+      "description": "Name for left arrow.",
+      "message": "سهم لليسار"
+   },
+   "kbsArrowRight": {
+      "description": "Name for right arrow.",
+      "message": "سهم لليمين"
+   },
+   "kbsArrowUp": {
+      "description": "Name for up arrow.",
+      "message": "سهم لأعلى"
+   },
+   "kbsCtrl": {
+      "description": "Name for control key.",
+      "message": "CTRL"
+   },
+   "kbsShift": {
+      "description": "Name for shift key.",
+      "message": "SHIFT"
+   },
+   "legalNotice": {
+      "description": "Legal Notice",
+      "message": "إشعار"
+   },
+   "legalNoticeLink": {
+      "description": "Link to 'Legal Notice'",
+      "message": "http://www.amazon.com/privacy"
+   },
+   "legalTerms": {
+      "description": "Legal Notice",
+      "message": "شروط الاستخدام"
+   },
+   "legalTermsLink": {
+      "description": "Link to 'Terms of Use'",
+      "message": "http://www.amazon.com/sendtokindleterms"
+   },
+   "loadingPreview": {
+      "description": "Text for message of loading preview alert",
+      "message": "جارٍ تحميل المعاينة"
+   },
+   "loadingPreviewMessage": {
+      "description": "Text for message of loading preview alert",
+      "message": "جارٍ تحميل المعاينة"
+   },
+   "optDelivery": {
+      "description": "Information text device settings.",
+      "message": "هل تبحث عن خيارات التوصيل الخاصة بك؟ "
+   },
+   "optDeliveryLink": {
+      "description": "Information text device settings link.",
+      "message": "انقر هنا"
+   },
+   "optKSInfo": {
+      "description": "Information text for keyboard shortcuts.",
+      "message": "للتغيير، انقر فوق المربع أدناه واختر مجموعة المفاتيح على لوحة المفاتيح:"
+   },
+   "optKeyboardShortcut": {
+      "description": "Header text for keyboard shortcuts.",
+      "message": "اختصارات لوحة المفاتيح"
+   },
+   "options": {
+      "description": "Option page title.",
+      "message": "Send to Kindle: الخيارات"
+   },
+   "popUpCountryAU": {
+      "description": "Country name of AU",
+      "message": "أستراليا"
+   },
+   "popUpCountryBR": {
+      "description": "Country name of BR",
+      "message": "البرازيل"
+   },
+   "popUpCountryCA": {
+      "description": "Country name of CA",
+      "message": "كندا"
+   },
+   "popUpCountryDE": {
+      "description": "Country name of DE",
+      "message": "ألمانيا"
+   },
+   "popUpCountryES": {
+      "description": "Country name of ES",
+      "message": "إسبانيا"
+   },
+   "popUpCountryIN": {
+      "description": "Country name of IN",
+      "message": "الهند"
+   },
+   "popUpCountryIT": {
+      "description": "Country name of IT",
+      "message": "إيطاليا"
+   },
+   "popUpCountryJP": {
+      "description": "Country name of JP",
+      "message": "اليابان"
+   },
+   "popUpCountryMX": {
+      "description": "Country name of MX",
+      "message": "المكسيك"
+   },
+   "popUpCountryNL": {
+      "description": "Country name of NL",
+      "message": "هولندا"
+   },
+   "popUpCountryPickerContinue": {
+      "description": "PopUp text to continue once user selected a country",
+      "message": "متابعة"
+   },
+   "popUpCountryUK": {
+      "description": "Country name of UK",
+      "message": "المملكة المتحدة"
+   },
+   "popUpCountryUS": {
+      "description": "Country name of US",
+      "message": "الولايات المتحدة"
+   },
+   "popUpCountryfr": {
+      "description": "Country name of FR",
+      "message": "فرنسا"
+   },
+   "popUpCreateAccount": {
+      "description": "PopUp text for create new account button",
+      "message": "أنشئ حسابك على أمازون"
+   },
+   "popUpFeedback": {
+      "description": "PopUp text for feedback button.",
+      "message": "التقييم"
+   },
+   "popUpFeedbackDescription": {
+      "description": "PopUp text for description of feedback page.",
+      "message": "هذه التقييمات خاصة وستساعدنا على تحسين تجربتك في المعاينة."
+   },
+   "popUpFeedbackPlaceholder": {
+      "description": "Placeholder of feedback textarea",
+      "message": "أخبرنا بالمزيد (اختياري)."
+   },
+   "popUpFeedbackSubmit": {
+      "description": "PopUp text for submit button in feedback page.",
+      "message": "إرسال"
+   },
+   "popUpFeedbackThanksText": {
+      "description": "PopUp text to show after user send a feedback.",
+      "message": "شكرًا على ملاحظاتك."
+   },
+   "popUpFeedbackTitle": {
+      "description": "PopUp text for title of feedback page.",
+      "message": "تقييم تجربتك مع Send to Kindle."
+   },
+   "popUpForgotPassword": {
+      "description": "PopUp text for forgot password link",
+      "message": "نسيت كلمة المرور"
+   },
+   "popUpHistory": {
+      "description": "PopUp text for extraction history.",
+      "message": "السجل"
+   },
+   "popUpNewToAmazon": {
+      "description": "PopUp text for new account button divider",
+      "message": "هل أنت جديد في أمازون؟"
+   },
+   "popUpOptions": {
+      "description": "PopUp text for Amazon options page.",
+      "message": "الإعدادات"
+   },
+   "popUpPreferCountrySelect": {
+      "description": "PopUp text in country picker selection",
+      "message": "حدد الموقع الإلكتروني الخاص بالبلد/المنطقة المفضلة لك:"
+   },
+   "popUpPreviewAndSend": {
+      "description": "PopUp text for preview.",
+      "message": "المعاينة والإرسال"
+   },
+   "popUpSaveCountry": {
+      "description": "PopUp text sve country button",
+      "message": "حفظ البلد"
+   },
+   "popUpSendSelectedText": {
+      "description": "PopUp text for sending selected text.",
+      "message": "إرسال الاختيار"
+   },
+   "popUpSendToKindle": {
+      "description": "PopUp text for S2K.",
+      "message": "إرسال سريع"
+   },
+   "popUpSettings": {
+      "description": "PopUp text for settings button.",
+      "message": "الإعدادات"
+   },
+   "popUpSettingsAddLibDes": {
+      "description": "PopUp text for the description of 'Add to your library' section in settings page",
+      "message": "يمكن تنزيل الملفات في مكتبتك إلى أي جهاز مرتبط بحسابك."
+   },
+   "popUpSettingsAddLibDevicesListTitle": {
+      "description": "PopUp text for the title of `devices list` part in 'Add to your library' section in settings page",
+      "message": "اختر مكان إرسال الملف (الملفات):"
+   },
+   "popUpSettingsAddLibInlineAlertText": {
+      "description": "PopUp text for the inline alert of 'Add to your library' section in settings page, when user do not select any devices",
+      "message": "مطلوب جهاز واحد على الأقل"
+   },
+   "popUpSettingsAddLibNoDevicesText": {
+      "description": "PopUp text for inform user that they do not have abt devices in 'Add to your library' section in settings page",
+      "message": "لم يتم العثور على أجهزة. انتقل إلى read.amazon.com أو قم بتسجيل جهاز Kindle الخاص بك."
+   },
+   "popUpSettingsAddLibTitle": {
+      "description": "PopUp text for the title of 'Add to your library' section in settings page",
+      "message": "إضافة إلى مكتبتك"
+   },
+   "popUpSettingsComplexityWarningDes": {
+      "description": "PopUp text for the description of 'Show complex layout warnings' section in settings page",
+      "message": "قد لا يتم عرض بعض المواقع ذات التنسيقات المعقدة بشكل صحيح على Kindle."
+   },
+   "popUpSettingsComplexityWarningTitle": {
+      "description": "PopUp text for the title of 'Show complex layout warnings' section in settings page",
+      "message": "عرض تحذيرات التنسيق المعقد"
+   },
+   "popUpSettingsLogoutButton": {
+      "description": "PopUp text for the button of 'Logout' section in settings page",
+      "message": "تسجيل الخروج"
+   },
+   "popUpSettingsLogoutDes": {
+      "description": "PopUp text for the description of 'Logout' section in settings page",
+      "message": "قم بتسجيل الخروج من حساب أمازون الخاص بك في هذا المتصفح."
+   },
+   "popUpSettingsLogoutTitle": {
+      "description": "PopUp text for the title of 'Logout' section in settings page",
+      "message": "تسجيل الخروج"
+   },
+   "popUpSettingsUserNameTitle": {
+      "description": "PopUp text for the title of user name in settings page.",
+      "message": "تم تسجيل الدخول باسم"
+   },
+   "popUpShortcuts": {
+      "description": "PopUp text for shortcut settings.",
+      "message": "الاختصارات"
+   },
+   "popUpSignIn": {
+      "description": "PopUp text for sign in button",
+      "message": "تسجيل الدخول"
+   },
+   "previewFeedback": {
+      "description": "Text for feedback button in Preview page",
+      "message": "تقييم معاينتك"
+   },
+   "previewHeaderSend": {
+      "description": "Text for send button in header of Preview page",
+      "message": "إرسال"
+   },
+   "previewHeaderTitle": {
+      "description": "Title in header of Preview page",
+      "message": "معاينة"
+   },
+   "previewInputAuthorDes": {
+      "description": "Description of input area of author",
+      "message": "المؤلف"
+   },
+   "previewInputLengthLimitAlert": {
+      "description": "Text for inline alert of length limit in preview page",
+      "message": "تم الوصول إلى حد 256 حرف "
+   },
+   "previewInputTitleDes": {
+      "description": "Description of input area of title",
+      "message": "العنوان"
+   },
+   "previewSelectionHeaderTitle": {
+      "description": "Title in header of Preview page",
+      "message": "تحديد المعاينة"
+   },
+   "previewTitleEmptyAlert": {
+      "description": "Text for inline alert of empty title",
+      "message": "العنوان مطلوب"
+   }
+}

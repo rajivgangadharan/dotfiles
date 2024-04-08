@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmomentum=globalThis.webpackChunkmomentum||[]).push([[8651],{8651:(a,t,e)=>{async function n(a,t=!0){await a.addParticleUpdater("color",(async a=>{const{ColorUpdater:t}=await e.e(4423).then(e.bind(e,4423));return new t(a)}),t)}e.d(t,{loadColorUpdater:()=>n})}}]);

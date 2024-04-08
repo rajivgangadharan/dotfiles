@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmomentum=globalThis.webpackChunkmomentum||[]).push([[3232],{13232:(n,i,a)=>{async function o(n,i=!0){const{MotionPlugin:o}=await a.e(9463).then(a.bind(a,9463));await n.addPlugin(new o(n),i)}a.d(i,{loadMotionPlugin:()=>o})}}]);

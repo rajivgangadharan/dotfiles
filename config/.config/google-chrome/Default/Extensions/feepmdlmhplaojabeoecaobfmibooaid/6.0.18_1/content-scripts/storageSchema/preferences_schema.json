@@ -1,0 +1,26 @@
+{
+  "type": "object",
+  "properties": {
+  
+   
+    "defaultOpenWebPagePDF": {
+      "title": "Open Web PDFs",
+      "description": "Open Web PDFs",
+      "type": "boolean",
+      "default": false
+    }
+    ,
+    "classroomOpenWith": {
+      "title": "Open Classroom PDFs Directly",
+      "description": "Open Google Classroom PDFs Directly",
+      "type": "boolean",
+      "default": true
+    },
+    "brightspaceIntegrationEnabled": {
+      "title": "Brightspace/D2L integration enabled",
+      "description": "Toggle to enable/disable Brightspace/D2L integration.",
+      "type": "boolean",
+      "default": true
+    }
+  }
+}

@@ -1,0 +1,502 @@
+{
+   "A11yAlert": {
+      "description": "A11y text for Alert container",
+      "message": "इशारा"
+   },
+   "A11yAlertAnalyzingMessage": {
+      "description": "Voice Over read out text for message of analyzing alert",
+      "message": "वेबसाइटच्या सामग्रीचे विश्लेषण करणे"
+   },
+   "A11yAlertLoadingPreviewMessage": {
+      "description": "Voice Over read out text for message of loading preview alert",
+      "message": "वेबसाइट सामग्रीचे पूर्वावलोकन लोड करत आहे"
+   },
+   "A11yAlertSendingToKindleMessage": {
+      "description": "Voice Over read out text for message of sending to kindle alert",
+      "message": "तुमच्या Kindle वर सामग्री पाठवत आहे"
+   },
+   "A11yDeviceList": {
+      "description": "A11y text for device list container",
+      "message": "डिव्हाइसची यादी"
+   },
+   "A11yFeedbackCurrentRating": {
+      "description": "A11y text for feedback rating",
+      "message": "वर्तमान रेटिंग: "
+   },
+   "A11yFeedbackRating": {
+      "description": "A11y text for feedback rating action",
+      "message": "रेटिंग म्हणून"
+   },
+   "A11yFeedbackStar": {
+      "description": "A11y text for feedback star icon",
+      "message": "स्टार"
+   },
+   "A11yHistoryDelete": {
+      "description": "A11y text for History list delete icon",
+      "message": "हटवा"
+   },
+   "A11yHistoryList": {
+      "description": "A11y text for History list container",
+      "message": "इतिहासाची यादी"
+   },
+   "A11yIconBack": {
+      "description": "A11y text for back icon",
+      "message": "मागे"
+   },
+   "A11yIconClose": {
+      "description": "A11y text for close icon",
+      "message": "बंद करा"
+   },
+   "A11yIconSpinner": {
+      "description": "A11y text for loading spinner",
+      "message": "लोड होत आहे"
+   },
+   "A11yPopupSettingsError": {
+      "description": "A11y text for setting button with error icon in corner",
+      "message": "बटण सेट करणे, त्रुटी सेट करणे"
+   },
+   "A11yPreviewAuthor": {
+      "description": "A11y text for edit area of author in preview page",
+      "message": "लेखक: "
+   },
+   "A11yPreviewTitle": {
+      "description": "A11y text for edit area of title in preview page",
+      "message": "शीर्षक: "
+   },
+   "AfterSignInText": {
+      "description": "Text for after sign-in page",
+      "message": "तुम्ही तुमच्या Amazon खात्यात यशस्वीरित्या लॉग इन केले आहे."
+   },
+   "alertAnalyzingMessage": {
+      "description": "Text for message of analyzing alert",
+      "message": "वेबसाइटचे विश्लेषण करत आहे"
+   },
+   "alertButtonCancel": {
+      "description": "Text for cancel button of alert",
+      "message": "रद्द करा"
+   },
+   "alertButtonCancelSending": {
+      "description": "Text for cancel sending button of alert",
+      "message": "पाठविणे रद्द करा"
+   },
+   "alertButtonNevermind": {
+      "description": "Text for never mind button of alert",
+      "message": "हरकत नाही"
+   },
+   "alertButtonOK": {
+      "description": "Text for OK button of alert",
+      "message": "ठीक आहे"
+   },
+   "alertButtonSendAnyway": {
+      "description": "Text for send anyway button of alert",
+      "message": "तरीही पाठवा"
+   },
+   "alertButtonSignIn": {
+      "description": "Text for sign in button of alert",
+      "message": "साइन इन करा"
+   },
+   "alertButtonSubmit": {
+      "description": "Text for submit button of alert",
+      "message": "सबमिट करा"
+   },
+   "alertCancelSendingMessage": {
+      "description": "Text for message of cancel sending alert",
+      "message": "हे वेब पृष्ठ बंद केल्याने पाठवणे रद्द होईल. केलेली कोणतीही प्रगती पाठविली जाणार नाही."
+   },
+   "alertCancelSendingTitle": {
+      "description": "Text for title of cancel sending alert",
+      "message": "पाठविणे रद्द करायचे?"
+   },
+   "alertFeedbackFinishMessage": {
+      "description": "Text for message of feedback alert after user submit a feedback",
+      "message": "तुमचा अभिप्राय सामायिक केल्याबद्दल धन्यवाद!"
+   },
+   "alertFeedbackInputMessage": {
+      "description": "Text for message of feedback alert to ask user to input feedback",
+      "message": "तुमच्या वेब पृष्ठाचे पूर्वावलोकन कसे होते?"
+   },
+   "alertFeedbackTitle": {
+      "description": "Text for title of feedback alert",
+      "message": "तुमचे पूर्वावलोकन रेट करा"
+   },
+   "alertLoadingPreviewMessage": {
+      "description": "Text for message of loading preview alert",
+      "message": "पूर्वावलोकन लोड करत आहे"
+   },
+   "alertLowQualityMessage": {
+      "description": "Text for message of low quality alert",
+      "message": "या पृष्ठाची सामग्री योग्यरित्या लोड होत नाही आणि पाठविली जाऊ शकत नाही. त्याऐवजी तुम्ही मजकूर निवडी पाठवण्याचा प्रयत्न करू शकता."
+   },
+   "alertLowQualityTitle": {
+      "description": "Text for title of low quality alert",
+      "message": "सामग्री पाठवू शकत नाही"
+   },
+   "alertPreviewErrorTitle": {
+      "description": "Text for title of preview failed alert",
+      "message": "पूर्वावलोकन अयशस्वी"
+   },
+   "alertPreviewExtractionErrorMessage": {
+      "description": "Text for message of extraction error alert",
+      "message": "आम्ही तुमच्या सामग्रीचे पूर्वावलोकन लोड करू शकलो नाही. कृपया नंतर पुन्हा प्रयत्न करा."
+   },
+   "alertPreviewGeneralErrorMessage": {
+      "description": "Text for message of general preview error alert",
+      "message": "आम्ही तुमच्या सामग्रीचे पूर्वावलोकन लोड करू शकलो नाही."
+   },
+   "alertSendingErrorTitle": {
+      "description": "Text for title of sending failed alert",
+      "message": "पाठवणे अयशस्वी"
+   },
+   "alertSendingGeneralErrorMessage": {
+      "description": "Text for message of general sending error alert",
+      "message": "आम्ही तुमची सामग्री पाठवू शकलो नाही. कृपया नंतर पुन्हा प्रयत्न करा."
+   },
+   "alertSendingMessage": {
+      "description": "Text for message of sending alert",
+      "message": "तुमच्या Kindle लायब्ररीमध्ये पोहोचायला काही मिनिटे लागू शकतात."
+   },
+   "alertSendingNetworkErrorMessage": {
+      "description": "Text for message of network sending error alert",
+      "message": "आम्ही तुमची सामग्री पाठवू शकलो नाही. कृपया तुमचे कनेक्शन तपासा आणि पुन्हा प्रयत्न करा."
+   },
+   "alertSendingNoAuthErrorMessage": {
+      "description": "Text for message of sending error alert when user try to send with invalid authentication status",
+      "message": "कृपया तुमचे वेबपेज पाठविण्यापूर्वी साइन इन करा."
+   },
+   "alertSendingTitle": {
+      "description": "Text for title of sending alert",
+      "message": "तुमची सामग्री त्याच्या मार्गावर आहे"
+   },
+   "alertSendingToKindleMessage": {
+      "description": "Text for message of sending to kindle alert",
+      "message": "Kindle वर पाठवत आहे"
+   },
+   "ctxSendToKindle": {
+      "description": "Context menu text for S2K",
+      "message": "Send to Kindle"
+   },
+   "extensionDescription": {
+      "description": "Extension description for extension UI and download.",
+      "message": "तुमच्या Kindle डिव्हाइसवर बातम्या लेख आणि ब्लॉग पोस्ट्स किंवा वाचन अ‍ॅप यासारख्या वेब सामग्री पाठविणे आणि वाचणे आता पूर्वीपेक्षा सोपे आहे."
+   },
+   "extensionName": {
+      "description": "Extension Name",
+      "message": "Google Chrome साठी Send to Kindle"
+   },
+   "history": {
+      "description": "Title for history view",
+      "message": "Send to Kindle :: इतिहास"
+   },
+   "historyClearAll": {
+      "description": "Action to clear history.",
+      "message": "इतिहास साफ करा"
+   },
+   "historyClose": {
+      "description": "Action to close history.",
+      "message": "बंद करा"
+   },
+   "historyDaysAgo": {
+      "description": "Timespan 'n Days Ago'",
+      "message": " दिवसांपूर्वी"
+   },
+   "historyNoData": {
+      "description": "Message for empty history.",
+      "message": "गेल्या 30 दिवसांपासून कोणतेही पाठवलेले आयटम नाहीत."
+   },
+   "historyTableHeader": {
+      "description": "Table header for S2K History",
+      "message": "इतिहास"
+   },
+   "historyTagSelection": {
+      "description": "The tag in history page to show the item is from `send selection` option",
+      "message": "(निवड)"
+   },
+   "historyToday": {
+      "description": "Timespan 'today'",
+      "message": "आज"
+   },
+   "historyYesterday": {
+      "description": "Timespan 'Yesterday'",
+      "message": "काल"
+   },
+   "kbsAlt": {
+      "description": "Name for alt. key.",
+      "message": "ALT"
+   },
+   "kbsArrowDown": {
+      "description": "Name for down arrow.",
+      "message": "खाली बाण"
+   },
+   "kbsArrowLeft": {
+      "description": "Name for left arrow.",
+      "message": "डावा बाण"
+   },
+   "kbsArrowRight": {
+      "description": "Name for right arrow.",
+      "message": "बाण उजवीकडे"
+   },
+   "kbsArrowUp": {
+      "description": "Name for up arrow.",
+      "message": "वर बाण"
+   },
+   "kbsCtrl": {
+      "description": "Name for control key.",
+      "message": "CTRL"
+   },
+   "kbsShift": {
+      "description": "Name for shift key.",
+      "message": "शिफ्ट"
+   },
+   "legalNotice": {
+      "description": "Legal Notice",
+      "message": "सूचना"
+   },
+   "legalNoticeLink": {
+      "description": "Link to 'Legal Notice'",
+      "message": "http://www.amazon.com/privacy"
+   },
+   "legalTerms": {
+      "description": "Legal Notice",
+      "message": "वापराच्या अटी"
+   },
+   "legalTermsLink": {
+      "description": "Link to 'Terms of Use'",
+      "message": "http://www.amazon.com/sendtokindleterms"
+   },
+   "loadingPreview": {
+      "description": "Text for message of loading preview alert",
+      "message": "पूर्वावलोकन लोड करत आहे"
+   },
+   "loadingPreviewMessage": {
+      "description": "Text for message of loading preview alert",
+      "message": "पूर्वावलोकन लोड करत आहे"
+   },
+   "optDelivery": {
+      "description": "Information text device settings.",
+      "message": "तुमचे डिलिव्हरी पर्याय शोधत आहात? "
+   },
+   "optDeliveryLink": {
+      "description": "Information text device settings link.",
+      "message": "येथे क्लिक करा"
+   },
+   "optKSInfo": {
+      "description": "Information text for keyboard shortcuts.",
+      "message": "बदलण्यासाठी, खालील बॉक्सवर क्लिक करा आणि तुमच्या कीबोर्डवरील की संयोजन निवडा:"
+   },
+   "optKeyboardShortcut": {
+      "description": "Header text for keyboard shortcuts.",
+      "message": "कीबोर्ड शॉर्टकट्स"
+   },
+   "options": {
+      "description": "Option page title.",
+      "message": "Send to Kindle :: पर्याय"
+   },
+   "popUpCountryAU": {
+      "description": "Country name of AU",
+      "message": "ऑस्ट्रेलिया"
+   },
+   "popUpCountryBR": {
+      "description": "Country name of BR",
+      "message": "ब्राझील"
+   },
+   "popUpCountryCA": {
+      "description": "Country name of CA",
+      "message": "कॅनडा"
+   },
+   "popUpCountryDE": {
+      "description": "Country name of DE",
+      "message": "जर्मनी"
+   },
+   "popUpCountryES": {
+      "description": "Country name of ES",
+      "message": "स्पेन"
+   },
+   "popUpCountryIN": {
+      "description": "Country name of IN",
+      "message": "भारत"
+   },
+   "popUpCountryIT": {
+      "description": "Country name of IT",
+      "message": "इटली"
+   },
+   "popUpCountryJP": {
+      "description": "Country name of JP",
+      "message": "जपान"
+   },
+   "popUpCountryMX": {
+      "description": "Country name of MX",
+      "message": "मेक्सिको"
+   },
+   "popUpCountryNL": {
+      "description": "Country name of NL",
+      "message": "नेदरलँड्स"
+   },
+   "popUpCountryPickerContinue": {
+      "description": "PopUp text to continue once user selected a country",
+      "message": "सुरू ठेवा"
+   },
+   "popUpCountryUK": {
+      "description": "Country name of UK",
+      "message": "युनायटेड किंग्डम"
+   },
+   "popUpCountryUS": {
+      "description": "Country name of US",
+      "message": "युनायटेड स्टेट्स"
+   },
+   "popUpCountryfr": {
+      "description": "Country name of FR",
+      "message": "फ्रान्स"
+   },
+   "popUpCreateAccount": {
+      "description": "PopUp text for create new account button",
+      "message": "तुमचे Amazon खाते तयार करा"
+   },
+   "popUpFeedback": {
+      "description": "PopUp text for feedback button.",
+      "message": "अभिप्राय"
+   },
+   "popUpFeedbackDescription": {
+      "description": "PopUp text for description of feedback page.",
+      "message": "हा अभिप्राय खाजगी आहे आणि आम्हाला तुमचा पूर्वावलोकन अनुभव सुधारण्यात मदत करेल."
+   },
+   "popUpFeedbackPlaceholder": {
+      "description": "Placeholder of feedback textarea",
+      "message": "आम्हाला अधिक सांगा (पर्यायी)."
+   },
+   "popUpFeedbackSubmit": {
+      "description": "PopUp text for submit button in feedback page.",
+      "message": "सबमिट करा"
+   },
+   "popUpFeedbackThanksText": {
+      "description": "PopUp text to show after user send a feedback.",
+      "message": "तुमच्या अभिप्रायाबद्दल धन्यवाद!"
+   },
+   "popUpFeedbackTitle": {
+      "description": "PopUp text for title of feedback page.",
+      "message": "तुमचा Send to Kindle अनुभव रेट करा."
+   },
+   "popUpForgotPassword": {
+      "description": "PopUp text for forgot password link",
+      "message": "पासवर्ड विसरलात"
+   },
+   "popUpHistory": {
+      "description": "PopUp text for extraction history.",
+      "message": "इतिहास"
+   },
+   "popUpNewToAmazon": {
+      "description": "PopUp text for new account button divider",
+      "message": "Amazon वर नवीन आहात?"
+   },
+   "popUpOptions": {
+      "description": "PopUp text for Amazon options page.",
+      "message": "सेटिंग्ज"
+   },
+   "popUpPreferCountrySelect": {
+      "description": "PopUp text in country picker selection",
+      "message": "तुमच्या पसंतीच्या देश/प्रदेशाची वेबसाइट निवडा:"
+   },
+   "popUpPreviewAndSend": {
+      "description": "PopUp text for preview.",
+      "message": "पूर्वावलोकन करा आणि पाठवा"
+   },
+   "popUpSaveCountry": {
+      "description": "PopUp text sve country button",
+      "message": "देश जतन करा"
+   },
+   "popUpSendSelectedText": {
+      "description": "PopUp text for sending selected text.",
+      "message": "निवड पाठवा"
+   },
+   "popUpSendToKindle": {
+      "description": "PopUp text for S2K.",
+      "message": "त्वरित पाठवा"
+   },
+   "popUpSettings": {
+      "description": "PopUp text for settings button.",
+      "message": "सेटिंग्ज"
+   },
+   "popUpSettingsAddLibDes": {
+      "description": "PopUp text for the description of 'Add to your library' section in settings page",
+      "message": "तुमच्या लायब्ररीमधील फाइल्स तुमच्या खात्याशी लिंक केलेल्या कोणत्याही डिव्हाइसवर डाउनलोड केल्या जाऊ शकतात."
+   },
+   "popUpSettingsAddLibDevicesListTitle": {
+      "description": "PopUp text for the title of `devices list` part in 'Add to your library' section in settings page",
+      "message": "तुमची फाइल (तुमच्या फाइल्स) कोठे पाठवायची(च्या) ते निवडा:"
+   },
+   "popUpSettingsAddLibInlineAlertText": {
+      "description": "PopUp text for the inline alert of 'Add to your library' section in settings page, when user do not select any devices",
+      "message": "किमान एक डिव्हाइस आवश्यक"
+   },
+   "popUpSettingsAddLibNoDevicesText": {
+      "description": "PopUp text for inform user that they do not have abt devices in 'Add to your library' section in settings page",
+      "message": "कोणतीही डिव्हाइसेस सापडली नाहीत. read.amazon.com वर जा किंवा तुमच्या Kindle डिव्हाइसची नोंदणी करा."
+   },
+   "popUpSettingsAddLibTitle": {
+      "description": "PopUp text for the title of 'Add to your library' section in settings page",
+      "message": "तुमच्या लायब्ररीमध्ये जोडा"
+   },
+   "popUpSettingsComplexityWarningDes": {
+      "description": "PopUp text for the description of 'Show complex layout warnings' section in settings page",
+      "message": "जटिल लेआउट असलेल्या काही साइट Kindle वर योग्यरित्या प्रदर्शित होणार नाहीत."
+   },
+   "popUpSettingsComplexityWarningTitle": {
+      "description": "PopUp text for the title of 'Show complex layout warnings' section in settings page",
+      "message": "जटिल लेआउट चेतावणी दर्शवा"
+   },
+   "popUpSettingsLogoutButton": {
+      "description": "PopUp text for the button of 'Logout' section in settings page",
+      "message": "साइन आउट करा"
+   },
+   "popUpSettingsLogoutDes": {
+      "description": "PopUp text for the description of 'Logout' section in settings page",
+      "message": "या ब्राउझरमध्ये तुमच्या Amazon खात्यातून साइन आउट करा."
+   },
+   "popUpSettingsLogoutTitle": {
+      "description": "PopUp text for the title of 'Logout' section in settings page",
+      "message": "साइन आउट करा"
+   },
+   "popUpSettingsUserNameTitle": {
+      "description": "PopUp text for the title of user name in settings page.",
+      "message": "यानुसार साइन इन केले"
+   },
+   "popUpShortcuts": {
+      "description": "PopUp text for shortcut settings.",
+      "message": "शॉर्टकट्स"
+   },
+   "popUpSignIn": {
+      "description": "PopUp text for sign in button",
+      "message": "साइन इन करा"
+   },
+   "previewFeedback": {
+      "description": "Text for feedback button in Preview page",
+      "message": "तुमचे पूर्वावलोकन रेट करा"
+   },
+   "previewHeaderSend": {
+      "description": "Text for send button in header of Preview page",
+      "message": "पाठवा"
+   },
+   "previewHeaderTitle": {
+      "description": "Title in header of Preview page",
+      "message": "पूर्वावलोकन"
+   },
+   "previewInputAuthorDes": {
+      "description": "Description of input area of author",
+      "message": "लेखक"
+   },
+   "previewInputLengthLimitAlert": {
+      "description": "Text for inline alert of length limit in preview page",
+      "message": "256 वर्ण मर्यादा गाठली "
+   },
+   "previewInputTitleDes": {
+      "description": "Description of input area of title",
+      "message": "शीर्षक"
+   },
+   "previewSelectionHeaderTitle": {
+      "description": "Title in header of Preview page",
+      "message": "निवडीचे पूर्वावलोकन"
+   },
+   "previewTitleEmptyAlert": {
+      "description": "Text for inline alert of empty title",
+      "message": "शीर्षक आवश्यक आहे"
+   }
+}

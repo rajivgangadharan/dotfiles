@@ -1,0 +1,6 @@
+2024/04/05-06:50:15.658 1ffb Reusing MANIFEST /home/rajivg/.config/google-chrome/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/04/05-06:50:15.659 1ffb Recovering log #4
+2024/04/05-06:50:15.680 1ffb Reusing old log /home/rajivg/.config/google-chrome/Default/IndexedDB/https_mail.google.com_0.indexeddb.leveldb/000004.log 
+2024/04/05-06:50:32.622 1ffc Level-0 table #8: started
+2024/04/05-06:50:32.652 1ffc Level-0 table #8: 2850638 bytes OK
+2024/04/05-06:50:32.660 1ffc Delete type=0 #4

@@ -1,0 +1,502 @@
+{
+   "A11yAlert": {
+      "description": "A11y text for Alert container",
+      "message": "ಅಲರ್ಟ್"
+   },
+   "A11yAlertAnalyzingMessage": {
+      "description": "Voice Over read out text for message of analyzing alert",
+      "message": "ವೆಬ್‌ಸೈಟ್‌ನ ವಿಷಯವನ್ನು ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತಿದೆ"
+   },
+   "A11yAlertLoadingPreviewMessage": {
+      "description": "Voice Over read out text for message of loading preview alert",
+      "message": "ವೆಬ್‌ಸೈಟ್ ವಿಷಯದ ಪೂರ್ವವೀಕ್ಷಣೆ ಲೋಡ್ ಆಗುತ್ತಿದೆ"
+   },
+   "A11yAlertSendingToKindleMessage": {
+      "description": "Voice Over read out text for message of sending to kindle alert",
+      "message": "ನಿಮ್ಮ Kindle ಗೆ ವಿಷಯವನ್ನು ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ"
+   },
+   "A11yDeviceList": {
+      "description": "A11y text for device list container",
+      "message": "ಸಾಧನ ಪಟ್ಟಿ"
+   },
+   "A11yFeedbackCurrentRating": {
+      "description": "A11y text for feedback rating",
+      "message": "ಪ್ರಸ್ತುತ ರೇಟಿಂಗ್ "
+   },
+   "A11yFeedbackRating": {
+      "description": "A11y text for feedback rating action",
+      "message": "ಇದರಂತೆ ರೇಟಿಂಗ್"
+   },
+   "A11yFeedbackStar": {
+      "description": "A11y text for feedback star icon",
+      "message": "ಸ್ಟಾರ್"
+   },
+   "A11yHistoryDelete": {
+      "description": "A11y text for History list delete icon",
+      "message": "ಅಳಿಸಿ"
+   },
+   "A11yHistoryList": {
+      "description": "A11y text for History list container",
+      "message": "ಇತಿಹಾಸ ಪಟ್ಟಿ"
+   },
+   "A11yIconBack": {
+      "description": "A11y text for back icon",
+      "message": "ಹಿಂದಕ್ಕೆ"
+   },
+   "A11yIconClose": {
+      "description": "A11y text for close icon",
+      "message": "ಮುಚ್ಚಿ"
+   },
+   "A11yIconSpinner": {
+      "description": "A11y text for loading spinner",
+      "message": "ಲೋಡ್ ಆಗುತ್ತಿದೆ"
+   },
+   "A11yPopupSettingsError": {
+      "description": "A11y text for setting button with error icon in corner",
+      "message": "ಸೆಟ್ಟಿಂಗ್ ಬಟನ್, ಸೆಟ್ಟಿಂಗ್ ದೋಷ"
+   },
+   "A11yPreviewAuthor": {
+      "description": "A11y text for edit area of author in preview page",
+      "message": "ಲೇಖಕ: "
+   },
+   "A11yPreviewTitle": {
+      "description": "A11y text for edit area of title in preview page",
+      "message": "ಶೀರ್ಷಿಕೆ: "
+   },
+   "AfterSignInText": {
+      "description": "Text for after sign-in page",
+      "message": "ನಿಮ್ಮ Amazon ಖಾತೆಗೆ ನೀವು ಯಶಸ್ವಿಯಾಗಿ ಲಾಗ್ ಇನ್ ಮಾಡಿದ್ದೀರಿ."
+   },
+   "alertAnalyzingMessage": {
+      "description": "Text for message of analyzing alert",
+      "message": "ವೆಬ್‍ಸೈಟ್ ವಿಶ್ಲೇಷಿಸಲಾಗುತ್ತಿದೆ"
+   },
+   "alertButtonCancel": {
+      "description": "Text for cancel button of alert",
+      "message": "ರದ್ದುಮಾಡಿ"
+   },
+   "alertButtonCancelSending": {
+      "description": "Text for cancel sending button of alert",
+      "message": "ಕಳುಹಿಸುವುದನ್ನು ರದ್ದುಗೊಳಿಸಿ"
+   },
+   "alertButtonNevermind": {
+      "description": "Text for never mind button of alert",
+      "message": "ಚಿಂತಿಸಬೇಡಿ"
+   },
+   "alertButtonOK": {
+      "description": "Text for OK button of alert",
+      "message": "ಸರಿ"
+   },
+   "alertButtonSendAnyway": {
+      "description": "Text for send anyway button of alert",
+      "message": "ಹೇಗಾದರೂ ಕಳುಹಿಸಿ"
+   },
+   "alertButtonSignIn": {
+      "description": "Text for sign in button of alert",
+      "message": "ಸೈನ್ ಇನ್ ಮಾಡಿ"
+   },
+   "alertButtonSubmit": {
+      "description": "Text for submit button of alert",
+      "message": "ಸಲ್ಲಿಸಿ"
+   },
+   "alertCancelSendingMessage": {
+      "description": "Text for message of cancel sending alert",
+      "message": "ಈ ವೆಬ್‍ ‌ಪುಟವನ್ನು ಮುಚ್ಚುವುದು ಕಳುಹಿಸುವುದನ್ನು ರದ್ದುಗೊಳಿಸುತ್ತದೆ. ಮಾಡಿದ ಯಾವುದೇ ಪ್ರಗತಿಯನ್ನು ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ."
+   },
+   "alertCancelSendingTitle": {
+      "description": "Text for title of cancel sending alert",
+      "message": "ಕಳುಹಿಸುವುದನ್ನು ರದ್ದುಗೊಳಿಸುವುದೇ?"
+   },
+   "alertFeedbackFinishMessage": {
+      "description": "Text for message of feedback alert after user submit a feedback",
+      "message": "ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆಯನ್ನು ಹಂಚಿಕೊಂಡಿದ್ದಕ್ಕಾಗಿ ಧನ್ಯವಾದಗಳು!"
+   },
+   "alertFeedbackInputMessage": {
+      "description": "Text for message of feedback alert to ask user to input feedback",
+      "message": "ನಿಮ್ಮ ವೆಬ್‍ ಪುಟದ ಪೂರ್ವವೀಕ್ಷಣೆ ಹೇಗಿತ್ತು?"
+   },
+   "alertFeedbackTitle": {
+      "description": "Text for title of feedback alert",
+      "message": "ನಿಮ್ಮ ಪೂರ್ವವೀಕ್ಷಣೆಯನ್ನು ರೇಟ್ ಮಾಡಿ"
+   },
+   "alertLoadingPreviewMessage": {
+      "description": "Text for message of loading preview alert",
+      "message": "ಪೂರ್ವವೀಕ್ಷಣೆಯನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ"
+   },
+   "alertLowQualityMessage": {
+      "description": "Text for message of low quality alert",
+      "message": "ಈ ಪುಟದ ವಿಷಯವು ಸರಿಯಾಗಿ ಲೋಡ್ ಆಗುತ್ತಿಲ್ಲ ಮತ್ತು ಕಳುಹಿಸಲಾಗುವುದಿಲ್ಲ. ಬದಲಿಗೆ ನೀವು ಪಠ್ಯ ಆಯ್ಕೆಗಳನ್ನು ಕಳುಹಿಸಲು ಪ್ರಯತ್ನಿಸಬಹುದು."
+   },
+   "alertLowQualityTitle": {
+      "description": "Text for title of low quality alert",
+      "message": "ವಿಷಯವನ್ನು ಕಳುಹಿಸಲು ಸಾಧ್ಯವಿಲ್ಲ"
+   },
+   "alertPreviewErrorTitle": {
+      "description": "Text for title of preview failed alert",
+      "message": "ಪೂರ್ವವೀಕ್ಷಣೆ ವಿಫಲವಾಗಿದೆ"
+   },
+   "alertPreviewExtractionErrorMessage": {
+      "description": "Text for message of extraction error alert",
+      "message": "ನಿಮ್ಮ ಕಂಟೆಂಟ್‌ನ ಪೂರ್ವವೀಕ್ಷಣೆಯನ್ನು ನಾವು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ನಂತರ ಪುನಃ ಪ್ರಯತ್ನಿಸಿ."
+   },
+   "alertPreviewGeneralErrorMessage": {
+      "description": "Text for message of general preview error alert",
+      "message": "ನಿಮ್ಮ ಕಂಟೆಂಟ್‌ನ ಪೂರ್ವವೀಕ್ಷಣೆಯನ್ನು ನಾವು ಲೋಡ್ ಮಾಡಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ."
+   },
+   "alertSendingErrorTitle": {
+      "description": "Text for title of sending failed alert",
+      "message": "ಕಳುಹಿಸುವುದು ವಿಫಲವಾಗಿದೆ"
+   },
+   "alertSendingGeneralErrorMessage": {
+      "description": "Text for message of general sending error alert",
+      "message": "ನಿಮ್ಮ ವಿಷಯವನ್ನು ನಾವು ಕಳುಹಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ನಂತರ ಮತ್ತೆ ಪ್ರಯತ್ನಿಸಿ."
+   },
+   "alertSendingMessage": {
+      "description": "Text for message of sending alert",
+      "message": "ನಿಮ್ಮ Kindle ಲೈಬ್ರರಿಗೆ ಬರಲು ಕೆಲವು ನಿಮಿಷಗಳನ್ನು ತೆಗೆದುಕೊಳ್ಳಬಹುದು."
+   },
+   "alertSendingNetworkErrorMessage": {
+      "description": "Text for message of network sending error alert",
+      "message": "ನಿಮ್ಮ ವಿಷಯವನ್ನು ನಾವು ಕಳುಹಿಸಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ. ದಯವಿಟ್ಟು ನಿಮ್ಮ ಸಂಪರ್ಕವನ್ನು ಪರಿಶೀಲಿಸಿ ಮತ್ತು ಇನ್ನೊಮ್ಮೆ ಪ್ರಯತ್ನಿಸಿ."
+   },
+   "alertSendingNoAuthErrorMessage": {
+      "description": "Text for message of sending error alert when user try to send with invalid authentication status",
+      "message": "ನಿಮ್ಮ ವೆಬ್‌ಪುಟವನ್ನು ಕಳುಹಿಸುವ ಮೊದಲು ದಯವಿಟ್ಟು ಸೈನ್ ಇನ್ ಮಾಡಿ."
+   },
+   "alertSendingTitle": {
+      "description": "Text for title of sending alert",
+      "message": "ನಿಮ್ಮ ವಿಷಯವು ಹಾದಿಯಲ್ಲಿದೆ"
+   },
+   "alertSendingToKindleMessage": {
+      "description": "Text for message of sending to kindle alert",
+      "message": "Kindle ಗೆ ಕಳುಹಿಸಲಾಗುತ್ತಿದೆ"
+   },
+   "ctxSendToKindle": {
+      "description": "Context menu text for S2K",
+      "message": "Send to Kindle"
+   },
+   "extensionDescription": {
+      "description": "Extension description for extension UI and download.",
+      "message": "ನಿಮ್ಮ Kindle ಸಾಧನ ಅಥವಾ ಓದುವ ಆ್ಯಪ್‌ಗೆ ಸುದ್ದಿ ಲೇಖನಗಳು ಮತ್ತು ಬ್ಲಾಗ್ ಪೋಸ್ಟ್‌ಗಳಂತಹ ವೆಬ್ ವಿಷಯವನ್ನು ಕಳುಹಿಸುವುದು ಮತ್ತು ಓದುವುದು ಈಗ ಹಿಂದೆಂದಿಗಿಂತಲೂ ಸುಲಭವಾಗಿದೆ."
+   },
+   "extensionName": {
+      "description": "Extension Name",
+      "message": "Google Chrome™ ಗಾಗಿ Send to Kindle"
+   },
+   "history": {
+      "description": "Title for history view",
+      "message": "Send to Kindle :: ಇತಿಹಾಸ"
+   },
+   "historyClearAll": {
+      "description": "Action to clear history.",
+      "message": "ಇತಿಹಾಸವನ್ನು ಅಳಿಸಿ"
+   },
+   "historyClose": {
+      "description": "Action to close history.",
+      "message": "ಮುಚ್ಚಿ"
+   },
+   "historyDaysAgo": {
+      "description": "Timespan 'n Days Ago'",
+      "message": " ದಿನಗಳ ಹಿಂದೆ"
+   },
+   "historyNoData": {
+      "description": "Message for empty history.",
+      "message": "ಕಳೆದ 30 ದಿನಗಳಿಂದ ಕಳುಹಿಸಿದ ಯಾವುದೇ ಐಟಂಗಳಿಲ್ಲ."
+   },
+   "historyTableHeader": {
+      "description": "Table header for S2K History",
+      "message": "ಇತಿಹಾಸ"
+   },
+   "historyTagSelection": {
+      "description": "The tag in history page to show the item is from `send selection` option",
+      "message": "(ಆಯ್ಕೆ)"
+   },
+   "historyToday": {
+      "description": "Timespan 'today'",
+      "message": "ಇಂದು"
+   },
+   "historyYesterday": {
+      "description": "Timespan 'Yesterday'",
+      "message": "ನಿನ್ನೆ"
+   },
+   "kbsAlt": {
+      "description": "Name for alt. key.",
+      "message": "ALT"
+   },
+   "kbsArrowDown": {
+      "description": "Name for down arrow.",
+      "message": "ಕೆಳಭಾಗದ ಬಾಣದ ಗುರುತು"
+   },
+   "kbsArrowLeft": {
+      "description": "Name for left arrow.",
+      "message": "ಎಡಭಾಗದ ಬಾಣದ ಗುರುತು"
+   },
+   "kbsArrowRight": {
+      "description": "Name for right arrow.",
+      "message": "ಬಲಭಾಗದ ಬಾಣದ ಗುರುತು"
+   },
+   "kbsArrowUp": {
+      "description": "Name for up arrow.",
+      "message": "ಮೇಲ್ಬಾಗದ ಬಾಣದ ಗುರುತು"
+   },
+   "kbsCtrl": {
+      "description": "Name for control key.",
+      "message": "CTRL"
+   },
+   "kbsShift": {
+      "description": "Name for shift key.",
+      "message": "SHIFT"
+   },
+   "legalNotice": {
+      "description": "Legal Notice",
+      "message": "ಸೂಚನೆ"
+   },
+   "legalNoticeLink": {
+      "description": "Link to 'Legal Notice'",
+      "message": "http://www.amazon.com/privacy"
+   },
+   "legalTerms": {
+      "description": "Legal Notice",
+      "message": "ಬಳಕೆಯ ನಿಯಮಗಳು"
+   },
+   "legalTermsLink": {
+      "description": "Link to 'Terms of Use'",
+      "message": "http://www.amazon.com/sendtokindleterms"
+   },
+   "loadingPreview": {
+      "description": "Text for message of loading preview alert",
+      "message": "ಪೂರ್ವವೀಕ್ಷಣೆಯನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ"
+   },
+   "loadingPreviewMessage": {
+      "description": "Text for message of loading preview alert",
+      "message": "ಪೂರ್ವವೀಕ್ಷಣೆಯನ್ನು ಲೋಡ್ ಮಾಡಲಾಗುತ್ತಿದೆ"
+   },
+   "optDelivery": {
+      "description": "Information text device settings.",
+      "message": "ನಿಮ್ಮ ಡೆಲಿವರಿ ಆಯ್ಕೆಗಳಿಗಾಗಿ ಹುಡುಕುತ್ತಿರುವಿರಾ? "
+   },
+   "optDeliveryLink": {
+      "description": "Information text device settings link.",
+      "message": "ಇಲ್ಲಿ ಕ್ಲಿಕ್‌ ಮಾಡಿ"
+   },
+   "optKSInfo": {
+      "description": "Information text for keyboard shortcuts.",
+      "message": "ಬದಲಾಯಿಸಲು, ಕೆಳಗಿನ ಬಾಕ್ಸ್ ಮೇಲೆ ಕ್ಲಿಕ್ ಮಾಡಿ ಮತ್ತು ನಿಮ್ಮ ಕೀಬೋರ್ಡ್‌ನಲ್ಲಿ ಕೀ ಸಂಯೋಜನೆಯನ್ನು ಆಯ್ಕೆಮಾಡಿ:"
+   },
+   "optKeyboardShortcut": {
+      "description": "Header text for keyboard shortcuts.",
+      "message": "ಕೀಬೋರ್ಡ್ ಶಾರ್ಟ್‌ಕಟ್‌ಗಳು"
+   },
+   "options": {
+      "description": "Option page title.",
+      "message": "Send to Kindle :: ಆಯ್ಕೆಗಳು"
+   },
+   "popUpCountryAU": {
+      "description": "Country name of AU",
+      "message": "ಆಸ್ಟ್ರೇಲಿಯಾ"
+   },
+   "popUpCountryBR": {
+      "description": "Country name of BR",
+      "message": "ಬ್ರೆಜಿಲ್"
+   },
+   "popUpCountryCA": {
+      "description": "Country name of CA",
+      "message": "ಕೆನಡಾ"
+   },
+   "popUpCountryDE": {
+      "description": "Country name of DE",
+      "message": "ಜರ್ಮನಿ"
+   },
+   "popUpCountryES": {
+      "description": "Country name of ES",
+      "message": "ಸ್ಪೇನ್"
+   },
+   "popUpCountryIN": {
+      "description": "Country name of IN",
+      "message": "ಭಾರತ"
+   },
+   "popUpCountryIT": {
+      "description": "Country name of IT",
+      "message": "ಇಟಲಿ"
+   },
+   "popUpCountryJP": {
+      "description": "Country name of JP",
+      "message": "ಜಪಾನ್"
+   },
+   "popUpCountryMX": {
+      "description": "Country name of MX",
+      "message": "ಮೆಕ್ಸಿಕೊ"
+   },
+   "popUpCountryNL": {
+      "description": "Country name of NL",
+      "message": "ನೆದರ್‌ಲ್ಯಾಂಡ್ಸ್"
+   },
+   "popUpCountryPickerContinue": {
+      "description": "PopUp text to continue once user selected a country",
+      "message": "ಮುಂದುವರಿಸಿ"
+   },
+   "popUpCountryUK": {
+      "description": "Country name of UK",
+      "message": "ಯುನೈಟೆಡ್ ಕಿಂಗ್‌ಡಮ್"
+   },
+   "popUpCountryUS": {
+      "description": "Country name of US",
+      "message": "ಯುನೈಟೆಡ್ ಸ್ಟೇಟ್ಸ್"
+   },
+   "popUpCountryfr": {
+      "description": "Country name of FR",
+      "message": "ಫ್ರಾನ್ಸ್"
+   },
+   "popUpCreateAccount": {
+      "description": "PopUp text for create new account button",
+      "message": "ನಿಮ್ಮ Amazon ಖಾತೆಯನ್ನು ರಚಿಸಿ"
+   },
+   "popUpFeedback": {
+      "description": "PopUp text for feedback button.",
+      "message": "ಪ್ರತಿಕ್ರಿಯೆ"
+   },
+   "popUpFeedbackDescription": {
+      "description": "PopUp text for description of feedback page.",
+      "message": "ಈ ಪ್ರತಿಕ್ರಿಯೆ ಖಾಸಗಿಯಾಗಿದೆ ಮತ್ತು ನಿಮ್ಮ ಪೂರ್ವವೀಕ್ಷಣೆ ಅನುಭವವನ್ನು ಸುಧಾರಿಸಲು ನಮಗೆ ಸಹಾಯ ಮಾಡುತ್ತದೆ."
+   },
+   "popUpFeedbackPlaceholder": {
+      "description": "Placeholder of feedback textarea",
+      "message": "ನಮಗೆ ಹೆಚ್ಚು ಹೇಳಿ (ಐಚ್ಚಿಕ)."
+   },
+   "popUpFeedbackSubmit": {
+      "description": "PopUp text for submit button in feedback page.",
+      "message": "ಸಲ್ಲಿಸಿ"
+   },
+   "popUpFeedbackThanksText": {
+      "description": "PopUp text to show after user send a feedback.",
+      "message": "ನಿಮ್ಮ ಪ್ರತಿಕ್ರಿಯೆಗಾಗಿ ಧನ್ಯವಾದಗಳು!"
+   },
+   "popUpFeedbackTitle": {
+      "description": "PopUp text for title of feedback page.",
+      "message": "ನಿಮ್ಮ Send to Kindle ಕಳುಹಿಸುವುದನ್ನು ರೇಟ್ ಮಾಡಿ."
+   },
+   "popUpForgotPassword": {
+      "description": "PopUp text for forgot password link",
+      "message": "ಪಾಸ್‌ವರ್ಡ್ ಮರೆತುಹೋಗಿದೆ"
+   },
+   "popUpHistory": {
+      "description": "PopUp text for extraction history.",
+      "message": "ಇತಿಹಾಸ"
+   },
+   "popUpNewToAmazon": {
+      "description": "PopUp text for new account button divider",
+      "message": "Amazon ‌ಗೆ ಹೊಸಬರೇ?"
+   },
+   "popUpOptions": {
+      "description": "PopUp text for Amazon options page.",
+      "message": "ಸೆಟ್ಟಿಂಗ್‌‍‌ಗಳು"
+   },
+   "popUpPreferCountrySelect": {
+      "description": "PopUp text in country picker selection",
+      "message": "ನಿಮ್ಮ ಆದ್ಯತೆಯ ದೇಶ/ಪ್ರದೇಶದ ವೆಬ್‌ಸೈಟ್‌ ಅನ್ನು ಆಯ್ಕೆ ಮಾಡಿ:"
+   },
+   "popUpPreviewAndSend": {
+      "description": "PopUp text for preview.",
+      "message": "ಪೂರ್ವವೀಕ್ಷಣೆ ನೋಡಿ ಮತ್ತು ಕಳುಹಿಸಿ"
+   },
+   "popUpSaveCountry": {
+      "description": "PopUp text sve country button",
+      "message": "ದೇಶವನ್ನು ಸೇವ್ ಮಾಡಿ"
+   },
+   "popUpSendSelectedText": {
+      "description": "PopUp text for sending selected text.",
+      "message": "ಕಳುಹಿಸಿ ಆಯ್ಕೆ"
+   },
+   "popUpSendToKindle": {
+      "description": "PopUp text for S2K.",
+      "message": "ತ್ವರಿತವಾಗಿ ಕಳುಹಿಸಿ"
+   },
+   "popUpSettings": {
+      "description": "PopUp text for settings button.",
+      "message": "ಸೆಟ್ಟಿಂಗ್‌‍‌ಗಳು"
+   },
+   "popUpSettingsAddLibDes": {
+      "description": "PopUp text for the description of 'Add to your library' section in settings page",
+      "message": "ನಿಮ್ಮ ಲೈಬ್ರರಿಯಲ್ಲಿರುವ ಫೈಲ್‌ಗಳನ್ನು ನಿಮ್ಮ ಖಾತೆಗೆ ಲಿಂಕ್ ಮಾಡಲಾದ ಯಾವುದೇ ಸಾಧನಕ್ಕೆ ಡೌನ್‌ಲೋಡ್ ಮಾಡಬಹುದು."
+   },
+   "popUpSettingsAddLibDevicesListTitle": {
+      "description": "PopUp text for the title of `devices list` part in 'Add to your library' section in settings page",
+      "message": "ನಿಮ್ಮ ಫೈಲ್ (ಗಳನ್ನು) ಎಲ್ಲಿ ಕಳುಹಿಸಬೇಕು ಎಂಬುದನ್ನು ಆರಿಸಿ:"
+   },
+   "popUpSettingsAddLibInlineAlertText": {
+      "description": "PopUp text for the inline alert of 'Add to your library' section in settings page, when user do not select any devices",
+      "message": "ಕನಿಷ್ಠ ಒಂದು ಸಾಧನದ ಅಗತ್ಯವಿದೆ"
+   },
+   "popUpSettingsAddLibNoDevicesText": {
+      "description": "PopUp text for inform user that they do not have abt devices in 'Add to your library' section in settings page",
+      "message": "ಯಾವುದೇ ಸಾಧನಗಳು ಕಂಡುಬಂದಿಲ್ಲ. read.amazon.com ಗೆ ಹೋಗಿ ಅಥವಾ ನಿಮ್ಮ Kindle ಸಾಧನವನ್ನು ನೋಂದಾಯಿಸಿ."
+   },
+   "popUpSettingsAddLibTitle": {
+      "description": "PopUp text for the title of 'Add to your library' section in settings page",
+      "message": "ನಿಮ್ಮ ಲೈಬ್ರರಿಗೆ ಸೇರಿಸಿ"
+   },
+   "popUpSettingsComplexityWarningDes": {
+      "description": "PopUp text for the description of 'Show complex layout warnings' section in settings page",
+      "message": "ಸಂಕೀರ್ಣ ಲೇಔಟ್‌ಗಳನ್ನು ಹೊಂದಿರುವ ಕೆಲವು ಸೈಟ್‌ಗಳು Kindle ‌ನಲ್ಲಿ ಸರಿಯಾಗಿ ಪ್ರದರ್ಶಿಸದಿರಬಹುದು."
+   },
+   "popUpSettingsComplexityWarningTitle": {
+      "description": "PopUp text for the title of 'Show complex layout warnings' section in settings page",
+      "message": "ಸಂಕೀರ್ಣ ಲೇಔಟ್‌ನ ಎಚ್ಚರಿಕೆಗಳನ್ನು ತೋರಿಸಿ"
+   },
+   "popUpSettingsLogoutButton": {
+      "description": "PopUp text for the button of 'Logout' section in settings page",
+      "message": "ಸೈನ್ ಔಟ್ ಮಾಡಿ"
+   },
+   "popUpSettingsLogoutDes": {
+      "description": "PopUp text for the description of 'Logout' section in settings page",
+      "message": "ಈ ಬ್ರೌಸರ್‌ನಲ್ಲಿ ನಿಮ್ಮ Amazon ಖಾತೆಯಿಂದ ಸೈನ್ ಔಟ್ ಮಾಡಿ."
+   },
+   "popUpSettingsLogoutTitle": {
+      "description": "PopUp text for the title of 'Logout' section in settings page",
+      "message": "ಸೈನ್ ಔಟ್"
+   },
+   "popUpSettingsUserNameTitle": {
+      "description": "PopUp text for the title of user name in settings page.",
+      "message": "ಹೀಗೆ ಸೈನ್ ಇನ್ ಮಾಡಿದ್ದೀರಿ"
+   },
+   "popUpShortcuts": {
+      "description": "PopUp text for shortcut settings.",
+      "message": "ಶಾರ್ಟ್‌ಕಟ್‌ಗಳು"
+   },
+   "popUpSignIn": {
+      "description": "PopUp text for sign in button",
+      "message": "ಸೈನ್ ಇನ್"
+   },
+   "previewFeedback": {
+      "description": "Text for feedback button in Preview page",
+      "message": "ನಿಮ್ಮ ಪೂರ್ವವೀಕ್ಷಣೆಯನ್ನು ರೇಟ್ ಮಾಡಿ"
+   },
+   "previewHeaderSend": {
+      "description": "Text for send button in header of Preview page",
+      "message": "ಕಳುಹಿಸಿ"
+   },
+   "previewHeaderTitle": {
+      "description": "Title in header of Preview page",
+      "message": "ಪೂರ್ವವೀಕ್ಷಣೆ"
+   },
+   "previewInputAuthorDes": {
+      "description": "Description of input area of author",
+      "message": "ಲೇಖಕರು"
+   },
+   "previewInputLengthLimitAlert": {
+      "description": "Text for inline alert of length limit in preview page",
+      "message": "256 ಅಕ್ಷರ ಮಿತಿಯನ್ನು ತಲುಪಿದೆ "
+   },
+   "previewInputTitleDes": {
+      "description": "Description of input area of title",
+      "message": "ಶೀರ್ಷಿಕೆ"
+   },
+   "previewSelectionHeaderTitle": {
+      "description": "Title in header of Preview page",
+      "message": "ಆಯ್ಕೆಯನ್ನು ಪೂರ್ವವೀಕ್ಷಿಸಿ"
+   },
+   "previewTitleEmptyAlert": {
+      "description": "Text for inline alert of empty title",
+      "message": "ಶೀರ್ಷಿಕೆ ಅಗತ್ಯವಿದೆ"
+   }
+}

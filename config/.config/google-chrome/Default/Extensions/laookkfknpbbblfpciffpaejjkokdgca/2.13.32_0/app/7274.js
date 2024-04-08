@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmomentum=globalThis.webpackChunkmomentum||[]).push([[7274],{47274:(t,a,e)=>{async function n(t,a=!0){await t.addParticleUpdater("tilt",(async t=>{const{TiltUpdater:a}=await e.e(2084).then(e.bind(e,52084));return new a(t)}),a)}e.d(a,{loadTiltUpdater:()=>n})}}]);

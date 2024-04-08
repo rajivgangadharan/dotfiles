@@ -1,0 +1,15 @@
+2024/04/06-13:42:01.955 4 Reusing MANIFEST /home/rajivg/.config/google-chrome/Default/Local Storage/leveldb/MANIFEST-000001
+2024/04/06-13:42:01.972 4 Recovering log #25
+2024/04/06-13:42:01.975 4 Reusing old log /home/rajivg/.config/google-chrome/Default/Local Storage/leveldb/000025.log 
+2024/04/06-13:44:51.778 6 Level-0 table #29: started
+2024/04/06-13:44:51.785 6 Level-0 table #29: 24829 bytes OK
+2024/04/06-13:44:51.792 6 Delete type=0 #25
+2024/04/06-13:44:51.793 6 Compacting 4@0 + 1@1 files
+2024/04/06-13:44:51.812 6 Generated table #30@0: 248 keys, 361091 bytes
+2024/04/06-13:44:51.812 6 Compacted 4@0 + 1@1 files => 361091 bytes
+2024/04/06-13:44:51.819 6 compacted to: files[ 0 1 1 0 0 0 0 ]
+2024/04/06-13:44:51.820 6 Delete type=2 #18
+2024/04/06-13:44:51.820 6 Delete type=2 #20
+2024/04/06-13:44:51.820 6 Delete type=2 #23
+2024/04/06-13:44:51.820 6 Delete type=2 #26
+2024/04/06-13:44:51.820 6 Delete type=2 #29

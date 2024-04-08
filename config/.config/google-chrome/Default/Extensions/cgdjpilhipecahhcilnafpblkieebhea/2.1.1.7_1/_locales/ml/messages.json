@@ -1,0 +1,502 @@
+{
+   "A11yAlert": {
+      "description": "A11y text for Alert container",
+      "message": "ജാഗ്രത"
+   },
+   "A11yAlertAnalyzingMessage": {
+      "description": "Voice Over read out text for message of analyzing alert",
+      "message": "വെബ്സൈറ്റിന്റെ ഉള്ളടക്കം വിശകലനം ചെയ്യുന്നു"
+   },
+   "A11yAlertLoadingPreviewMessage": {
+      "description": "Voice Over read out text for message of loading preview alert",
+      "message": "വെബ്സൈറ്റ് ഉള്ളടക്കത്തിന്റെ പ്രിവ്യൂ ലോഡ് ചെയ്യുന്നു"
+   },
+   "A11yAlertSendingToKindleMessage": {
+      "description": "Voice Over read out text for message of sending to kindle alert",
+      "message": "നിങ്ങളുടെ Kindle-ലേക്ക് ഉള്ളടക്കം അയയ്ക്കുന്നു"
+   },
+   "A11yDeviceList": {
+      "description": "A11y text for device list container",
+      "message": "ഉപകരണ ലിസ്റ്റ്"
+   },
+   "A11yFeedbackCurrentRating": {
+      "description": "A11y text for feedback rating",
+      "message": "നിലവിലെ റേറ്റിംഗ്: "
+   },
+   "A11yFeedbackRating": {
+      "description": "A11y text for feedback rating action",
+      "message": "റേറ്റിംഗ്"
+   },
+   "A11yFeedbackStar": {
+      "description": "A11y text for feedback star icon",
+      "message": "സ്‌റ്റാർ"
+   },
+   "A11yHistoryDelete": {
+      "description": "A11y text for History list delete icon",
+      "message": "ഡിലീറ്റ്"
+   },
+   "A11yHistoryList": {
+      "description": "A11y text for History list container",
+      "message": "ചരിത്ര ലിസ്റ്റ്"
+   },
+   "A11yIconBack": {
+      "description": "A11y text for back icon",
+      "message": "തിരികെ"
+   },
+   "A11yIconClose": {
+      "description": "A11y text for close icon",
+      "message": "അടയ്ക്കുക"
+   },
+   "A11yIconSpinner": {
+      "description": "A11y text for loading spinner",
+      "message": "ലോഡ് ചെയ്യുന്നു"
+   },
+   "A11yPopupSettingsError": {
+      "description": "A11y text for setting button with error icon in corner",
+      "message": "ക്രമീകരണ ബട്ടൺ, ക്രമീകരണത്തിൽ പിശക്"
+   },
+   "A11yPreviewAuthor": {
+      "description": "A11y text for edit area of author in preview page",
+      "message": "രചയിതാവ്: "
+   },
+   "A11yPreviewTitle": {
+      "description": "A11y text for edit area of title in preview page",
+      "message": "ശീർഷകം: "
+   },
+   "AfterSignInText": {
+      "description": "Text for after sign-in page",
+      "message": "നിങ്ങളുടെ Amazon അക്കൗണ്ടിലേക്ക് നിങ്ങൾ വിജയകരമായി ലോഗിൻ ചെയ്തു."
+   },
+   "alertAnalyzingMessage": {
+      "description": "Text for message of analyzing alert",
+      "message": "വെബ്സൈറ്റ് വിശകലനം ചെയ്യുന്നു"
+   },
+   "alertButtonCancel": {
+      "description": "Text for cancel button of alert",
+      "message": "റദ്ദാക്കുക"
+   },
+   "alertButtonCancelSending": {
+      "description": "Text for cancel sending button of alert",
+      "message": "അയയ്ക്കുന്നത് റദ്ദാക്കുക"
+   },
+   "alertButtonNevermind": {
+      "description": "Text for never mind button of alert",
+      "message": "കാര്യമാക്കേണ്ടതില്ല"
+   },
+   "alertButtonOK": {
+      "description": "Text for OK button of alert",
+      "message": "ശരി"
+   },
+   "alertButtonSendAnyway": {
+      "description": "Text for send anyway button of alert",
+      "message": "എന്തായാലും അയയ്ക്കുക"
+   },
+   "alertButtonSignIn": {
+      "description": "Text for sign in button of alert",
+      "message": "സൈൻ ഇൻ ചെയ്യുക"
+   },
+   "alertButtonSubmit": {
+      "description": "Text for submit button of alert",
+      "message": "സമർപ്പിക്കുക"
+   },
+   "alertCancelSendingMessage": {
+      "description": "Text for message of cancel sending alert",
+      "message": "ഈ വെബ് പേജ് അടയ്ക്കുന്നത് അയയ്‌ക്കൽ റദ്ദാക്കും. എന്തെങ്കിലും പുരോഗതി ഉണ്ടായത് അയയ്ക്കില്ല."
+   },
+   "alertCancelSendingTitle": {
+      "description": "Text for title of cancel sending alert",
+      "message": "അയയ്ക്കുന്നത് റദ്ദാക്കണോ?"
+   },
+   "alertFeedbackFinishMessage": {
+      "description": "Text for message of feedback alert after user submit a feedback",
+      "message": "നിങ്ങളുടെ ഫീഡ്ബാക്ക് പങ്കിട്ടതിന് നന്ദി!"
+   },
+   "alertFeedbackInputMessage": {
+      "description": "Text for message of feedback alert to ask user to input feedback",
+      "message": "നിങ്ങളുടെ വെബ് പേജിന്റെ പ്രിവ്യൂ എങ്ങനെയുണ്ടായിരുന്നു?"
+   },
+   "alertFeedbackTitle": {
+      "description": "Text for title of feedback alert",
+      "message": "നിങ്ങളുടെ പ്രിവ്യൂ റേറ്റ് ചെയ്യുക"
+   },
+   "alertLoadingPreviewMessage": {
+      "description": "Text for message of loading preview alert",
+      "message": "പ്രിവ്യൂ ലോഡ് ചെയ്യുന്നു"
+   },
+   "alertLowQualityMessage": {
+      "description": "Text for message of low quality alert",
+      "message": "ഈ പേജിന്റെ ഉള്ളടക്കം ശരിയായി ലോഡ് ചെയ്യുന്നില്ല, അതിനാൽ അയയ്ക്കാൻ കഴിയില്ല. പകരം ടെക്സ്റ്റ് തിരഞ്ഞെടുക്കലുകൾ അയയ്ക്കാൻ നിങ്ങൾക്ക് ശ്രമിക്കാം."
+   },
+   "alertLowQualityTitle": {
+      "description": "Text for title of low quality alert",
+      "message": "ഉള്ളടക്കം അയയ്ക്കാൻ കഴിയില്ല"
+   },
+   "alertPreviewErrorTitle": {
+      "description": "Text for title of preview failed alert",
+      "message": "പ്രിവ്യൂ പരാജയപ്പെട്ടു"
+   },
+   "alertPreviewExtractionErrorMessage": {
+      "description": "Text for message of extraction error alert",
+      "message": "നിങ്ങളുടെ ഉള്ളടക്കത്തിന്റെ പ്രിവ്യൂ ഞങ്ങൾക്ക് ലോഡ് ചെയ്യാനായില്ല. ദയവായി പിന്നീട് വീണ്ടും ശ്രമിക്കുക."
+   },
+   "alertPreviewGeneralErrorMessage": {
+      "description": "Text for message of general preview error alert",
+      "message": "നിങ്ങളുടെ ഉള്ളടക്കത്തിന്റെ പ്രിവ്യൂ ഞങ്ങൾക്ക് ലോഡ് ചെയ്യാനായില്ല."
+   },
+   "alertSendingErrorTitle": {
+      "description": "Text for title of sending failed alert",
+      "message": "അയയ്ക്കുന്നത് പരാജയപ്പെട്ടു"
+   },
+   "alertSendingGeneralErrorMessage": {
+      "description": "Text for message of general sending error alert",
+      "message": "ഞങ്ങൾക്ക് നിങ്ങളുടെ ഉള്ളടക്കം അയയ്ക്കാൻ കഴിഞ്ഞില്ല. ദയവായി പിന്നീട് വീണ്ടും ശ്രമിക്കുക."
+   },
+   "alertSendingMessage": {
+      "description": "Text for message of sending alert",
+      "message": "നിങ്ങളുടെ Kindle ലൈബ്രറിയിൽ എത്തിച്ചേരാൻ കുറച്ച് മിനിറ്റുകൾ എടുത്തേക്കാം."
+   },
+   "alertSendingNetworkErrorMessage": {
+      "description": "Text for message of network sending error alert",
+      "message": "ഞങ്ങൾക്ക് നിങ്ങളുടെ ഉള്ളടക്കം അയയ്ക്കാൻ കഴിഞ്ഞില്ല. ദയവായി നിങ്ങളുടെ കണക്ഷൻ പരിശോധിച്ച് വീണ്ടും ശ്രമിക്കുക."
+   },
+   "alertSendingNoAuthErrorMessage": {
+      "description": "Text for message of sending error alert when user try to send with invalid authentication status",
+      "message": "നിങ്ങളുടെ വെബ്പേജ് അയയ്ക്കുന്നതിന് മുമ്പ് ദയവായി സൈൻ ഇൻ ചെയ്യുക."
+   },
+   "alertSendingTitle": {
+      "description": "Text for title of sending alert",
+      "message": "നിങ്ങളുടെ ഉള്ളടക്കം വന്നുകൊണ്ടിരിക്കുകയാണ്"
+   },
+   "alertSendingToKindleMessage": {
+      "description": "Text for message of sending to kindle alert",
+      "message": "Kindle-ലേക്ക് അയയ്ക്കുന്നു"
+   },
+   "ctxSendToKindle": {
+      "description": "Context menu text for S2K",
+      "message": "Send to Kindle"
+   },
+   "extensionDescription": {
+      "description": "Extension description for extension UI and download.",
+      "message": "നിങ്ങളുടെ Kindle ഉപകരണത്തിലേക്കോ വായനാ ആപ്പിലേക്കോ വാർത്താ ലേഖനങ്ങളും ബ്ലോഗ് പോസ്റ്റുകളും പോലുള്ള വെബ് ഉള്ളടക്കം അയയ്ക്കുന്നതും അതിൽ നിന്ന് വായിക്കുന്നതും ഇപ്പോൾ മുമ്പത്തേക്കാൾ എളുപ്പമാണ്."
+   },
+   "extensionName": {
+      "description": "Extension Name",
+      "message": "Google Chrome™-നുള്ള Send to Kindle"
+   },
+   "history": {
+      "description": "Title for history view",
+      "message": "Send to Kindle :: ചരിത്രം"
+   },
+   "historyClearAll": {
+      "description": "Action to clear history.",
+      "message": "ചരിത്രം മായ്‌ക്കുക"
+   },
+   "historyClose": {
+      "description": "Action to close history.",
+      "message": "അടയ്ക്കുക"
+   },
+   "historyDaysAgo": {
+      "description": "Timespan 'n Days Ago'",
+      "message": " ദിവസം മുമ്പ്"
+   },
+   "historyNoData": {
+      "description": "Message for empty history.",
+      "message": "കഴിഞ്ഞ 30 ദിവസമായി അയച്ച ഇനങ്ങളൊന്നുമില്ല."
+   },
+   "historyTableHeader": {
+      "description": "Table header for S2K History",
+      "message": "ചരിത്രം"
+   },
+   "historyTagSelection": {
+      "description": "The tag in history page to show the item is from `send selection` option",
+      "message": "(തിരഞ്ഞെടുക്കൽ)"
+   },
+   "historyToday": {
+      "description": "Timespan 'today'",
+      "message": "ഇന്ന്"
+   },
+   "historyYesterday": {
+      "description": "Timespan 'Yesterday'",
+      "message": "ഇന്നലെ"
+   },
+   "kbsAlt": {
+      "description": "Name for alt. key.",
+      "message": "ALT"
+   },
+   "kbsArrowDown": {
+      "description": "Name for down arrow.",
+      "message": "താഴേക്കുള്ള അമ്പടയാളം"
+   },
+   "kbsArrowLeft": {
+      "description": "Name for left arrow.",
+      "message": "ഇടത്തോട്ടുള്ള അമ്പടയാളം"
+   },
+   "kbsArrowRight": {
+      "description": "Name for right arrow.",
+      "message": "വലത്തോട്ടുള്ള അമ്പടയാളം"
+   },
+   "kbsArrowUp": {
+      "description": "Name for up arrow.",
+      "message": "മുകളിലേക്കുള്ള അമ്പടയാളം"
+   },
+   "kbsCtrl": {
+      "description": "Name for control key.",
+      "message": "CTRL"
+   },
+   "kbsShift": {
+      "description": "Name for shift key.",
+      "message": "ഷിഫ്റ്റ്"
+   },
+   "legalNotice": {
+      "description": "Legal Notice",
+      "message": "അറിയിപ്പ്"
+   },
+   "legalNoticeLink": {
+      "description": "Link to 'Legal Notice'",
+      "message": "http://www.amazon.com/privacy"
+   },
+   "legalTerms": {
+      "description": "Legal Notice",
+      "message": "ഉപയോഗ നിബന്ധനകൾ"
+   },
+   "legalTermsLink": {
+      "description": "Link to 'Terms of Use'",
+      "message": "http://www.amazon.com/sendtokindleterms"
+   },
+   "loadingPreview": {
+      "description": "Text for message of loading preview alert",
+      "message": "പ്രിവ്യൂ ലോഡ് ചെയ്യുന്നു"
+   },
+   "loadingPreviewMessage": {
+      "description": "Text for message of loading preview alert",
+      "message": "പ്രിവ്യൂ ലോഡ് ചെയ്യുന്നു"
+   },
+   "optDelivery": {
+      "description": "Information text device settings.",
+      "message": "നിങ്ങളുടെ ഡെലിവറി ഓപ്ഷനുകൾക്കായി തിരയുകയാണോ? "
+   },
+   "optDeliveryLink": {
+      "description": "Information text device settings link.",
+      "message": "ഇവിടെ ക്ലിക്ക് ചെയ്യുക"
+   },
+   "optKSInfo": {
+      "description": "Information text for keyboard shortcuts.",
+      "message": "മാറ്റാൻ, ചുവടെയുള്ള ബോക്സിൽ ക്ലിക്ക് ചെയ്ത് നിങ്ങളുടെ കീബോർഡിൽ കീ കോമ്പിനേഷൻ തിരഞ്ഞെടുക്കുക:"
+   },
+   "optKeyboardShortcut": {
+      "description": "Header text for keyboard shortcuts.",
+      "message": "കീബോർഡ് ഷോര്‍ട്ട്‌കട്ടുകള്‍"
+   },
+   "options": {
+      "description": "Option page title.",
+      "message": "Send to Kindle :: ഓപ്ഷനുകൾ"
+   },
+   "popUpCountryAU": {
+      "description": "Country name of AU",
+      "message": "ഓസ്‌ട്രേലിയ"
+   },
+   "popUpCountryBR": {
+      "description": "Country name of BR",
+      "message": "ബ്രസീൽ"
+   },
+   "popUpCountryCA": {
+      "description": "Country name of CA",
+      "message": "കാനഡ"
+   },
+   "popUpCountryDE": {
+      "description": "Country name of DE",
+      "message": "ജർമ്മനി"
+   },
+   "popUpCountryES": {
+      "description": "Country name of ES",
+      "message": "സ്പെയിൻ"
+   },
+   "popUpCountryIN": {
+      "description": "Country name of IN",
+      "message": "ഇന്ത്യ"
+   },
+   "popUpCountryIT": {
+      "description": "Country name of IT",
+      "message": "ഇറ്റലി"
+   },
+   "popUpCountryJP": {
+      "description": "Country name of JP",
+      "message": "ജപ്പാൻ"
+   },
+   "popUpCountryMX": {
+      "description": "Country name of MX",
+      "message": "മെക്സിക്കോ"
+   },
+   "popUpCountryNL": {
+      "description": "Country name of NL",
+      "message": "നെതർലാൻഡ്‌സ്"
+   },
+   "popUpCountryPickerContinue": {
+      "description": "PopUp text to continue once user selected a country",
+      "message": "തുടരുക"
+   },
+   "popUpCountryUK": {
+      "description": "Country name of UK",
+      "message": "യുണൈറ്റഡ് കിംഗ്ഡം"
+   },
+   "popUpCountryUS": {
+      "description": "Country name of US",
+      "message": "യുണൈറ്റഡ് സ്റ്റേറ്റ്സ്"
+   },
+   "popUpCountryfr": {
+      "description": "Country name of FR",
+      "message": "ഫ്രാൻസ്"
+   },
+   "popUpCreateAccount": {
+      "description": "PopUp text for create new account button",
+      "message": "നിങ്ങളുടെ Amazon അക്കൗണ്ട് സൃഷ്ടിക്കുക"
+   },
+   "popUpFeedback": {
+      "description": "PopUp text for feedback button.",
+      "message": "ഫീഡ്‌ബാക്ക്"
+   },
+   "popUpFeedbackDescription": {
+      "description": "PopUp text for description of feedback page.",
+      "message": "ഈ ഫീഡ്ബാക്ക് സ്വകാര്യമാണ്, നിങ്ങളുടെ പ്രിവ്യൂ അനുഭവം മെച്ചപ്പെടുത്താൻ ഇത് ഞങ്ങളെ സഹായിക്കും."
+   },
+   "popUpFeedbackPlaceholder": {
+      "description": "Placeholder of feedback textarea",
+      "message": "ഞങ്ങളോട് കൂടുതൽ പറയുക (ഓപ്ഷണൽ)."
+   },
+   "popUpFeedbackSubmit": {
+      "description": "PopUp text for submit button in feedback page.",
+      "message": "സമർപ്പിക്കുക"
+   },
+   "popUpFeedbackThanksText": {
+      "description": "PopUp text to show after user send a feedback.",
+      "message": "നിങ്ങളുടെ ഫീഡ്‌ബാക്കിന് നന്ദി!"
+   },
+   "popUpFeedbackTitle": {
+      "description": "PopUp text for title of feedback page.",
+      "message": "നിങ്ങളുടെ Send to Kindle അനുഭവം റേറ്റ് ചെയ്യുക."
+   },
+   "popUpForgotPassword": {
+      "description": "PopUp text for forgot password link",
+      "message": "പാസ്‌വേഡ് മറന്നു"
+   },
+   "popUpHistory": {
+      "description": "PopUp text for extraction history.",
+      "message": "ചരിത്രം"
+   },
+   "popUpNewToAmazon": {
+      "description": "PopUp text for new account button divider",
+      "message": "Amazon-ൽ പുതിയതാണോ?"
+   },
+   "popUpOptions": {
+      "description": "PopUp text for Amazon options page.",
+      "message": "ക്രമീകരണം"
+   },
+   "popUpPreferCountrySelect": {
+      "description": "PopUp text in country picker selection",
+      "message": "നിങ്ങൾ മുൻഗണന നൽകുന്ന രാജ്യം/മേഖല വെബ്‌സൈറ്റ് തിരഞ്ഞെടുക്കുക:"
+   },
+   "popUpPreviewAndSend": {
+      "description": "PopUp text for preview.",
+      "message": "പ്രിവ്യൂ ചെയ്ത ശേഷം അയയ്ക്കുക"
+   },
+   "popUpSaveCountry": {
+      "description": "PopUp text sve country button",
+      "message": "രാജ്യം സേവ് ചെയ്യുക"
+   },
+   "popUpSendSelectedText": {
+      "description": "PopUp text for sending selected text.",
+      "message": "തിരഞ്ഞെടുത്തത് അയയ്ക്കുക"
+   },
+   "popUpSendToKindle": {
+      "description": "PopUp text for S2K.",
+      "message": "ദ്രുത അയയ്ക്കല്‍"
+   },
+   "popUpSettings": {
+      "description": "PopUp text for settings button.",
+      "message": "ക്രമീകരണം"
+   },
+   "popUpSettingsAddLibDes": {
+      "description": "PopUp text for the description of 'Add to your library' section in settings page",
+      "message": "നിങ്ങളുടെ ലൈബ്രറിയിലെ ഫയലുകൾ നിങ്ങളുടെ അക്കൗണ്ടിലേക്ക് ലിങ്ക് ചെയ്തിരിക്കുന്ന ഏത് ഉപകരണത്തിലും ഡൗൺലോഡ് ചെയ്യാൻ കഴിയും."
+   },
+   "popUpSettingsAddLibDevicesListTitle": {
+      "description": "PopUp text for the title of `devices list` part in 'Add to your library' section in settings page",
+      "message": "നിങ്ങളുടെ ഫയൽ(ഫയലുകൾ) എവിടേക്ക് അയയ്ക്കണമെന്നത് തിരഞ്ഞെടുക്കുക:"
+   },
+   "popUpSettingsAddLibInlineAlertText": {
+      "description": "PopUp text for the inline alert of 'Add to your library' section in settings page, when user do not select any devices",
+      "message": "കുറഞ്ഞത് ഒരു ഉപകരണമെങ്കിലും ആവശ്യമാണ്"
+   },
+   "popUpSettingsAddLibNoDevicesText": {
+      "description": "PopUp text for inform user that they do not have abt devices in 'Add to your library' section in settings page",
+      "message": "ഉപകരണങ്ങളൊന്നും കണ്ടെത്തിയില്ല. read.amazon.com എന്നതിലേക്ക് പോകുക, അല്ലെങ്കിൽ നിങ്ങളുടെ Kindle ഉപകരണം രജിസ്റ്റർ ചെയ്യുക."
+   },
+   "popUpSettingsAddLibTitle": {
+      "description": "PopUp text for the title of 'Add to your library' section in settings page",
+      "message": "നിങ്ങളുടെ ലൈബ്രറിയിലേക്ക് ചേർക്കുക"
+   },
+   "popUpSettingsComplexityWarningDes": {
+      "description": "PopUp text for the description of 'Show complex layout warnings' section in settings page",
+      "message": "സങ്കീർണ്ണമായ ലേഔട്ടുകളുള്ള ചില സൈറ്റുകൾ Kindle-ൽ ശരിയായി പ്രദർശിപ്പിച്ചേക്കില്ല."
+   },
+   "popUpSettingsComplexityWarningTitle": {
+      "description": "PopUp text for the title of 'Show complex layout warnings' section in settings page",
+      "message": "സങ്കീർണ്ണമായ ലേഔട്ട് മുന്നറിയിപ്പുകൾ കാണിക്കുക"
+   },
+   "popUpSettingsLogoutButton": {
+      "description": "PopUp text for the button of 'Logout' section in settings page",
+      "message": "സൈൻ ഔട്ട് ചെയ്യുക"
+   },
+   "popUpSettingsLogoutDes": {
+      "description": "PopUp text for the description of 'Logout' section in settings page",
+      "message": "ഈ ബ്രൗസറിൽ നിങ്ങളുടെ Amazon അക്കൗണ്ട് സൈൻ ഔട്ട് ചെയ്യുക."
+   },
+   "popUpSettingsLogoutTitle": {
+      "description": "PopUp text for the title of 'Logout' section in settings page",
+      "message": "സൈൻ ഔട്ട് ചെയ്യുക"
+   },
+   "popUpSettingsUserNameTitle": {
+      "description": "PopUp text for the title of user name in settings page.",
+      "message": "ആയി സൈൻ ഇൻ ചെയ്‌തു"
+   },
+   "popUpShortcuts": {
+      "description": "PopUp text for shortcut settings.",
+      "message": "ഷോര്‍ട്ട്‌കട്ടുകള്‍"
+   },
+   "popUpSignIn": {
+      "description": "PopUp text for sign in button",
+      "message": "സൈൻ ഇൻ ചെയ്യുക"
+   },
+   "previewFeedback": {
+      "description": "Text for feedback button in Preview page",
+      "message": "നിങ്ങളുടെ പ്രിവ്യൂ റേറ്റ് ചെയ്യുക"
+   },
+   "previewHeaderSend": {
+      "description": "Text for send button in header of Preview page",
+      "message": "അയയ്ക്കുക"
+   },
+   "previewHeaderTitle": {
+      "description": "Title in header of Preview page",
+      "message": "പ്രിവ്യൂ"
+   },
+   "previewInputAuthorDes": {
+      "description": "Description of input area of author",
+      "message": "രചയിതാവ്"
+   },
+   "previewInputLengthLimitAlert": {
+      "description": "Text for inline alert of length limit in preview page",
+      "message": "256 എന്ന പ്രതീക പരിധിയില്‍ എത്തി "
+   },
+   "previewInputTitleDes": {
+      "description": "Description of input area of title",
+      "message": "ശീർഷകം"
+   },
+   "previewSelectionHeaderTitle": {
+      "description": "Title in header of Preview page",
+      "message": "പ്രിവ്യൂ തിരഞ്ഞെടുക്കൽ"
+   },
+   "previewTitleEmptyAlert": {
+      "description": "Text for inline alert of empty title",
+      "message": "ശീർഷകം ആവശ്യമാണ്"
+   }
+}

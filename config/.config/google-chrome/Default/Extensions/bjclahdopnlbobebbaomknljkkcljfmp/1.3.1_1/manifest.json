@@ -1,0 +1,24 @@
+{
+   "background": {
+      "scripts": [ "background.js" ]
+   },
+   "browser_action": {
+      "default_icon": "images/pulseicon48.png",
+      "default_popup": "popup.html"
+   },
+   "content_security_policy": "script-src 'self' https://ssl.google-analytics.com; object-src 'self'",
+   "description": "Pulse by Zerodha - Latest financial and market news from all major Indian news sources aggregated in one place",
+   "differential_fingerprint": "1.e673bd1bc303cdb8c0a8eed9ca86d1046761b9d513612e488d40dff41a6ded64",
+   "icons": {
+      "128": "images/pulseicon128.png",
+      "16": "images/pulseicon16.png",
+      "48": "images/pulseicon48.png"
+   },
+   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAqCrEgerPIe5jveVrRgS0xmw6jC9831dfgz+IOVAfR5d9Z8s/iK0yQiCiX5q8AYppaKFje8kLU8MxWtxt5aS6iG9qLl2aUdAnxu7pTfxOCQHq0tMC3AHMTFpUo9JFvoLBGN96jeXuODMPzqm1oO/+EedBwlS9RqIj0+gHHNy+6VqL2hVLKHR/B9Sx7HBMkNRZC9SrwwypJgQC5VbyX11S3CWb/OhIz5QiWVZ2Ynv4vba0+DG8a7xw+xC8GBro6qNBnjR0IsON+MCf+3D6SFWxwWXjEJ9cs0m83Dryrge71ZWaQJjX9oPbxCxCxu34FkmYHr/hL8MR7sIwUlwf0CKh7wIDAQAB",
+   "manifest_version": 2,
+   "name": "Pulse by Zerodha",
+   "offline_enabled": false,
+   "permissions": [ "https://pulse.zerodha.com/" ],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.3.1"
+}

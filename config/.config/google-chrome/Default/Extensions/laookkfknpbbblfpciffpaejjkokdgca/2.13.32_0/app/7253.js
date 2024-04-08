@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmomentum=globalThis.webpackChunkmomentum||[]).push([[7253],{92171:(a,e,n)=>{n.d(e,{h:()=>o});const o=["emoji"]},77253:(a,e,n)=>{n.d(e,{loadEmojiShape:()=>h});var o=n(92171);async function h(a,e=!0){const{EmojiDrawer:h}=await n.e(7306).then(n.bind(n,27306));await a.addShape(o.h,new h,e)}}}]);

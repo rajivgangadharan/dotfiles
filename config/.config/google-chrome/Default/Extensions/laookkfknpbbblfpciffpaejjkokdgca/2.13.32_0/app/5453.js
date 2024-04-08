@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmomentum=globalThis.webpackChunkmomentum||[]).push([[5453],{65453:(t,a,e)=>{async function n(t,a=!0){await t.addParticleUpdater("rotate",(async t=>{const{RotateUpdater:a}=await e.e(1706).then(e.bind(e,51706));return new a(t)}),a)}e.d(a,{loadRotateUpdater:()=>n})}}]);

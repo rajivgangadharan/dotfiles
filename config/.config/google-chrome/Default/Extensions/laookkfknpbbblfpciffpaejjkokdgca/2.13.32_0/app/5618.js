@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmomentum=globalThis.webpackChunkmomentum||[]).push([[5618],{15618:(a,t,e)=>{async function n(a,t=!0){await a.addParticleUpdater("opacity",(async a=>{const{OpacityUpdater:t}=await e.e(2187).then(e.bind(e,72187));return new t(a)}),t)}e.d(t,{loadOpacityUpdater:()=>n})}}]);

@@ -1,0 +1,9 @@
+{
+  "catalogs_to_be_synced": {
+    "__class__": "set",
+    "__value__": []
+  },
+  "database location dialog": "/media/rajivg/LIBRARY/Calibre Library",
+  "welcome_wizard_device": "kindle_pw",
+  "welcome_wizard_was_run": true
+}

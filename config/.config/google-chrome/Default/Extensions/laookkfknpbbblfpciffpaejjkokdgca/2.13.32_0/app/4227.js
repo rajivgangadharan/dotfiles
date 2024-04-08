@@ -1,0 +1,1 @@
+"use strict";(globalThis.webpackChunkmomentum=globalThis.webpackChunkmomentum||[]).push([[4227],{54227:(a,e,n)=>{async function s(a,e=!0){await a.addMover("base",(async()=>{const{BaseMover:a}=await n.e(7183).then(n.bind(n,47183));return new a}),e)}n.d(e,{loadBaseMover:()=>s})}}]);

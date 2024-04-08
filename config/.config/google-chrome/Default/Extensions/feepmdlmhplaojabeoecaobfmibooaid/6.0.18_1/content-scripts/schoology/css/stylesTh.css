@@ -1,0 +1,101 @@
+
+.s-grade-item-assignment-submission-app[data-app-nid="Texthelp"] {
+    z-index: 20;
+  }
+  
+  .s-grade-item-assignment-submission-app .texthelp-tooltip {
+    cursor: default;
+    background: #000;
+    bottom: 100%;
+    color: #fff;
+    display: block;
+    left: 65px;
+    margin-bottom: 15px;
+    opacity: 0;
+    padding: 10px;
+    pointer-events: none;
+    position: absolute;
+    width: 200px;
+    transform: translateY(10px);
+    transition: all .25s ease-out;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.28);
+  }
+  
+  .s-grade-item-assignment-submission-app .texthelp-tooltip  a {
+    color: white;
+    text-decoration: underline;
+  }
+
+  .s-grade-item-assignment-submission-app .texthelp-tooltip:before {
+    bottom: -20px;
+    content: " ";
+    display: block;
+    height: 20px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+  }  
+
+  .s-grade-item-assignment-submission-app .texthelp-tooltip:after {
+    border-left: solid transparent 10px;
+    border-right: solid transparent 10px;
+    border-top: solid #000 10px;
+    bottom: -10px;
+    content: " ";
+    height: 0;
+    left: 10%;
+    margin-left: -13px;
+    position: absolute;
+    width: 0;
+  }
+    
+  .s-grade-item-assignment-submission-app:hover .texthelp-tooltip {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0px);
+  }
+
+
+  #SchoologyOpenWith
+  {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAACXBIWXMAAAsTAAALEwEAmpwYAAAKWmlUWHRYTUw6Y29tLmFkb2JlLnhtcAAAAAAAPD94cGFja2V0IGJlZ2luPSLvu78iIGlkPSJXNU0wTXBDZWhpSHpyZVN6TlRjemtjOWQiPz4gPHg6eG1wbWV0YSB4bWxuczp4PSJhZG9iZTpuczptZXRhLyIgeDp4bXB0az0iQWRvYmUgWE1QIENvcmUgNi4wLWMwMDYgNzkuZGFiYWNiYiwgMjAyMS8wNC8xNC0wMDozOTo0NCAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczpkYz0iaHR0cDovL3B1cmwub3JnL2RjL2VsZW1lbnRzLzEuMS8iIHhtbG5zOnhtcE1NPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvbW0vIiB4bWxuczpzdEV2dD0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlRXZlbnQjIiB4bWxuczpzdFJlZj0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL3NUeXBlL1Jlc291cmNlUmVmIyIgeG1sbnM6cGhvdG9zaG9wPSJodHRwOi8vbnMuYWRvYmUuY29tL3Bob3Rvc2hvcC8xLjAvIiB4bWxuczp0aWZmPSJodHRwOi8vbnMuYWRvYmUuY29tL3RpZmYvMS4wLyIgeG1sbnM6ZXhpZj0iaHR0cDovL25zLmFkb2JlLmNvbS9leGlmLzEuMC8iIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIDIyLjQgKE1hY2ludG9zaCkiIHhtcDpDcmVhdGVEYXRlPSIyMDIxLTA2LTExVDE0OjQ0OjM2KzAxOjAwIiB4bXA6TWV0YWRhdGFEYXRlPSIyMDIxLTA2LTExVDE1OjMzKzAxOjAwIiB4bXA6TW9kaWZ5RGF0ZT0iMjAyMS0wNi0xMVQxNTozMyswMTowMCIgZGM6Zm9ybWF0PSJpbWFnZS9wbmciIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NDc4MzYwMzMtMTQwMy00Y2I5LTlkN2UtZDM4MmM4YjhjMjkwIiB4bXBNTTpEb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6YmI1MmY5YmEtOGRlMy05NjQ4LWIyOTQtNjc3ZGJlY2JmNjUwIiB4bXBNTTpPcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6Mjg4YjRmYzQtZTQ0MS00OWRiLWFmNTItZWVlMDA0YmJkNGY5IiBwaG90b3Nob3A6Q29sb3JNb2RlPSIzIiB0aWZmOk9yaWVudGF0aW9uPSIxIiB0aWZmOlhSZXNvbHV0aW9uPSI3MjAwMDAvMTAwMDAiIHRpZmY6WVJlc29sdXRpb249IjcyMDAwMC8xMDAwMCIgdGlmZjpSZXNvbHV0aW9uVW5pdD0iMiIgZXhpZjpDb2xvclNwYWNlPSI2NTUzNSIgZXhpZjpQaXhlbFhEaW1lbnNpb249IjQ4IiBleGlmOlBpeGVsWURpbWVuc2lvbj0iNDgiPiA8eG1wTU06SGlzdG9yeT4gPHJkZjpTZXE+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJjcmVhdGVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjI4OGI0ZmM0LWU0NDEtNDlkYi1hZjUyLWVlZTAwNGJiZDRmOSIgc3RFdnQ6d2hlbj0iMjAyMS0wNi0xMVQxNDo0NDozNiswMTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIyLjQgKE1hY2ludG9zaCkiLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOjUxMmY3MjY4LTA5MDItNDA1ZC05MmE0LThlODcyMmE2NGUxZiIgc3RFdnQ6d2hlbj0iMjAyMS0wNi0xMVQxNTozMjo1MyswMTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIyLjQgKE1hY2ludG9zaCkiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249InNhdmVkIiBzdEV2dDppbnN0YW5jZUlEPSJ4bXAuaWlkOmY3YTEwMDAyLTk2NTgtNGMwMC1hMWIzLWE3OTZmOTFkMWUzOSIgc3RFdnQ6d2hlbj0iMjAyMS0wNi0xMVQxNTozMyswMTowMCIgc3RFdnQ6c29mdHdhcmVBZ2VudD0iQWRvYmUgUGhvdG9zaG9wIDIyLjQgKE1hY2ludG9zaCkiIHN0RXZ0OmNoYW5nZWQ9Ii8iLz4gPHJkZjpsaSBzdEV2dDphY3Rpb249ImNvbnZlcnRlZCIgc3RFdnQ6cGFyYW1ldGVycz0iZnJvbSBkb2N1bWVudC92bmQuYWRvYmUuY3BzZCtkY3ggdG8gaW1hZ2UvcG5nIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJkZXJpdmVkIiBzdEV2dDpwYXJhbWV0ZXJzPSJjb252ZXJ0ZWQgZnJvbSBkb2N1bWVudC92bmQuYWRvYmUuY3BzZCtkY3ggdG8gaW1hZ2UvcG5nIi8+IDxyZGY6bGkgc3RFdnQ6YWN0aW9uPSJzYXZlZCIgc3RFdnQ6aW5zdGFuY2VJRD0ieG1wLmlpZDo0NzgzNjAzMy0xNDAzLTRjYjktOWQ3ZS1kMzgyYzhiOGMyOTAiIHN0RXZ0OndoZW49IjIwMjEtMDYtMTFUMTU6MzMrMDE6MDAiIHN0RXZ0OnNvZnR3YXJlQWdlbnQ9IkFkb2JlIFBob3Rvc2hvcCAyMi40IChNYWNpbnRvc2gpIiBzdEV2dDpjaGFuZ2VkPSIvIi8+IDwvcmRmOlNlcT4gPC94bXBNTTpIaXN0b3J5PiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDpmN2ExMDAwMi05NjU4LTRjMDAtYTFiMy1hNzk2ZjkxZDFlMzkiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6Mjg4YjRmYzQtZTQ0MS00OWRiLWFmNTItZWVlMDA0YmJkNGY5IiBzdFJlZjpvcmlnaW5hbERvY3VtZW50SUQ9InhtcC5kaWQ6Mjg4YjRmYzQtZTQ0MS00OWRiLWFmNTItZWVlMDA0YmJkNGY5Ii8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+ADzHpAAAAq1JREFUWMPFl11IU2EYx2cgJBmrbiqI0UUEIhVEl1EkXXRT9AEFiZCgFwVhIYXorLZZF1pKg0Fkhm61PkYth2J+raGZhDjdKEe5MnWumrma03Sf/8570LHTtjofc3vgD+eT/+8953ne93lFAMSUNJR8SF34ljzFoqWDdIVGlOKRx3wJUbyrDrcX++RaiItu4+CNJ5iizlcq4gKcUhogOl0d0Ullc2oBdpc3MQByL9+PeWbeH4Txkxtayzc0mp3osrvhmvMnB6BS18sAuKDujtx7O+nBEY0FmVeMEFV0M7RKakRegxkG27QwgGAojFutAzhWq0eVvh++QBAB6lpJy8cY00Q6obVidjHID+DvIOaHqVGzNV/W3ruDyQEobRvlbL5WbkKnfUY4wJDTiwwpN/MNsm4MOGb550B0FOjeczLfJGvH+mIl6o0W4QALgRCyZSbW5lsVbcg6U0tXzprCOjh/zgkDGP7qZW2+vaoVmQU3GeV7UWMUBtBM1TMb81yFARn51QxzIsn5OysPsEvxIsY4WuM/PPwByKyX2LwLO6/q/mlO1D86xR/AFwwh69qrWPPyLuyQPvqvOZFpZEJYGR5/aGXO9+WdyClTszIn+uz6JQwg+jesruzEttIG1ubrqH6CrCuCp2KyCGVXdmALldVszYmK6l8mZy0Y+uLCxrMqTuakLM1j34UDvP7goFszLuZEJVE9BP8qoPoACcfPTpR3/TH9blIWI9vUDHIusU+8fFULfvsCdMtW1m7H0QdW1PVNIBwWkAML/gDkz99g87nEebBHqoZh0B55p/DZCKN8a3rH+QMsR4gaRh+VE6oOMyqe9tDtWlPPO4zFqXVJTR8D4ADVKwoG4BKHGocZAMV6W2oBJj2L2H9vkO4nCMz0vD8hQNq3ZmnfnKZ1e/4HtU+NVRp5xVMAAAAASUVORK5CYII=) no-repeat 2px 0;
+    background-size: contain;
+    margin-left: 10px;
+    margin-top: 10px;
+    padding: 1px 5px 5px 28px;
+    height: 10px;
+    border-left: 1px solid #c7c7c7;
+  }
+
+
+  #SchoologyOpenWith a
+  {
+    color: #fff;
+    background-color: #9F5DFF;
+    padding: 6px;
+    font-weight: bolder;
+    font-size: 8px;
+  }
+
+
+
+
+.thSubmission-overlay {
+
+  left: 25%;
+    top: 10%;
+
+  width: 50%;
+  height: 600px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.thSubmission-overlay-fullscreen {
+
+  z-index: 10000;
+
+  position: absolute;
+}

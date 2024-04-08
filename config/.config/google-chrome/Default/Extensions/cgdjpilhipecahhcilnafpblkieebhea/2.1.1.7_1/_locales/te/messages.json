@@ -1,0 +1,502 @@
+{
+   "A11yAlert": {
+      "description": "A11y text for Alert container",
+      "message": "హెచ్చరిక"
+   },
+   "A11yAlertAnalyzingMessage": {
+      "description": "Voice Over read out text for message of analyzing alert",
+      "message": "వెబ్‌సైట్ కంటెంట్‌ని విశ్లేషించడం"
+   },
+   "A11yAlertLoadingPreviewMessage": {
+      "description": "Voice Over read out text for message of loading preview alert",
+      "message": "వెబ్‌సైట్ కంటెంట్ ప్రివ్యూ లోడ్ అవుతోంది"
+   },
+   "A11yAlertSendingToKindleMessage": {
+      "description": "Voice Over read out text for message of sending to kindle alert",
+      "message": "మీ Kindle‌కి కంటెంట్‌ని పంపుతోంది"
+   },
+   "A11yDeviceList": {
+      "description": "A11y text for device list container",
+      "message": "డివైజ్ జాబితా"
+   },
+   "A11yFeedbackCurrentRating": {
+      "description": "A11y text for feedback rating",
+      "message": "కరెంట్ రేటింగ్: "
+   },
+   "A11yFeedbackRating": {
+      "description": "A11y text for feedback rating action",
+      "message": "రేటింగ్"
+   },
+   "A11yFeedbackStar": {
+      "description": "A11y text for feedback star icon",
+      "message": "స్టార్"
+   },
+   "A11yHistoryDelete": {
+      "description": "A11y text for History list delete icon",
+      "message": "తొలగించండి"
+   },
+   "A11yHistoryList": {
+      "description": "A11y text for History list container",
+      "message": "చరిత్ర జాబితా"
+   },
+   "A11yIconBack": {
+      "description": "A11y text for back icon",
+      "message": "వెనుకకు"
+   },
+   "A11yIconClose": {
+      "description": "A11y text for close icon",
+      "message": "మూసివేయండి"
+   },
+   "A11yIconSpinner": {
+      "description": "A11y text for loading spinner",
+      "message": "లోడ్ అవుతోంది"
+   },
+   "A11yPopupSettingsError": {
+      "description": "A11y text for setting button with error icon in corner",
+      "message": "సెట్టింగ్ బటన్, సెట్టింగ్ లోపం"
+   },
+   "A11yPreviewAuthor": {
+      "description": "A11y text for edit area of author in preview page",
+      "message": "రచయిత: "
+   },
+   "A11yPreviewTitle": {
+      "description": "A11y text for edit area of title in preview page",
+      "message": "శీర్షిక: "
+   },
+   "AfterSignInText": {
+      "description": "Text for after sign-in page",
+      "message": "మీరు మీ Amazon ఖాతాకు విజయవంతంగా లాగిన్ చేసారు."
+   },
+   "alertAnalyzingMessage": {
+      "description": "Text for message of analyzing alert",
+      "message": "వెబ్‌సైట్‌ను విశ్లేషిస్తోంది"
+   },
+   "alertButtonCancel": {
+      "description": "Text for cancel button of alert",
+      "message": "రద్దు చేయండి"
+   },
+   "alertButtonCancelSending": {
+      "description": "Text for cancel sending button of alert",
+      "message": "పంపడాన్నిరద్దు చేయండి"
+   },
+   "alertButtonNevermind": {
+      "description": "Text for never mind button of alert",
+      "message": "పర్వాలేదు"
+   },
+   "alertButtonOK": {
+      "description": "Text for OK button of alert",
+      "message": "సరే"
+   },
+   "alertButtonSendAnyway": {
+      "description": "Text for send anyway button of alert",
+      "message": "ఎలాగైనా పంపండి"
+   },
+   "alertButtonSignIn": {
+      "description": "Text for sign in button of alert",
+      "message": "సైన్ ఇన్ చేయండి"
+   },
+   "alertButtonSubmit": {
+      "description": "Text for submit button of alert",
+      "message": "సమర్పించండి"
+   },
+   "alertCancelSendingMessage": {
+      "description": "Text for message of cancel sending alert",
+      "message": "ఈ వెబ్‌ పేజీని మూసివేస్తే పంపడం రద్దు చేయబడుతుంది. ఏదైనా పూర్తయిన ప్రోగ్రెస్ పంపబడదు."
+   },
+   "alertCancelSendingTitle": {
+      "description": "Text for title of cancel sending alert",
+      "message": "పంపడం రద్దు చేయాలా?"
+   },
+   "alertFeedbackFinishMessage": {
+      "description": "Text for message of feedback alert after user submit a feedback",
+      "message": "మీ అభిప్రాయాన్ని పంచుకున్నందుకు ధన్యవాదాలు!"
+   },
+   "alertFeedbackInputMessage": {
+      "description": "Text for message of feedback alert to ask user to input feedback",
+      "message": "మీ వెబ్ పేజీ ప్రివ్యూ ఎలా ఉంది?"
+   },
+   "alertFeedbackTitle": {
+      "description": "Text for title of feedback alert",
+      "message": "మీ ప్రివ్యూకి రేటింగ్ ఇవ్వండి"
+   },
+   "alertLoadingPreviewMessage": {
+      "description": "Text for message of loading preview alert",
+      "message": "ప్రివ్యూ లోడ్ అవుతోంది"
+   },
+   "alertLowQualityMessage": {
+      "description": "Text for message of low quality alert",
+      "message": "ఈ పేజీ యొక్క కంటెంట్ సరిగ్గా లోడ్ కావడం లేదు మరియు పంపడం సాధ్యం కాదు. మీరు బదులుగా టెక్ట్స్ ఎంపికలను పంపడానికి ప్రయత్నించవచ్చు."
+   },
+   "alertLowQualityTitle": {
+      "description": "Text for title of low quality alert",
+      "message": "కంటెంట్‌ను పంపడం సాధ్యపడదు"
+   },
+   "alertPreviewErrorTitle": {
+      "description": "Text for title of preview failed alert",
+      "message": "ప్రివ్యూ విఫలమైంది"
+   },
+   "alertPreviewExtractionErrorMessage": {
+      "description": "Text for message of extraction error alert",
+      "message": "మీ కంటెంట్ యొక్క ప్రివ్యూను మేము లోడ్ చేయలేకపోయాము. దయచేసి తర్వాత మళ్లీ ప్రయత్నించండి."
+   },
+   "alertPreviewGeneralErrorMessage": {
+      "description": "Text for message of general preview error alert",
+      "message": "మీ కంటెంట్ యొక్క ప్రివ్యూను మేము లోడ్ చేయలేకపోయాము."
+   },
+   "alertSendingErrorTitle": {
+      "description": "Text for title of sending failed alert",
+      "message": "పంపడం విఫలమైంది"
+   },
+   "alertSendingGeneralErrorMessage": {
+      "description": "Text for message of general sending error alert",
+      "message": "మేము మీ కంటెంట్‌ను పంపలేకపోయాము. దయచేసి తర్వాత మళ్లీ ప్రయత్నించండి."
+   },
+   "alertSendingMessage": {
+      "description": "Text for message of sending alert",
+      "message": "మీ Kindle లైబ్రరీకి చేరుకోవడానికి కొన్ని నిమిషాలు పట్టవచ్చు."
+   },
+   "alertSendingNetworkErrorMessage": {
+      "description": "Text for message of network sending error alert",
+      "message": "మేము మీ కంటెంట్‌ను పంపలేకపోయాము. దయచేసి మీ కనెక్షన్‌ను సరిచూసుకుని, ఆపై మళ్లీ ప్రయత్నించండి."
+   },
+   "alertSendingNoAuthErrorMessage": {
+      "description": "Text for message of sending error alert when user try to send with invalid authentication status",
+      "message": "మీ వెబ్‍పేజీని పంపే ముందు దయచేసి సైన్ ఇన్ చేయండి."
+   },
+   "alertSendingTitle": {
+      "description": "Text for title of sending alert",
+      "message": "మీ కంటెంట్ మార్గమధ్యంలో ఉంది"
+   },
+   "alertSendingToKindleMessage": {
+      "description": "Text for message of sending to kindle alert",
+      "message": "Kindleకు పంపడం"
+   },
+   "ctxSendToKindle": {
+      "description": "Context menu text for S2K",
+      "message": "Send to Kindle"
+   },
+   "extensionDescription": {
+      "description": "Extension description for extension UI and download.",
+      "message": "వార్తా కథనాలు మరియు బ్లాగ్ పోస్ట్‌లు వంటి వెబ్ కంటెంట్‌ను మీ Kindle పరికరం లేదా రీడింగ్ యాప్‌కు పంపడం మరియు చదవడం ఇప్పుడు మునుపటి కంటే సులభం."
+   },
+   "extensionName": {
+      "description": "Extension Name",
+      "message": "Google Chrome కోసం Send to Kindle"
+   },
+   "history": {
+      "description": "Title for history view",
+      "message": "Send to Kindle :: చరిత్ర"
+   },
+   "historyClearAll": {
+      "description": "Action to clear history.",
+      "message": "చరిత్రను తొలగించండి"
+   },
+   "historyClose": {
+      "description": "Action to close history.",
+      "message": "మూసివేయండి"
+   },
+   "historyDaysAgo": {
+      "description": "Timespan 'n Days Ago'",
+      "message": " రోజుల క్రితం"
+   },
+   "historyNoData": {
+      "description": "Message for empty history.",
+      "message": "గత 30 రోజుల నుండి పంపిన అంశాలు ఏవీ లేవు."
+   },
+   "historyTableHeader": {
+      "description": "Table header for S2K History",
+      "message": "చరిత్ర"
+   },
+   "historyTagSelection": {
+      "description": "The tag in history page to show the item is from `send selection` option",
+      "message": "(ఎంపిక)"
+   },
+   "historyToday": {
+      "description": "Timespan 'today'",
+      "message": "ఈరోజు"
+   },
+   "historyYesterday": {
+      "description": "Timespan 'Yesterday'",
+      "message": "నిన్న"
+   },
+   "kbsAlt": {
+      "description": "Name for alt. key.",
+      "message": "ALT"
+   },
+   "kbsArrowDown": {
+      "description": "Name for down arrow.",
+      "message": "బాణం కిందకు"
+   },
+   "kbsArrowLeft": {
+      "description": "Name for left arrow.",
+      "message": "ఎడమ బాణం"
+   },
+   "kbsArrowRight": {
+      "description": "Name for right arrow.",
+      "message": "కుడి బాణం"
+   },
+   "kbsArrowUp": {
+      "description": "Name for up arrow.",
+      "message": "బాణం పైకి"
+   },
+   "kbsCtrl": {
+      "description": "Name for control key.",
+      "message": "CTRL"
+   },
+   "kbsShift": {
+      "description": "Name for shift key.",
+      "message": "షిఫ్ట్"
+   },
+   "legalNotice": {
+      "description": "Legal Notice",
+      "message": "నోటీసు"
+   },
+   "legalNoticeLink": {
+      "description": "Link to 'Legal Notice'",
+      "message": "http://www.amazon.com/privacy"
+   },
+   "legalTerms": {
+      "description": "Legal Notice",
+      "message": "వినియోగ నిబంధనలు"
+   },
+   "legalTermsLink": {
+      "description": "Link to 'Terms of Use'",
+      "message": "http://www.amazon.com/sendtokindleterms"
+   },
+   "loadingPreview": {
+      "description": "Text for message of loading preview alert",
+      "message": "ప్రివ్యూ లోడ్ అవుతోంది"
+   },
+   "loadingPreviewMessage": {
+      "description": "Text for message of loading preview alert",
+      "message": "ప్రివ్యూ లోడ్ అవుతోంది"
+   },
+   "optDelivery": {
+      "description": "Information text device settings.",
+      "message": "మీ డెలివరీ ఆప్షన్‌ల కోసం చూస్తున్నారా? "
+   },
+   "optDeliveryLink": {
+      "description": "Information text device settings link.",
+      "message": "ఇక్కడ క్లిక్ చేయండి"
+   },
+   "optKSInfo": {
+      "description": "Information text for keyboard shortcuts.",
+      "message": "మార్చడానికి, దిగువ బాక్సుపై క్లిక్ చేసి, మీ కీబోర్డ్‌లోని కీ కాంబినేషన్‌ను ఎంచుకోండి:"
+   },
+   "optKeyboardShortcut": {
+      "description": "Header text for keyboard shortcuts.",
+      "message": "కీబోర్డ్ షార్ట్‌కట్‌లు"
+   },
+   "options": {
+      "description": "Option page title.",
+      "message": "Send to Kindle:: ఆప్షన్‌లు"
+   },
+   "popUpCountryAU": {
+      "description": "Country name of AU",
+      "message": "ఆస్ట్రేలియా"
+   },
+   "popUpCountryBR": {
+      "description": "Country name of BR",
+      "message": "బ్రెజిల్"
+   },
+   "popUpCountryCA": {
+      "description": "Country name of CA",
+      "message": "కెనడా"
+   },
+   "popUpCountryDE": {
+      "description": "Country name of DE",
+      "message": "జర్మనీ"
+   },
+   "popUpCountryES": {
+      "description": "Country name of ES",
+      "message": "స్పెయిన్"
+   },
+   "popUpCountryIN": {
+      "description": "Country name of IN",
+      "message": "భారత దేశం"
+   },
+   "popUpCountryIT": {
+      "description": "Country name of IT",
+      "message": "ఇటలీ"
+   },
+   "popUpCountryJP": {
+      "description": "Country name of JP",
+      "message": "జపాన్"
+   },
+   "popUpCountryMX": {
+      "description": "Country name of MX",
+      "message": "మెక్సికో"
+   },
+   "popUpCountryNL": {
+      "description": "Country name of NL",
+      "message": "నెదర్లాండ్స్‌"
+   },
+   "popUpCountryPickerContinue": {
+      "description": "PopUp text to continue once user selected a country",
+      "message": "కొనసాగించండి"
+   },
+   "popUpCountryUK": {
+      "description": "Country name of UK",
+      "message": "యునైటెడ్ కింగ్‌డమ్"
+   },
+   "popUpCountryUS": {
+      "description": "Country name of US",
+      "message": "యునైటెడ్ స్టేట్స్"
+   },
+   "popUpCountryfr": {
+      "description": "Country name of FR",
+      "message": "ఫ్రాన్స్"
+   },
+   "popUpCreateAccount": {
+      "description": "PopUp text for create new account button",
+      "message": "మీ Amazon ఖాతాను రూపొందించండి"
+   },
+   "popUpFeedback": {
+      "description": "PopUp text for feedback button.",
+      "message": "అభిప్రాయం"
+   },
+   "popUpFeedbackDescription": {
+      "description": "PopUp text for description of feedback page.",
+      "message": "ఈ అభిప్రాయం ప్రైవేట్ మరియు మీ ప్రివ్యూ అనుభవాన్ని మెరుగుపరచడంలో మాకు సహాయపడుతుంది."
+   },
+   "popUpFeedbackPlaceholder": {
+      "description": "Placeholder of feedback textarea",
+      "message": "మాకు మరింత చెప్పండి (ఐచ్ఛికం)."
+   },
+   "popUpFeedbackSubmit": {
+      "description": "PopUp text for submit button in feedback page.",
+      "message": "సమర్పించండి"
+   },
+   "popUpFeedbackThanksText": {
+      "description": "PopUp text to show after user send a feedback.",
+      "message": "మీ అభిప్రాయం అందించినందుకు ధన్యవాదాలు!"
+   },
+   "popUpFeedbackTitle": {
+      "description": "PopUp text for title of feedback page.",
+      "message": "మీ Send to Kindle అనుభవానికి రేటింగ్ ఇవ్వండి."
+   },
+   "popUpForgotPassword": {
+      "description": "PopUp text for forgot password link",
+      "message": "పాస్‌వర్డ్ మర్చిపోయాను"
+   },
+   "popUpHistory": {
+      "description": "PopUp text for extraction history.",
+      "message": "చరిత్ర"
+   },
+   "popUpNewToAmazon": {
+      "description": "PopUp text for new account button divider",
+      "message": "Amazonకి కొత్తా?"
+   },
+   "popUpOptions": {
+      "description": "PopUp text for Amazon options page.",
+      "message": "సెట్టింగ్‌లు"
+   },
+   "popUpPreferCountrySelect": {
+      "description": "PopUp text in country picker selection",
+      "message": "మీకు నచ్చిన దేశం/ప్రాంతం యొక్క వెబ్‌సైట్‌ను ఎంపిక చేయండి:"
+   },
+   "popUpPreviewAndSend": {
+      "description": "PopUp text for preview.",
+      "message": "ప్రివ్యూ మరియు పంపండి"
+   },
+   "popUpSaveCountry": {
+      "description": "PopUp text sve country button",
+      "message": "దేశాన్ని రక్షించండి"
+   },
+   "popUpSendSelectedText": {
+      "description": "PopUp text for sending selected text.",
+      "message": "ఎంపిక చేసినదానిని పంపండి"
+   },
+   "popUpSendToKindle": {
+      "description": "PopUp text for S2K.",
+      "message": "త్వరగా పంపండి"
+   },
+   "popUpSettings": {
+      "description": "PopUp text for settings button.",
+      "message": "సెట్టింగ్‌లు"
+   },
+   "popUpSettingsAddLibDes": {
+      "description": "PopUp text for the description of 'Add to your library' section in settings page",
+      "message": "మీ లైబ్రరీలోని ఫైల్‌లను మీ ఖాతాకు లింక్ చేసిన ఏ డివైజ్‌లోకైనా డౌన్‌లోడ్ చేసుకోవచ్చు."
+   },
+   "popUpSettingsAddLibDevicesListTitle": {
+      "description": "PopUp text for the title of `devices list` part in 'Add to your library' section in settings page",
+      "message": "మీ ఫైల్(ల)ని ఎక్కడికి పంపాలో ఎంచుకోండి:"
+   },
+   "popUpSettingsAddLibInlineAlertText": {
+      "description": "PopUp text for the inline alert of 'Add to your library' section in settings page, when user do not select any devices",
+      "message": "కనీసం ఒక డివైజ్ అవసరం"
+   },
+   "popUpSettingsAddLibNoDevicesText": {
+      "description": "PopUp text for inform user that they do not have abt devices in 'Add to your library' section in settings page",
+      "message": "డివైజ్‍లు ఏవీ కనుగొనలేదు. read.amazon.com కు వెళ్లండి లేదా మీ Kindle డివైజ్‍ని రిజిస్టర్ చేయండి."
+   },
+   "popUpSettingsAddLibTitle": {
+      "description": "PopUp text for the title of 'Add to your library' section in settings page",
+      "message": "మీ లైబ్రరీకి జోడించండి"
+   },
+   "popUpSettingsComplexityWarningDes": {
+      "description": "PopUp text for the description of 'Show complex layout warnings' section in settings page",
+      "message": "క్లిష్టమైన లేఅవుట్‌లతో కూడిన కొన్ని సైట్‌లు Kindle‌లో సరిగ్గా ప్రదర్శించబడకపోవచ్చు."
+   },
+   "popUpSettingsComplexityWarningTitle": {
+      "description": "PopUp text for the title of 'Show complex layout warnings' section in settings page",
+      "message": "సంక్లిష్టమైన లేఅవుట్ హెచ్చరికలను చూపించు"
+   },
+   "popUpSettingsLogoutButton": {
+      "description": "PopUp text for the button of 'Logout' section in settings page",
+      "message": "సైన్ అవుట్ చేయండి"
+   },
+   "popUpSettingsLogoutDes": {
+      "description": "PopUp text for the description of 'Logout' section in settings page",
+      "message": "ఈ బ్రౌజర్‌లో మీ Amazon ఖాతా నుండి సైన్ అవుట్ చేయండి."
+   },
+   "popUpSettingsLogoutTitle": {
+      "description": "PopUp text for the title of 'Logout' section in settings page",
+      "message": "సైన్ అవుట్ చేయండి"
+   },
+   "popUpSettingsUserNameTitle": {
+      "description": "PopUp text for the title of user name in settings page.",
+      "message": "వలె సైన్ ఇన్ చేసారు"
+   },
+   "popUpShortcuts": {
+      "description": "PopUp text for shortcut settings.",
+      "message": "షార్ట్‌కట్‌లు"
+   },
+   "popUpSignIn": {
+      "description": "PopUp text for sign in button",
+      "message": "సైన్ ఇన్ చేయండి"
+   },
+   "previewFeedback": {
+      "description": "Text for feedback button in Preview page",
+      "message": "మీ ప్రివ్యూకి రేటింగ్ ఇవ్వండి"
+   },
+   "previewHeaderSend": {
+      "description": "Text for send button in header of Preview page",
+      "message": "పంపండి"
+   },
+   "previewHeaderTitle": {
+      "description": "Title in header of Preview page",
+      "message": "ప్రివ్యూ"
+   },
+   "previewInputAuthorDes": {
+      "description": "Description of input area of author",
+      "message": "రచయిత"
+   },
+   "previewInputLengthLimitAlert": {
+      "description": "Text for inline alert of length limit in preview page",
+      "message": "256 అక్షరాల పరిమితిని చేరుకున్నారు "
+   },
+   "previewInputTitleDes": {
+      "description": "Description of input area of title",
+      "message": "టైటిల్"
+   },
+   "previewSelectionHeaderTitle": {
+      "description": "Title in header of Preview page",
+      "message": "ప్రివ్యూ ఎంపిక"
+   },
+   "previewTitleEmptyAlert": {
+      "description": "Text for inline alert of empty title",
+      "message": "టైటిల్‌ అవసరం"
+   }
+}
