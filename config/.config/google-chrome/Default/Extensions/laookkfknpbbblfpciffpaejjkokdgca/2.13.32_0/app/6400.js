@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkmomentum=globalThis.webpackChunkmomentum||[]).push([[6400],{96400:(a,e,t)=>{async function n(a,e=!0){const{HeartDrawer:n}=await t.e(2831).then(t.bind(t,2831));await a.addShape("heart",new n,e)}t.d(e,{loadHeartShape:()=>n})}}]);

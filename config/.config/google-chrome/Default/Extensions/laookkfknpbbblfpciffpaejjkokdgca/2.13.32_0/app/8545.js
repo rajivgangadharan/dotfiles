@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkmomentum=globalThis.webpackChunkmomentum||[]).push([[8545],{78545:(a,e,n)=>{async function c(a,e=!0){const{CircleDrawer:c}=await n.e(7147).then(n.bind(n,17147));await a.addShape("circle",new c,e)}n.d(e,{loadCircleShape:()=>c})}}]);

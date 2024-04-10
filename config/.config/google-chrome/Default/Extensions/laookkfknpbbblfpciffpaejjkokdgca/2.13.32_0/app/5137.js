@@ -1,1 +1,0 @@
-"use strict";(globalThis.webpackChunkmomentum=globalThis.webpackChunkmomentum||[]).push([[5137],{5137:(a,e,t)=>{async function n(a,e=!0){await a.addParticleUpdater("life",(async a=>{const{LifeUpdater:e}=await t.e(7914).then(t.bind(t,77914));return new e(a)}),e)}t.d(e,{loadLifeUpdater:()=>n})}}]);

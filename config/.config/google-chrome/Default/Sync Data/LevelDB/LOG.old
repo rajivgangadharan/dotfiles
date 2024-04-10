@@ -1,6 +1,0 @@
-2024/04/05-06:50:06.243 1fff Reusing MANIFEST /home/rajivg/.config/google-chrome/Default/Sync Data/LevelDB/MANIFEST-000001
-2024/04/05-06:50:06.246 1fff Recovering log #12
-2024/04/05-06:50:06.276 1fff Reusing old log /home/rajivg/.config/google-chrome/Default/Sync Data/LevelDB/000012.log 
-2024/04/05-07:05:10.247 200c Level-0 table #16: started
-2024/04/05-07:05:10.257 200c Level-0 table #16: 132334 bytes OK
-2024/04/05-07:05:10.270 200c Delete type=0 #12
