@@ -4,6 +4,8 @@
 ---@type ChadrcConfig
 local M = {}
 
+M.plugins = "custom.plugins"
+
 M.ui = {
 	theme = "onedark",
 
@@ -12,5 +14,6 @@ M.ui = {
 	-- 	["@comment"] = { italic = true },
 	-- },
 }
+
 
 return M
