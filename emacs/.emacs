@@ -1,3 +1,26 @@
+(require 'deft)
+(require 'package)
+
+(defun set-frame-size-according-to-resolution ()
+  (interactive)
+  (if window-system
+  (progn
+    ;; use 120 char wide window for largeish displays
+    ;; and smaller 80 column windows for smaller displays
+    ;; pick whatever numbers make sense for you
+    (if (> (x-display-pixel-width) 1280)
+           (add-to-list 'default-frame-alist (cons 'width 120))
+           (add-to-list 'default-frame-alist (cons 'width 80)))
+    ;; for the height, subtract a couple hundred pixels
+    ;; from the screen height (for panels, menubars and
+    ;; whatnot), then divide by the height of a char to
+    ;; get the height we want
+    (add-to-list 'default-frame-alist 
+         (cons 'height (/ (- (x-display-pixel-height) 200)
+                             (frame-char-height)))))))
+
+(set-frame-size-according-to-resolution)
+
 ;; If there are no archived package contents, refresh them
 (when (not package-archive-contents)
   (package-refresh-contents))
@@ -5,53 +28,15 @@
 ;; Initializes the package infrastructure
 (package-initialize)
 
-(setq package-archives
-             '(("melpa" . "http://melpa.org/packages/")
-              ("org" . "https://orgmode.org/elpa"))) 
+(add-to-list 'package-archives
+             '(
+	       ("melpa" . "http://melpa.org/packages/")
+               ("org" . "https://orgmode.org/elpa")
+	       ("gnu" . "https://elpa.gnu.org/packages")
+	       ("nongnu" . "https://elpa.nongnu.org/nongnu")
+	       )
+	     ) 
 (setq environment '(process-environment))
-(require 'package)
-(require 'org-roam)
-(cond ((string-equal system-type "gnu/linux")
-       (message "GNU/Linux detected.")
-       (setq org-base-directory "/run/media/rajivg/WORK/org-files/Notes")
-       (setq org-directory org-base-directory)
-(if (not (file-directory-p org-directory))
-    (make-directory org-directory))
-(setq org-default-notes-file (concat org-directory "/remember-notes.org"))
-(setq org-remember-templates
-      `(("Todo"    ?t "* TODO %?\n  %i\n" ,(concat org-directory "/remember-noteS.org") bottom)
- 	("Misc"    ?m "* %?\n  %i\n"      ,(concat org-directory "/Notes.org")   "Misc")
- 	("iNfo"    ?n "* %?\n  %i\n"      ,(concat org-directory "/Notes.org")   "Information")
- 	("Idea"    ?i "* %?\n  %i\n"      ,(concat org-directory "/Notes.org")   "Ideas")
- 	("Journal" ?j "* %T %?\n\n  %i\n" ,(concat org-directory "/journal.org") bottom)
- 	("Blog"    ?b "* %T %? :BLOG:\n\n  %i\n" ,(concat org-directory "/journal.org") bottom)
- 	))
-       )
-)
-
-;;(setq org-directory (concat(org-base-directory "/org-roam")))
-
-(setq org-startup-with-inline-images t)
-(use-package org-roam
-  :ensure t
-  :after org
-  :init (setq org-roam-v2-ack t) ;; Acknowledge V2 upgrade
-  :custom (org-roam-directory (file-truename org-directory))
-  :config
-  (org-roam-setup)
-  :bind (
-	 ("C-c n f" . org-roam-node-find)
-          ("C-c n r" . org-roam-node-random)		    
-           (:map org-mode-map
-                 (("C-c n i" . org-roam-node-insert)
-                  ("C-c n o" . org-id-get-create)
-                  ("C-c n t" . org-roam-tag-add)
-                  ("C-c n a" . org-roam-alias-add)
-                  ("C-c n l" . org-roam-buffer-toggle)
-		  )
-		 )
-	   )
-)
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -59,73 +44,20 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(column-number-mode t)
- '(custom-enabled-themes '(adwaita))
+ '(custom-enabled-themes '(catppuccin))
+ '(custom-safe-themes
+   '("d77d6ba33442dd3121b44e20af28f1fae8eeda413b2c3d3b9f1315fbda021992" default))
  '(package-selected-packages
-   '(flymake-shell flymake-python-pyflakes tree-sitter-ispell tree-sitter-indent tree-sitter-ess-r tree-sitter org-journal pdf-tools flycheck-rust cargo-mode cargo rust-mode es-windows pet citar-org-roam citar bibtex-utils bibtex-completion bibclean-format auto-virtualenv scholar-import elpy unicode-fonts ace-window use-package org-roam xclip exwm))
+   '(sequences org-unique-id catppuccin-theme flymake-shell flymake-python-pyflakes tree-sitter-ispell tree-sitter-indent tree-sitter-ess-r tree-sitter org-journal pdf-tools flycheck-rust cargo-mode cargo rust-mode es-windows pet citar-org-roam citar bibtex-utils bibtex-completion bibclean-format auto-virtualenv scholar-import elpy unicode-fonts ace-window use-package org-roam xclip exwm))
  '(save-place-mode t)
  '(tool-bar-mode nil)
- '(warning-suppress-types
-   '((comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp)
-     (comp))))
+ '(warning-suppress-types '((comp) (comp))))
 
-
-(put 'set-goal-column 'disabled nil)
 (dolist (hook '(text-mode-hook))
   (add-hook hook (lambda () (flyspell-mode 1))))
 (set-frame-font "JetBrains Mono 12" nil t)
 
-(require 'package)
-(require 'deft)
-
 (setq inhibit-startup-message t)    ;; Hide the startup message
-(global-linum-mode t)               ;; Enable line numbers globally
-
-(require 'org-roam)
-(require 'package)
-(setq org-startup-with-inline-images t)
-
-(use-package org-roam
-  :ensure t
-  :after org
-  :init (setq org-roam-v2-ack t) ;; Acknowledge V2 upgrade
-  :custom
-  org-roam-directory (file-truename org-directory)
-  :config
-  (org-roam-setup)
-  :bind (
-	 ("C-c n f" . org-roam-node-find)
-           ("C-c n r" . org-roam-node-random)		    
-           (:map org-mode-map
-                 (("C-c n i" . org-roam-node-insert)
-                  ("C-c n o" . org-id-get-create)
-                  ("C-c n t" . org-roam-tag-add)
-                  ("C-c n a" . org-roam-alias-add)
-                  ("C-c n l" . org-roam-buffer-toggle)
-		  )
-		 )
-	   )
-  )
 
 ;; Optionally use the `orderless' completion style. See
 ;; `+orderless-dispatch' in the Consult wiki for an advanced Orderless style
@@ -196,7 +128,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- )
+ '(default ((t (:family "JetBrains Mono" :foundry "JB" :slant normal :weight regular :height 151 :width normal)))))
 
 (defun my-emoji-fonts ()
   (set-fontset-font t 'symbol "Noto Color Emoji")
@@ -236,11 +168,11 @@
 (setq rust-format-on-save t)
 (add-hook 'rust-mode-hook
           (lambda () (prettify-symbols-mode)))
+
+(load-theme 'catppuccin :no-confirm)
+(setq catppuccin-flavor 'frappe) ;; or 'latte, 'macchiato, or 'mocha
+(catppuccin-reload)
+
 ;;(push '(".add" . ?+) rust-prettify-symbols-alist)
-(use-package tree-sitter
-  :config
-  (require 'tree-sitter-langs)
-  (global-tree-sitter-mode)
-  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 ;; User-Defined init.el ends here
 
