@@ -140,3 +140,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 export PATH=${PATH}:/opt/nvim-linux64/bin/:.
+# For Powerline
+if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+    source /usr/share/powerline/bindings/bash/powerline.sh
+fi
+
