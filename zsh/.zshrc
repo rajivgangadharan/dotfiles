@@ -124,6 +124,8 @@ unset __conda_setup
 # <<< conda initialize <<<
 export PATH=${PATH}:/opt/nvim-linux64/bin/:.
 # For powerline 
-if [[ -r /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
-    source /usr/share/powerline/bindings/zsh/powerline.zsh
-fi
+#if [[ -r /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
+#    source /usr/share/powerline/bindings/zsh/powerline.zsh
+#fi
+#
+source ~/themes/catppuccin_frappe-zsh-syntax-highlighting.zsh
