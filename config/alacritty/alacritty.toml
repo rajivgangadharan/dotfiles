@@ -1,0 +1,68 @@
+# Alacritty configuration
+#
+# Check the Alacritty Wiki https://github.com/alacritty/alacritty/wiki/Configuration
+import = [
+    "~/.config/alacritty/themes/themes/catppuccin_frappe.toml"
+]
+
+# Font configuration (changes require restart)
+[font]
+  # Normal (body) font face
+  normal = { family = "JetBrains Mono", style = "Regular" }
+
+  # Bold font face
+  bold = { family = "JetBrains Mono", style = "Bold" }
+
+  # Italic font face
+  italic = { family = "JetBrains Mono", style = "Italic" }
+
+  # Point size
+  size = 15.0
+
+# Window configuration
+[window]
+  
+  startup_mode = "Windowed"
+
+  # Window dimensions (changes require restart)
+  [window.dimensions]
+    columns = 110 
+    lines = 30
+
+  # Padding (changes require restart)
+  [window.padding]
+    x = 10
+    y = 10
+
+# Scrolling configuration
+[scrolling]
+  # Scrollback buffer size (changes require restart)
+  history = 1000
+
+# Key bindings
+[[keyboard.bindings]]
+  # Example key binding
+  key = "Insert"
+  mods = "Control"
+  action = "Copy"
+
+[[keyboard.bindings]]
+  # Example key binding
+  key = "Insert"
+  mods = "Shift"
+  action = "Paste"
+
+[[keyboard.bindings]]
+  key = "PageDown"
+  mods = "Shift"
+  action = "ScrollPageUp"
+
+[[keyboard.bindings]]
+  key = "PageUp"
+  mods = "Shift"
+  action = "ScrollPageDown"
+
+# Mouse configuration
+[mouse]
+  # Hide when typing
+  hide_when_typing = true

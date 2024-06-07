@@ -120,6 +120,7 @@ else
         export PATH="/home/rajivg/anaconda3/bin:$PATH"
     fi
 fi
+export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
 unset __conda_setup
 # <<< conda initialize <<<
 export PATH=${PATH}:/opt/nvim-linux64/bin/:.

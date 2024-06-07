@@ -1,9 +1,0 @@
-[2024-03-31 17:05:00.116] [error] Python path "/home/rajivg/.config/jupyterlab-desktop/jlab_server/bin/python" does not exist.
-[2024-03-31 17:05:13.667] [warn]  Unsatisfied version 6.0.2 of shared singleton module @jupyter-widgets/base (required ^2.0.0 || ^3.0.0 || ^4.0.0)
-[2024-03-31 17:05:15.611] [warn]  Language pack 'en_US' not installed!
-[2024-03-31 17:05:16.439] [error] (node:67353) UnhandledPromiseRejectionWarning: Error: labShell.widgets(...).find is not a function
-(Use `jupyterlab-desktop --trace-warnings ...` to show where the warning was created)
-[2024-03-31 17:05:16.439] [error] (node:67353) UnhandledPromiseRejectionWarning: Unhandled promise rejection. This error originated either by throwing inside of an async function without a catch block, or by rejecting a promise which was not handled with .catch(). To terminate the node process on unhandled promise rejection, use the CLI flag `--unhandled-rejections=strict` (see https://nodejs.org/api/cli.html#cli_unhandled_rejections_mode). (rejection id: 3)
-[2024-03-31 17:05:17.874] [warn]  Failed to fetch ipywidgets through the "jupyter.widget.control" comm channel, fallback to fetching individual model state. Reason: Control comm was closed too early
-[2024-03-31 19:05:09.367] [warn]  Failed to fetch ipywidgets through the "jupyter.widget.control" comm channel, fallback to fetching individual model state. Reason: Control comm was closed too early
-[2024-03-31 19:05:19.675] [warn]  Failed to fetch ipywidgets through the "jupyter.widget.control" comm channel, fallback to fetching individual model state. Reason: Control comm was closed too early

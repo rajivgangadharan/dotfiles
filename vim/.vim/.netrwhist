@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/rajivg/.config/tmux'
+let g:netrw_dirhist_6='/home/rajivg/dotfiles/zsh'
+let g:netrw_dirhist_5='/home/rajivg/dotfiles/config/.config/alacritty'
+let g:netrw_dirhist_4='/home/rajivg/dotfiles/.config'
+let g:netrw_dirhist_3='/home/rajivg/Code/kubernetes/python/cluster_analytics'
+let g:netrw_dirhist_2='/mnt/sitespeed/data/graphite/conf/storage-schemas.conf'
+let g:netrw_dirhist_1='/mnt/sitespeed/data/sitespeed-result/www.sitespeed.io/2023-12-26-08-54-40'
