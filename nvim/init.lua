@@ -60,7 +60,7 @@ lspconfig.tsserver.setup{}
 
 -- Treesitter settings
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "lua", "python", "javascript" }, -- Add other languages here
+  ensure_installed = { "lua", "python", "javascript", "rust" }, -- Add other languages here
   highlight = {
     enable = true,              -- false will disable the whole extension
   },
