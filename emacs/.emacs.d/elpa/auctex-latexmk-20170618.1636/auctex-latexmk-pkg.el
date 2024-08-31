@@ -1,0 +1,2 @@
+;;; Generated package description from auctex-latexmk.el  -*- no-byte-compile: t -*-
+(define-package "auctex-latexmk" "20170618.1636" "Add LatexMk support to AUCTeX" '((auctex "11.87")) :commit "64967712b1bbfac8069aa5940fddef938a692a1a" :authors '(("Tomoya Tanjo" . "ttanjo@gmail.com")) :maintainer '("Tomoya Tanjo" . "ttanjo@gmail.com") :keywords '("tex") :url "https://github.com/tom-tan/auctex-latexmk/")
