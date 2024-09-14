@@ -44,11 +44,20 @@ require("lazy").setup({
   -- Plugin list
   "nvim-lua/plenary.nvim",  -- Useful lua functions used by lots of plugins
   "nvim-telescope/telescope.nvim",  -- Fuzzy finder
-  { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },  -- Treesitter configurations and abstraction layer
+  { 
+      "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" 
+  },  -- Treesitter configurations and abstraction layer
   "neovim/nvim-lspconfig",  -- Quickstart configurations for the Nvim LSP client
   "hrsh7th/nvim-cmp",  -- Autocompletion plugin
   "hrsh7th/cmp-nvim-lsp",  -- LSP source for nvim-cmp
   "L3MON4D3/LuaSnip",  -- Snippet engine
+  {
+      'folke/which-key.nvim',
+      event = 'BufWinEnter',
+      config = function()
+          require('which-key').setup {}
+      end
+  },
 })
 
 
