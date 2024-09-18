@@ -56,16 +56,28 @@ require("lazy").setup({
       event = 'BufWinEnter',
       config = function()
           require('which-key').setup {}
-      end
+      end,
+  },
+  {
+      'nvim-orgmode/orgmode',
+      event='VeryLazy',
+      ft = {'org'},
+      config = function()
+          require('orgmode').setup({
+              org_agenda_files = '~/orgfiles/**/*',
+              org_default_notes_file = '~/orgfiles/refile.org',
+          })
+      end,
   },
 })
 
 
 -- Treesitter settings
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "lua", "python", "javascript", "rust" }, -- Add other languages here
+  ensure_installed = { "lua", "python", "javascript", "rust"}, -- Add other languages here
   highlight = {
     enable = true,              -- false will disable the whole extension
+    additional_vim_regex_highlighting = {'org'},
   },
 }
 
