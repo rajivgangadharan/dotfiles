@@ -16,6 +16,8 @@ vim.opt.clipboard = "unnamedplus"-- Use the system clipboard
 vim.opt.mouse = "a"              -- Enable mouse support
 vim.opt.splitright = true        -- Vertical splits open to the right
 vim.opt.splitbelow = true        -- Horizontal splits open below
+vim.opt.spelllang = 'en_us'
+vim.opt.spell = true
 
 -- Tag settings
 vim.opt.tags = {"./tags","tags;/"}
