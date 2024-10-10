@@ -47,10 +47,11 @@
  '(custom-enabled-themes '(catppuccin))
  '(custom-safe-themes
    '("d77d6ba33442dd3121b44e20af28f1fae8eeda413b2c3d3b9f1315fbda021992" default))
+ '(desktop-save-mode t)
  '(package-selected-packages
    '(sequences org-unique-id catppuccin-theme flymake-shell flymake-python-pyflakes tree-sitter-ispell tree-sitter-indent tree-sitter-ess-r tree-sitter org-journal pdf-tools flycheck-rust cargo-mode cargo rust-mode es-windows pet citar-org-roam citar bibtex-utils bibtex-completion bibclean-format auto-virtualenv scholar-import elpy unicode-fonts ace-window use-package org-roam xclip exwm))
  '(save-place-mode t)
- '(tool-bar-mode nil)
+ '(tab-bar-mode t)
  '(warning-suppress-types '((comp) (comp))))
 
 (dolist (hook '(text-mode-hook))
@@ -128,7 +129,7 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "JetBrains Mono" :foundry "JB" :slant normal :weight regular :height 151 :width normal)))))
+ '(default ((t (:family "JetBrains Mono NL" :foundry "JB" :slant normal :weight light :height 143 :width normal)))))
 
 (defun my-emoji-fonts ()
   (set-fontset-font t 'symbol "Noto Color Emoji")

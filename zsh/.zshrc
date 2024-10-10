@@ -123,10 +123,15 @@ fi
 #export LD_PRELOAD=/usr/lib/x86_64-linux-gnu/libstdc++.so.6
 unset __conda_setup
 # <<< conda initialize <<<
-export PATH=${PATH}:/opt/nvim-linux64/bin/:/opt/flutter/flutter/bin:/opt/android-studio/cmdline-tools/latest/bin:.
+export PATH=${PATH}:/opt/nvim-linux64/bin/:/opt/flutter/flutter/bin:/opt/android-studio/cmdline-tools/latest/bin:~/go/bin:.
 # For powerline 
 #if [[ -r /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
 #    source /usr/share/powerline/bindings/zsh/powerline.zsh
 #fi
 #
 alias vi='nvim'
+alias smarttalk="cd ~/Code/smarttalk && . ./.venv/bin/activate"
+export PATH=$PATH:/usr/local/go/bin
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/rajivg/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rajivg/google-cloud-sdk/completion.zsh.inc'; fi
