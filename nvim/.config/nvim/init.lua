@@ -44,6 +44,8 @@ vim.opt.rtp:prepend(lazypath)
 -- Plugin configuration
 require("lazy").setup({
   -- Plugin list
+  "psf/black",
+  "jose-elias-alvarez/null-ls.nvim",
   "nvim-lua/plenary.nvim",  -- Useful lua functions used by lots of plugins
   "nvim-telescope/telescope.nvim",  -- Fuzzy finder
   { 
@@ -70,6 +72,54 @@ require("lazy").setup({
               org_default_notes_file = '~/orgfiles/refile.org',
           })
       end,
+  },
+  { "catppuccin/nvim", lazy = true, name = "catppuccin", priority=1000 },
+  { "nvim-tree/nvim-web-devicons", lazy = true },
+})
+
+-- nvim-cmp setup
+local cmp = require'cmp'
+local luasnip = require'luasnip'
+
+cmp.setup({
+  snippet = {
+    expand = function(args)
+      require'luasnip'.lsp_expand(args.body) -- For `LuaSnip` users.
+    end,
+  },
+  mapping = {
+    ['<C-b>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm({
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
+    ['<Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      elseif luasnip.expand_or_jumpable() then
+        luasnip.expand_or_jump()
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+    ['<S-Tab>'] = cmp.mapping(function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      elseif luasnip.jumpable(-1) then
+        luasnip.jump(-1)
+      else
+        fallback()
+      end
+    end, { 'i', 's' }),
+  },
+  sources = {
+    { name = 'nvim_lsp' },
+    { name = 'luasnip' },
+    { name = 'buffer' },
+    { name = 'path' },
   },
 })
 
@@ -106,7 +156,28 @@ require('telescope').setup{
 lspconfig = require('lspconfig')
 
 -- Enable language servers here
-lspconfig.pyright.setup{}
+--
+
+-- Add capabilities from nvim-cmp to the LSP
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+-- Pyright setup for Python LSP with autocompletion
+lspconfig.pyright.setup{
+  on_attach = function(client, bufnr)
+    -- Custom keybindings for LSP
+    local bufopts = { noremap=true, silent=true, buffer=bufnr }
+    vim.keymap.set('n', 'gd', vim.lsp.buf.definition, bufopts)
+    vim.keymap.set('n', 'K', vim.lsp.buf.hover, bufopts)
+    vim.keymap.set('n', 'gi', vim.lsp.buf.implementation, bufopts)
+    vim.keymap.set('n', '<C-k>', vim.lsp.buf.signature_help, bufopts)
+  end,
+  capabilities = capabilities,  -- Add this line to integrate cmp capabilities
+  flags = {
+    debounce_text_changes = 150,
+  },
+}
+
+
 lspconfig.ts_ls.setup{}
 lspconfig.rust_analyzer.setup({
   settings = {
@@ -119,5 +190,12 @@ lspconfig.rust_analyzer.setup({
       },
     },
   },
+})
+
+vim.api.nvim_create_autocmd("BufWritePre", {
+    pattern = "*.py",
+    callback = function()
+        vim.cmd("Black")
+    end,
 })
 

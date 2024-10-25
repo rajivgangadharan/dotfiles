@@ -131,6 +131,7 @@ export PATH=${PATH}:/opt/nvim-linux64/bin/:/opt/flutter/flutter/bin:/opt/android
 #
 alias vi='nvim'
 alias smarttalk="cd ~/Code/smarttalk && . ./.venv/bin/activate"
+alias clipart="cd ~/Code/biz/clipart/ && . ./.venv/bin/activate"
 export PATH=$PATH:/usr/local/go/bin
 
 # The next line enables shell command completion for gcloud.
