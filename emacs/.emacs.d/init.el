@@ -21,3 +21,10 @@
 
 (global-ligature-mode 't)
 (setq org-image-actual-width nil)
+(use-package catppuccin-theme
+  :ensure t
+  :config
+  ;; Load the theme (choose from latte, frappe, macchiato, or mocha)
+  (load-theme 'catppuccin-mocha t)
+  ;; Optional: Customize the flavor (latte, frappe, macchiato, or mocha)
+  (setq catppuccin-flavor 'mocha))
