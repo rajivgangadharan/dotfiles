@@ -1,22 +1,29 @@
 (require 'deft)
 (require 'package)
 
+;;(set-frame-font "JetBrains Mono 12" nil t)
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(default ((t (
+		:family "JetBrains Mono"
+			:foundry "JB"
+			:slant normal
+			:weight medium
+			:height 135
+			:width normal)))))
+
 (defun set-frame-size-according-to-resolution ()
   (interactive)
   (if window-system
   (progn
-    ;; use 120 char wide window for largeish displays
-    ;; and smaller 80 column windows for smaller displays
-    ;; pick whatever numbers make sense for you
     (if (> (x-display-pixel-width) 1280)
-           (add-to-list 'default-frame-alist (cons 'width 120))
+           (add-to-list 'default-frame-alist (cons 'width 100))
            (add-to-list 'default-frame-alist (cons 'width 80)))
-    ;; for the height, subtract a couple hundred pixels
-    ;; from the screen height (for panels, menubars and
-    ;; whatnot), then divide by the height of a char to
-    ;; get the height we want
     (add-to-list 'default-frame-alist 
-         (cons 'height (/ (- (x-display-pixel-height) 200)
+         (cons 'height (/ (- (x-display-pixel-height) 300)
                              (frame-char-height)))))))
 
 (set-frame-size-according-to-resolution)
@@ -25,17 +32,11 @@
 (when (not package-archive-contents)
   (package-refresh-contents))
 
-;; Initializes the package infrastructure
-(package-initialize)
 
-(add-to-list 'package-archives
-             '(
-	       ("melpa" . "http://melpa.org/packages/")
-               ("org" . "https://orgmode.org/elpa")
-	       ("gnu" . "https://elpa.gnu.org/packages")
-	       ("nongnu" . "https://elpa.nongnu.org/nongnu")
-	       )
-	     ) 
+(add-to-list 'package-archives 
+             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+
+(package-initialize)
 (setq environment '(process-environment))
 
 (custom-set-variables
@@ -46,19 +47,19 @@
  '(column-number-mode t)
  '(custom-enabled-themes '(catppuccin))
  '(custom-safe-themes
-   '("d77d6ba33442dd3121b44e20af28f1fae8eeda413b2c3d3b9f1315fbda021992" default))
- '(desktop-save-mode t)
+   '("f0019357d2829d589a5420843c82b8f5afd4f9db8a926882da975e15de76316a" "d77d6ba33442dd3121b44e20af28f1fae8eeda413b2c3d3b9f1315fbda021992" default))
+ '(desktop-save-mode nil)
  '(package-selected-packages
-   '(sequences org-unique-id catppuccin-theme flymake-shell flymake-python-pyflakes tree-sitter-ispell tree-sitter-indent tree-sitter-ess-r tree-sitter org-journal pdf-tools flycheck-rust cargo-mode cargo rust-mode es-windows pet citar-org-roam citar bibtex-utils bibtex-completion bibclean-format auto-virtualenv scholar-import elpy unicode-fonts ace-window use-package org-roam xclip exwm))
+   '(## sequences org-unique-id catppuccin-theme flymake-shell flymake-python-pyflakes tree-sitter-ispell tree-sitter-indent tree-sitter-ess-r tree-sitter org-journal pdf-tools flycheck-rust cargo-mode cargo rust-mode es-windows pet citar-org-roam citar bibtex-utils bibtex-completion bibclean-format scholar-import elpy unicode-fonts ace-window use-package org-roam xclip exwm))
  '(save-place-mode t)
  '(tab-bar-mode t)
  '(warning-suppress-types '((comp) (comp))))
 
 (dolist (hook '(text-mode-hook))
   (add-hook hook (lambda () (flyspell-mode 1))))
-(set-frame-font "JetBrains Mono 12" nil t)
 
-(setq inhibit-startup-message t)    ;; Hide the startup message
+
+(setq inhibit-startup-message nil)    ;; Hide the startup message
 
 ;; Optionally use the `orderless' completion style. See
 ;; `+orderless-dispatch' in the Consult wiki for an advanced Orderless style
@@ -97,7 +98,8 @@
 ;; Enable recent files
 (require 'recentf)
 (recentf-mode 1)
-
+(setq recentf-max-menu-items 5)
+(global-set-key "\C-x\ \C-r" 'recentf-open-files)
 ;;(require 'fill-column-indicator)
 ;;(setq fci-rule-width 1)
 ;;(setq fci-rule-color "darkblue")
@@ -124,12 +126,6 @@
 
 (global-set-key (kbd "C-x o") 'ace-window)
 
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(default ((t (:family "JetBrains Mono NL" :foundry "JB" :slant normal :weight light :height 143 :width normal)))))
 
 (defun my-emoji-fonts ()
   (set-fontset-font t 'symbol "Noto Color Emoji")
@@ -157,23 +153,23 @@
                 (?o delete-other-windows "Delete Other Windows")
                 (?? aw-show-dispatch-help))
           "List of actions for `aw-dispatch-default'.")
+(setq mac-command-modifier 'meta
+      mac-option-modifier 'alt
+      mac-right-option-modifier 'alt)
+(setq x-meta-keysym 'alt)
+(setq x-alt-keysym 'meta)
 
 (add-hook 'rust-mode-hook
           (lambda () (setq indent-tabs-mode nil)))
-(require 'auto-virtualenv)
-(add-hook 'python-mode-hook 'auto-virtualenv-set-virtualenv)
-(add-hook 'projectile-after-switch-project-hook 'auto-virtualenv-set-virtualenv)
-(require 'flymake-shell)
-(add-hook 'sh-set-shell-hook 'flymake-shell-load)
-
 (setq rust-format-on-save t)
 (add-hook 'rust-mode-hook
           (lambda () (prettify-symbols-mode)))
 
-(load-theme 'catppuccin :no-confirm)
-(setq catppuccin-flavor 'frappe) ;; or 'latte, 'macchiato, or 'mocha
-(catppuccin-reload)
+(use-package catppuccin-theme
+  :init
+  :ensure t
+  :config
+  )
 
-;;(push '(".add" . ?+) rust-prettify-symbols-alist)
-;; User-Defined init.el ends here
+(setq inhibit-startup-buffer-menu t)
 
