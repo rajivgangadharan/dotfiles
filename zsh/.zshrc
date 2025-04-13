@@ -8,7 +8,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussel"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -136,3 +136,27 @@ export PATH=$PATH:/usr/local/go/bin
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/rajivg/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rajivg/google-cloud-sdk/completion.zsh.inc'; fi
+
+# >>> mamba initialize >>>
+# !! Contents within this block are managed by 'micromamba shell init' !!
+export MAMBA_EXE='/home/rajivg/.local/bin/micromamba';
+export MAMBA_ROOT_PREFIX='/home/rajivg/micromamba';
+__mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__mamba_setup"
+else
+    alias micromamba="$MAMBA_EXE"  # Fallback on help from micromamba activate
+fi
+unset __mamba_setup
+# <<< mamba initialize <<<
+alias mgpt='micromamba activate mgpt_env && cd ~/Code/mgpt/'
+alias allm='micromamba activate agentic_llm_venv && cd ~/Code/langgraph-learn/'
+alias mgst='micromamba activate agentic_llm_venv && cd ~/Code/mgst/'
+alias ai='micromamba activate ai_venv && cd ~/Code/ai/'
+alias ml='micromamba activate ai_venv && cd ~/Code/ml/'
+alias rag='micromamba activate ai_venv && cd ~/Code/rag-coding-exercise'
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+eval "$(starship init zsh)"
