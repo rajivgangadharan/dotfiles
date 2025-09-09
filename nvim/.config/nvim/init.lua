@@ -59,10 +59,26 @@ require("lspconfig").pyright.setup {}
 -- Plugin configuration
 require("lazy").setup {
   "psf/black",
-  "jose-elias-alvarez/null-ls.nvim",
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    -- version = "<specific commit hash>", -- Replace with a known good commit
+    config = function()
+      local null_ls = require "null-ls"
+      null_ls.setup {
+        sources = {
+          -- Your null-ls sources
+          null_ls.builtins.formatting.black,
+          null_ls.builtins.formatting.prettier,
+          null_ls.builtins.formatting.stylua,
+        },
+      }
+    end,
+  },
   "nvim-lua/plenary.nvim",
+  "MunifTanjim/nui.nvim",
   "nvim-telescope/telescope.nvim",
-  { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
+  { "nvim-treesitter/nvim-treesitter", branch = "master", run = ":TSUpdate" },
+  { "nvim-lua/plenary.nvim", branch = "master" },
   "neovim/nvim-lspconfig",
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
@@ -70,6 +86,11 @@ require("lazy").setup {
   "nvim-tree/nvim-web-devicons",
   "nvim-neo-tree/neo-tree.nvim",
   "nvim-orgmode/orgmode",
+  "prettier/prettier",
+  "stylelint/stylelint",
+  "eslint/eslint",
+  "windwp/nvim-ts-autotag",
+  "windwp/nvim-autopairs",
   {
     "catppuccin/nvim",
     name = "catppuccin",
@@ -78,6 +99,38 @@ require("lazy").setup {
       require("catppuccin").setup()
       vim.cmd.colorscheme "catppuccin"
     end,
+  },
+  {
+    "folke/snacks.nvim",
+    priority = 1000,
+    lazy = false,
+    ---@type snacks.Config
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+      bigfile = { enabled = true },
+      dashboard = { enabled = true },
+      explorer = { enabled = true },
+      indent = { enabled = true },
+      input = { enabled = true },
+      picker = { enabled = true },
+      notifier = { enabled = true },
+      quickfile = { enabled = true },
+      scope = { enabled = true },
+      scroll = { enabled = true },
+      statuscolumn = { enabled = true },
+      words = { enabled = true },
+    },
+  },
+  {
+    "nvim-flutter/flutter-tools.nvim",
+    lazy = false,
+    dependencies = {
+      "nvim-lua/plenary.nvim",
+      "folke/snacks.nvim", -- optional for vim.ui.select
+    },
+    config = true,
   },
 }
 
@@ -126,6 +179,7 @@ null_ls.setup {
     null_ls.builtins.formatting.stylua,
   },
 }
+
 vim.api.nvim_create_autocmd("BufWritePre", {
   pattern = { "*.lua", "*.py", "*.js", "*.ts", "*.html", "*.css" },
   callback = function()

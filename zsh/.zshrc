@@ -132,7 +132,7 @@ export PATH=${PATH}:/opt/nvim-linux64/bin/:/opt/flutter/flutter/bin:/opt/android
 alias vi='nvim'
 alias smarttalk="cd ~/Code/smarttalk && . ./.venv/bin/activate"
 alias clipart="cd ~/Code/biz/clipart/ && . ./.venv/bin/activate"
-export PATH=$PATH:/usr/local/go/bin
+export PATH=$PATH:/usr/local/go/bin:/opt/dev/flutter/bin:.
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/rajivg/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/rajivg/google-cloud-sdk/completion.zsh.inc'; fi
@@ -149,9 +149,8 @@ else
 fi
 unset __mamba_setup
 # <<< mamba initialize <<<
-alias mgpt='micromamba activate mgpt_env && cd ~/Code/mgpt/'
 alias allm='micromamba activate agentic_llm_venv && cd ~/Code/langgraph-learn/'
-alias mgst='micromamba activate agentic_llm_venv && cd ~/Code/mgst/'
+alias hfac='micromamba activate agentic_llm_venv && cd ~/Code/huggingface-agents-course/'
 alias ai='micromamba activate ai_venv && cd ~/Code/ai/'
 alias ml='micromamba activate ai_venv && cd ~/Code/ml/'
 alias rag='micromamba activate ai_venv && cd ~/Code/rag-coding-exercise'
@@ -160,3 +159,7 @@ fpath+=~/.zfunc; autoload -Uz compinit; compinit
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 eval "$(starship init zsh)"
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
