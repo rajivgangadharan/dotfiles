@@ -28,3 +28,5 @@
   (load-theme 'catppuccin-mocha t)
   ;; Optional: Customize the flavor (latte, frappe, macchiato, or mocha)
   (setq catppuccin-flavor 'mocha))
+
+(setq-default TeX-engine 'xetex)
