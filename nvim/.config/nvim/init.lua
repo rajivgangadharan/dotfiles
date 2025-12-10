@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd("BufReadPre", {
   callback = function(args) -- Pass args to the callback
     local max_filesize = 100 * 1024 -- 100 KB
     local filepath = args.file -- Use args.file for the filepath
-    local ok, stats = pcall(vim.loop.fs_stat, filepath)
+    local ok, stats = pcall(vim.uv.fs_stat, filepath)
     if ok and stats and stats.size > max_filesize then
       vim.cmd "TSDisable"
       local clients = vim.lsp.get_active_clients { bufnr = args.buf } -- Get clients associated with the buffer
@@ -44,7 +44,7 @@ vim.keymap.set("n", "]d", vim.diagnostic.goto_next, { noremap = true, silent = t
 
 -- Set up Lazy.nvim as plugin manager
 local lazypath = vim.fn.stdpath "data" .. "/lazy/lazy.nvim"
-if not vim.loop.fs_stat(lazypath) then
+if not vim.uv.fs_stat(lazypath) then
   vim.fn.system {
     "git",
     "clone",
@@ -55,18 +55,17 @@ if not vim.loop.fs_stat(lazypath) then
   }
 end
 vim.opt.rtp:prepend(lazypath)
-require("lspconfig").pyright.setup {}
+
 -- Plugin configuration
 require("lazy").setup {
   "psf/black",
   {
-    "jose-elias-alvarez/null-ls.nvim",
-    -- version = "<specific commit hash>", -- Replace with a known good commit
+    "nvimtools/none-ls.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
     config = function()
       local null_ls = require "null-ls"
       null_ls.setup {
         sources = {
-          -- Your null-ls sources
           null_ls.builtins.formatting.black,
           null_ls.builtins.formatting.prettier,
           null_ls.builtins.formatting.stylua,
@@ -78,17 +77,28 @@ require("lazy").setup {
   "MunifTanjim/nui.nvim",
   "nvim-telescope/telescope.nvim",
   { "nvim-treesitter/nvim-treesitter", branch = "master", run = ":TSUpdate" },
-  { "nvim-lua/plenary.nvim", branch = "master" },
   "neovim/nvim-lspconfig",
+  {
+    "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup()
+    end,
+  },
+  {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mason-lspconfig").setup {
+        ensure_installed = { "lua_ls", "marksman", "jsonls", "pyright", "ts_ls", "rust_analyzer", "html", "cssls" },
+        automatic_installation = true,
+      }
+    end,
+  },
   "hrsh7th/nvim-cmp",
   "hrsh7th/cmp-nvim-lsp",
-  "L3MON4D3/LuaSnip",
+  { "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" },
   "nvim-tree/nvim-web-devicons",
   "nvim-neo-tree/neo-tree.nvim",
   "nvim-orgmode/orgmode",
-  "prettier/prettier",
-  "stylelint/stylelint",
-  "eslint/eslint",
   "windwp/nvim-ts-autotag",
   "windwp/nvim-autopairs",
   {
@@ -148,7 +158,7 @@ vim.cmd.colorscheme "catppuccin"
 
 -- Treesitter settings
 require("nvim-treesitter.configs").setup {
-  ensure_installed = { "lua", "python", "javascript", "rust" },
+  ensure_installed = { "lua", "python", "javascript", "rust", "markdown", "markdown_inline", "json" },
   highlight = { enable = true },
 }
 
@@ -170,18 +180,9 @@ require("telescope").setup {
   },
 }
 
--- Autoformat with null-ls.nvim
-local null_ls = require "null-ls"
-null_ls.setup {
-  sources = {
-    null_ls.builtins.formatting.black,
-    null_ls.builtins.formatting.prettier,
-    null_ls.builtins.formatting.stylua,
-  },
-}
-
+-- Autoformat on save
 vim.api.nvim_create_autocmd("BufWritePre", {
-  pattern = { "*.lua", "*.py", "*.js", "*.ts", "*.html", "*.css" },
+  pattern = { "*.lua", "*.py", "*.js", "*.ts", "*.html", "*.css", "*.json", "*.md" },
   callback = function()
     vim.lsp.buf.format { async = false }
   end,
@@ -191,15 +192,25 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 local lspconfig = require "lspconfig"
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-lspconfig.pyright.setup { capabilites }
+lspconfig.pyright.setup {
+  capabilities = capabilities,
+}
+
 lspconfig.ts_ls.setup {
   capabilities = capabilities,
   on_attach = function(client, _)
     client.server_capabilities.documentFormattingProvider = false
   end,
 }
+
 lspconfig.rust_analyzer.setup {
-  settings = { ["rust-analyzer"] = { cargo = { allFeatures = true }, checkOnSave = { command = "clippy" } } },
+  capabilities = capabilities,
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = { allFeatures = true },
+      checkOnSave = { command = "clippy" },
+    },
+  },
 }
 local cmp = require "cmp"
 
