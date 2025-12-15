@@ -93,9 +93,9 @@ require("lazy").setup {
             }
         end,
     },
-    "hrsh7th/nvim-cmp",
+    { "hrsh7th/nvim-cmp" },
     "hrsh7th/cmp-nvim-lsp",
-    { "L3MON4D3/LuaSnip",                version = "v2.*",  build = "make install_jsregexp" },
+    { "L3MON4D3/LuaSnip", version = "v2.*", build = "make install_jsregexp" },
     "nvim-tree/nvim-web-devicons",
     "nvim-neo-tree/neo-tree.nvim",
     "nvim-orgmode/orgmode",
@@ -241,7 +241,10 @@ vim.lsp.config("rust_analyzer", {
 })
 vim.lsp.enable { "rust-analyzer" }
 
-local cmp = require "cmp"
+local ok, cmp = pcall(require, "cmp")
+if not ok then
+    return
+end
 
 cmp.setup {
     snippet = {
