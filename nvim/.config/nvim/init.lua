@@ -142,6 +142,31 @@ require("lazy").setup {
     },
     config = true,
   },
+  {
+    "sudo-tee/opencode.nvim",
+    config = function()
+      require("opencode").setup {}
+    end,
+    dependencies = {
+      {
+        "MeanderingProgrammer/render-markdown.nvim",
+        opts = {
+          anti_conceal = { enabled = false },
+          file_types = { "markdown", "opencode_output" },
+        },
+        ft = { "markdown", "Avante", "copilot-chat", "opencode_output" },
+      },
+    },
+  },
+  {
+    "greggh/claude-code.nvim",
+    dependencies = {
+      "nvim-lua/plenary.nvim", -- Required for git operations
+    },
+    config = function()
+      require("claude-code").setup()
+    end,
+  },
 }
 
 require("catppuccin").setup {
