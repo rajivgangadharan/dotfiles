@@ -6,3 +6,4 @@ nautilus
 regolith3
 .bash_history
 config/.config/google-chrome/**
+*.lock
