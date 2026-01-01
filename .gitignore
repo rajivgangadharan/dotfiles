@@ -7,3 +7,7 @@ regolith3
 .bash_history
 config/.config/google-chrome/**
 *.lock
+.emacs.d/elpa/archives/*
+.emacs.d/history
+.emacs.d/places
+.emacs.d/recentf
