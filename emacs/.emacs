@@ -172,4 +172,3 @@
   )
 
 (setq inhibit-startup-buffer-menu t)
-

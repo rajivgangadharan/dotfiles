@@ -11,3 +11,6 @@ config/.config/google-chrome/**
 .emacs.d/history
 .emacs.d/places
 .emacs.d/recentf
+auto-save-list
+eln-cache
+.emacs~
