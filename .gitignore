@@ -14,3 +14,4 @@ config/.config/google-chrome/**
 auto-save-list
 eln-cache
 .emacs~
+session*
