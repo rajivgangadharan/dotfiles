@@ -16,3 +16,4 @@ eln-cache
 .emacs~
 session*
 .local/share/nvim/*
+nvim/.local/*
