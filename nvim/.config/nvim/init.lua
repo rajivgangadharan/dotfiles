@@ -158,6 +158,24 @@ require("lazy").setup {
       },
     },
   },
+  -- OFFICE: Uncomment the following section to use GitHub Copilot instead of OpenCode
+  -- Make sure to comment out or remove the opencode.nvim plugin above when enabling Copilot
+  -- {
+  --   "github/copilot.vim",
+  --   event = "InsertEnter",
+  --   config = function()
+  --     -- Copilot keybindings
+  --     vim.g.copilot_no_tab_map = true
+  --     vim.keymap.set("i", "<C-J>", 'copilot#Accept("\\<CR>")', {
+  --       expr = true,
+  --       replace_keycodes = false,
+  --       silent = true,
+  --     })
+  --     vim.keymap.set("i", "<C-K>", "<Plug>(copilot-dismiss)", { silent = true })
+  --     vim.keymap.set("i", "<C-L>", "<Plug>(copilot-next)", { silent = true })
+  --     vim.keymap.set("i", "<C-H>", "<Plug>(copilot-previous)", { silent = true })
+  --   end,
+  -- },
   {
     "greggh/claude-code.nvim",
     dependencies = {
