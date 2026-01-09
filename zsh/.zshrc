@@ -53,7 +53,6 @@ plugins=(
     poetry
     npm
     node
-    nvm
     yarn
     colored-man-pages
     command-not-found
@@ -113,12 +112,6 @@ add_to_path "/opt/android-studio/cmdline-tools/latest/bin"
 add_to_path "/opt/atom"
 add_to_path "$HOME/opt/terraform"
 add_to_path "$HOME/.opencode/bin"
-add_to_path "$HOME/.bun/bin"
-
-# Anaconda path (added at end to not override system python)
-if [[ -d "$HOME/anaconda3/bin" ]]; then
-    export PATH="$PATH:$HOME/anaconda3/bin"
-fi
 
 # ====================
 # Tool Configurations
@@ -127,41 +120,6 @@ fi
 # Rust/Cargo
 if [[ -f "$HOME/.cargo/env" ]]; then
     source "$HOME/.cargo/env"
-fi
-
-# NVM (Node Version Manager)
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
-
-# Bun
-export BUN_INSTALL="$HOME/.bun"
-[ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
-
-# Conda initialization
-if [[ -f "$HOME/anaconda3/bin/conda" ]]; then
-    __conda_setup="$('$HOME/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__conda_setup"
-    else
-        if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
-            source "$HOME/anaconda3/etc/profile.d/conda.sh"
-        fi
-    fi
-    unset __conda_setup
-fi
-
-# Micromamba initialization
-export MAMBA_EXE="$HOME/.local/bin/micromamba"
-export MAMBA_ROOT_PREFIX="$HOME/micromamba"
-if [[ -x "$MAMBA_EXE" ]]; then
-    __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__mamba_setup"
-    else
-        alias micromamba="$MAMBA_EXE"
-    fi
-    unset __mamba_setup
 fi
 
 # Google Cloud SDK
@@ -194,17 +152,6 @@ alias ohmyzsh="nvim ~/.oh-my-zsh"
 # Kubernetes
 alias kubectl="microk8s kubectl"
 alias k="kubectl"
-
-# Project shortcuts with environment activation
-alias smarttalk="cd ~/Code/smarttalk && [[ -f .venv/bin/activate ]] && source .venv/bin/activate"
-alias clipart="cd ~/Code/biz/clipart/ && [[ -f .venv/bin/activate ]] && source .venv/bin/activate"
-
-# Micromamba environment shortcuts
-alias allm='micromamba activate agentic_llm_venv && cd ~/Code/langgraph-learn/'
-alias hfac='micromamba activate agentic_llm_venv && cd ~/Code/huggingface-agents-course/'
-alias ai='micromamba activate ai_venv && cd ~/Code/ai/'
-alias ml='micromamba activate ai_venv && cd ~/Code/ml/'
-alias rag='micromamba activate ai_venv && cd ~/Code/rag-coding-exercise'
 
 # Utility aliases
 alias ls='ls --color=auto'
@@ -305,13 +252,17 @@ bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
 
 # ====================
-# Performance Optimizations
+# Local Configuration
 # ====================
 
-# Lazy load nvm to improve startup time
-if [[ -s "$NVM_DIR/nvm.sh" ]]; then
-    # Only load nvm when actually needed
-    alias nvm='unalias nvm && source "$NVM_DIR/nvm.sh" && nvm'
-    alias npm='unalias npm && source "$NVM_DIR/nvm.sh" && npm'
-    alias node='unalias node && source "$NVM_DIR/nvm.sh" && node'
+# Load machine-specific configuration
+# Set ZSH_LOCAL_CONFIG environment variable to choose which config to load
+# Default to .zshrc.local.home if not set
+ZSH_LOCAL_CONFIG="${ZSH_LOCAL_CONFIG:-home}"
+if [[ -f "${ZDOTDIR:-$HOME}/.zshrc.local.$ZSH_LOCAL_CONFIG" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zshrc.local.$ZSH_LOCAL_CONFIG"
 fi
+
+# ====================
+# Performance Optimizations
+# ====================
