@@ -19,16 +19,23 @@
 ;; Initialize package system
 (package-initialize)
 
-;; Refresh package list if empty
-(when (not package-archive-contents)
-  (package-refresh-contents))
+;; Set network timeout to prevent hanging on slow connections
+(setq url-queue-timeout 5)
+
+;; Don't automatically refresh package contents on startup
+;; This can cause Emacs to hang when MELPA is slow or unreachable
+;; To manually refresh packages, run: M-x package-refresh-contents
+;; (when (not package-archive-contents)
+;;   (package-refresh-contents))
 
 ;; Install use-package if not already installed
 (unless (package-installed-p 'use-package)
   (package-install 'use-package))
 
 (require 'use-package)
-(setq use-package-always-ensure t)
+;; Only auto-install packages if we can reach the package archives
+;; Set to nil to prevent hanging on startup when offline
+(setq use-package-always-ensure nil)
 
 ;; ====================
 ;; Basic Settings
@@ -487,10 +494,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(ligature catppuccin-theme org-journal pdf-tools citar-org-roam citar
-     elpy ace-window use-package org-roam xclip deft rust-mode cargo-mode
-     auctex reftex company company-auctex company-math cdlatex yasnippet
-     yasnippet-snippets magic-latex-buffer latex-preview-pane)))
+   '(ligature catppuccin-theme org-journal pdf-tools citar-org-roam citar elpy ace-window use-package org-roam xclip deft rust-mode cargo-mode auctex reftex company company-auctex company-math cdlatex yasnippet yasnippet-snippets magic-latex-buffer latex-preview-pane)))
 
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
