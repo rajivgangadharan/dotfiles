@@ -41,6 +41,12 @@
 ;; Basic Settings
 ;; ====================
 
+;; Start server for emacsclient (needed for inverse search from llpp)
+(unless (daemonp)
+  (require 'server)
+  (unless (server-running-p)
+    (server-start)))
+
 (setq inhibit-startup-message nil)
 (setq inhibit-startup-buffer-menu t)
 
@@ -272,10 +278,13 @@
   (setq TeX-auto-local ".auctex-auto")
   (setq TeX-style-local ".auctex-style")
 
-  ;; PDF viewer setup
-  (setq TeX-view-program-selection '((output-pdf "PDF Tools"))
-        TeX-view-program-list '(("PDF Tools" TeX-pdf-tools-sync-view))
-        TeX-source-correlate-start-server t)
+  ;; PDF viewer setup - use llpp for external viewing in tmux pane
+  ;; Forward search: C-c C-v jumps to current line in llpp
+  ;; Requires llpp to already be running with the PDF open (-remote connects to it)
+  (setq TeX-view-program-list
+        '(("llpp" "llpp -remote %o -origin \"@%n:%t\"")))
+  (setq TeX-view-program-selection
+        '((output-pdf "llpp")))
 
   ;; Update PDF buffers after successful LaTeX runs
   (add-hook 'TeX-after-compilation-finished-functions
