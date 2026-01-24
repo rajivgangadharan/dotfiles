@@ -6,13 +6,40 @@ nautilus
 regolith3
 .bash_history
 config/.config/google-chrome/**
+
+# Lock files
 *.lock
-.emacs.d/elpa/archives/*
+*-lock.json
+lazy-lock.json
+
+# Backup files
+*.backup
+*~
+
+# README and documentation
+README.md
+README*
+CHEATSHEET.md
+
+# Emacs
+.emacs.d/elpa/
 .emacs.d/history
 .emacs.d/places
 .emacs.d/recentf
+.emacs.d/org-roam.db
+.emacs.d/session*
+emacs/.emacs.d/elpa/
+emacs/.emacs.d/history
+emacs/.emacs.d/places
+emacs/.emacs.d/recentf
+emacs/.emacs.d/org-roam.db
+emacs/.emacs.d/session*
+emacs/.emacs.backup
 auto-save-list
 eln-cache
 .emacs~
+
+# Neovim
 .local/share/nvim/*
 nvim/.local/*
+nvim/.config/nvim/lazy-lock.json
