@@ -94,9 +94,41 @@ require("lazy").setup {
   {
     "williamboman/mason-lspconfig.nvim",
     config = function()
+      local lspconfig = require "lspconfig"
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
+
       require("mason-lspconfig").setup {
         ensure_installed = { "lua_ls", "marksman", "jsonls", "pyright", "ts_ls", "rust_analyzer", "html", "cssls" },
         automatic_installation = true,
+        handlers = {
+          -- Default handler for all servers
+          function(server_name)
+            lspconfig[server_name].setup {
+              capabilities = capabilities,
+            }
+          end,
+          -- Custom handler for ts_ls (disable formatting, use prettier instead)
+          ["ts_ls"] = function()
+            lspconfig.ts_ls.setup {
+              capabilities = capabilities,
+              on_attach = function(client, _)
+                client.server_capabilities.documentFormattingProvider = false
+              end,
+            }
+          end,
+          -- Custom handler for rust_analyzer
+          ["rust_analyzer"] = function()
+            lspconfig.rust_analyzer.setup {
+              capabilities = capabilities,
+              settings = {
+                ["rust-analyzer"] = {
+                  cargo = { allFeatures = true },
+                  checkOnSave = { command = "clippy" },
+                },
+              },
+            }
+          end,
+        },
       }
     end,
   },
@@ -237,41 +269,6 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     vim.lsp.buf.format { async = false }
   end,
 })
-
--- Configuring LSP
-local lspconfig = require "lspconfig"
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
-
--- Auto-setup all LSP servers installed by Mason
-require("mason-lspconfig").setup_handlers {
-  -- Default handler for all servers
-  function(server_name)
-    lspconfig[server_name].setup {
-      capabilities = capabilities,
-    }
-  end,
-  -- Custom handler for ts_ls (disable formatting, use prettier instead)
-  ["ts_ls"] = function()
-    lspconfig.ts_ls.setup {
-      capabilities = capabilities,
-      on_attach = function(client, _)
-        client.server_capabilities.documentFormattingProvider = false
-      end,
-    }
-  end,
-  -- Custom handler for rust_analyzer
-  ["rust_analyzer"] = function()
-    lspconfig.rust_analyzer.setup {
-      capabilities = capabilities,
-      settings = {
-        ["rust-analyzer"] = {
-          cargo = { allFeatures = true },
-          checkOnSave = { command = "clippy" },
-        },
-      },
-    }
-  end,
-}
 
 local ok, cmp = pcall(require, "cmp")
 if not ok then
