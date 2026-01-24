@@ -36,6 +36,12 @@ vim.api.nvim_create_autocmd("BufReadPre", {
   end,
 })
 
+-- Set leader key to space
+vim.g.mapleader = " "
+
+-- File explorer
+vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", { noremap = true, silent = true, desc = "Toggle file explorer" })
+
 -- Key mappings for LSP actions
 vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { noremap = true, silent = true })
@@ -58,6 +64,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Plugin configuration
 require("lazy").setup {
+  require("sessions"),
   "psf/black",
   {
     "nvimtools/none-ls.nvim",
