@@ -64,7 +64,7 @@ vim.opt.rtp:prepend(lazypath)
 
 -- Plugin configuration
 require("lazy").setup {
-  require("sessions"),
+  require("plugins.sessions"),
   "psf/black",
   {
     "nvimtools/none-ls.nvim",
@@ -239,32 +239,39 @@ vim.api.nvim_create_autocmd("BufWritePre", {
 })
 
 -- Configuring LSP
--- local lspconfig = require "lspconfig"
+local lspconfig = require "lspconfig"
 local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-vim.lsp.config("pyright", {
-  capabilities = capabilities,
-})
-vim.lsp.enable { "pyright" }
-
-vim.lsp.config("ts_ls", {
-  capabilities = capabilities,
-  on_attach = function(client, _)
-    client.server_capabilities.documentFormattingProvider = false
+-- Auto-setup all LSP servers installed by Mason
+require("mason-lspconfig").setup_handlers {
+  -- Default handler for all servers
+  function(server_name)
+    lspconfig[server_name].setup {
+      capabilities = capabilities,
+    }
   end,
-})
-vim.lsp.enable { "ts_ls" }
-
-vim.lsp.config("rust_analyzer", {
-  capabilities = capabilities,
-  settings = {
-    ["rust-analyzer"] = {
-      cargo = { allFeatures = true },
-      checkOnSave = { command = "clippy" },
-    },
-  },
-})
-vim.lsp.enable { "rust-analyzer" }
+  -- Custom handler for ts_ls (disable formatting, use prettier instead)
+  ["ts_ls"] = function()
+    lspconfig.ts_ls.setup {
+      capabilities = capabilities,
+      on_attach = function(client, _)
+        client.server_capabilities.documentFormattingProvider = false
+      end,
+    }
+  end,
+  -- Custom handler for rust_analyzer
+  ["rust_analyzer"] = function()
+    lspconfig.rust_analyzer.setup {
+      capabilities = capabilities,
+      settings = {
+        ["rust-analyzer"] = {
+          cargo = { allFeatures = true },
+          checkOnSave = { command = "clippy" },
+        },
+      },
+    }
+  end,
+}
 
 local ok, cmp = pcall(require, "cmp")
 if not ok then
