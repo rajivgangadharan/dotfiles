@@ -55,12 +55,12 @@ import = [
 [[keyboard.bindings]]
   key = "PageDown"
   mods = "Shift"
-  action = "ScrollPageUp"
+  action = "ScrollPageDown"
 
 [[keyboard.bindings]]
   key = "PageUp"
   mods = "Shift"
-  action = "ScrollPageDown"
+  action = "ScrollPageUp"
 
 # Mouse configuration
 [mouse]
