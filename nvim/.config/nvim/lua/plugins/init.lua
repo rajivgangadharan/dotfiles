@@ -87,7 +87,60 @@ return {
   {
     "sudo-tee/opencode.nvim",
     config = function()
-      require("opencode").setup {}
+      require("opencode").setup {
+        -- Core settings
+        default_mode = "build",
+        keymap_prefix = "<leader>o",
+
+        -- UI configuration
+        ui = {
+          position = "right",
+          input_position = "bottom",
+          window_width = 0.40,
+          zoom_width = 0.8,
+          input_height = 0.15,
+          display_model = true,
+          display_context_size = true,
+          display_cost = true,
+          output = {
+            tools = {
+              show_output = true,
+              show_reasoning_output = true,
+            },
+            always_scroll_to_bottom = false,
+          },
+          input = {
+            text = { wrap = true },
+            auto_hide = false,
+          },
+        },
+
+        -- Context settings
+        context = {
+          enabled = true,
+          diagnostics = {
+            enabled = true,
+            info = false,
+            warning = true,
+            error = true,
+          },
+          current_file = {
+            enabled = true,
+            show_full_path = true,
+          },
+          selection = {
+            enabled = true,
+          },
+          git_diff = {
+            enabled = false,
+          },
+        },
+
+        -- Quick chat settings
+        quick_chat = {
+          default_agent = "plan",
+        },
+      }
     end,
     dependencies = {
       {
