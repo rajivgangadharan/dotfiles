@@ -1,37 +1,50 @@
--- Additional LSP configurations
--- Note: Main LSP setup is in init.lua
--- This file can be used for additional LSP servers
+local configs = require "nvchad.configs.lspconfig"
+
+local on_attach = configs.on_attach
+local on_init = configs.on_init
+local capabilities = configs.capabilities
 
 local lspconfig = require "lspconfig"
-local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-local servers = { "html", "cssls", "marksman", "jsonls" }
+-- Your LSP servers
+local servers = {
+  "lua_ls",
+  "pyright",
+  "ts_ls",
+  "rust_analyzer",
+  "html",
+  "cssls",
+  "marksman",
+  "jsonls",
+}
 
--- Setup additional LSP servers with default config
 for _, lsp in ipairs(servers) do
   lspconfig[lsp].setup {
+    on_attach = on_attach,
+    on_init = on_init,
     capabilities = capabilities,
   }
 end
 
--- Lua LSP with specific settings for Neovim development
-lspconfig.lua_ls.setup {
+-- Custom config for rust_analyzer
+lspconfig.rust_analyzer.setup {
+  on_attach = on_attach,
+  on_init = on_init,
   capabilities = capabilities,
   settings = {
-    Lua = {
-      runtime = {
-        version = "LuaJIT",
-      },
-      diagnostics = {
-        globals = { "vim" },
-      },
-      workspace = {
-        library = vim.api.nvim_get_runtime_file("", true),
-        checkThirdParty = false,
-      },
-      telemetry = {
-        enable = false,
-      },
+    ["rust-analyzer"] = {
+      cargo = { allFeatures = true },
+      checkOnSave = { command = "clippy" },
     },
   },
+}
+
+-- Custom config for ts_ls (disable formatting, use prettier)
+lspconfig.ts_ls.setup {
+  on_attach = function(client, bufnr)
+    client.server_capabilities.documentFormattingProvider = false
+    on_attach(client, bufnr)
+  end,
+  on_init = on_init,
+  capabilities = capabilities,
 }
