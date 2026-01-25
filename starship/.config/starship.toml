@@ -17,3 +17,18 @@ disabled = true
 
 [gcloud]
 disabled = true
+
+[nodejs]
+disabled = true
+
+[directory]
+truncation_length = 3
+truncate_to_repo = false
+
+[username]
+show_always = true
+format = '[$user]($style)@'
+
+[hostname]
+ssh_only = false
+format = '[$hostname]($style) '
