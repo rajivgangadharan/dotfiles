@@ -1,14 +1,30 @@
 local configs = require "nvchad.configs.lspconfig"
 
-local on_attach = configs.on_attach
-local on_init = configs.on_init
-local capabilities = configs.capabilities
+-- Sets up base config (capabilities, on_init, on_attach autocmd) and lua_ls
+configs.defaults()
 
-local lspconfig = require "lspconfig"
+-- Custom config for rust_analyzer
+vim.lsp.config("rust_analyzer", {
+  settings = {
+    ["rust-analyzer"] = {
+      cargo = { allFeatures = true },
+      checkOnSave = { command = "clippy" },
+    },
+  },
+})
 
--- Your LSP servers
-local servers = {
-  "lua_ls",
+-- Disable formatting for ts_ls (use prettier instead)
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client.name == "ts_ls" then
+      client.server_capabilities.documentFormattingProvider = false
+    end
+  end,
+})
+
+-- Enable all servers
+vim.lsp.enable {
   "pyright",
   "ts_ls",
   "rust_analyzer",
@@ -16,35 +32,4 @@ local servers = {
   "cssls",
   "marksman",
   "jsonls",
-}
-
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    on_init = on_init,
-    capabilities = capabilities,
-  }
-end
-
--- Custom config for rust_analyzer
-lspconfig.rust_analyzer.setup {
-  on_attach = on_attach,
-  on_init = on_init,
-  capabilities = capabilities,
-  settings = {
-    ["rust-analyzer"] = {
-      cargo = { allFeatures = true },
-      checkOnSave = { command = "clippy" },
-    },
-  },
-}
-
--- Custom config for ts_ls (disable formatting, use prettier)
-lspconfig.ts_ls.setup {
-  on_attach = function(client, bufnr)
-    client.server_capabilities.documentFormattingProvider = false
-    on_attach(client, bufnr)
-  end,
-  on_init = on_init,
-  capabilities = capabilities,
 }
