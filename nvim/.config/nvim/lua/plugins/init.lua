@@ -90,7 +90,7 @@ return {
       require("opencode").setup {
         -- Core settings
         default_mode = "build",
-        keymap_prefix = "<leader>o",
+        keymap_prefix = "<leader>O",
 
         -- UI configuration
         ui = {
