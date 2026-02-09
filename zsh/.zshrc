@@ -266,3 +266,10 @@ fi
 # ====================
 # Performance Optimizations
 # ====================
+
+# bun completions
+[ -s "/home/rajivg/.bun/_bun" ] && source "/home/rajivg/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
