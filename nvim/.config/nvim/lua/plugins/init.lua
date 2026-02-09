@@ -86,6 +86,7 @@ return {
   -- OpenCode AI assistant
   {
     "sudo-tee/opencode.nvim",
+    cmd = "Opencode",
     config = function()
       require("opencode").setup {
         -- Core settings
