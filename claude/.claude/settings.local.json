@@ -9,7 +9,10 @@
       "Bash(nix flake update:*)",
       "Bash(du:*)",
       "Bash(ls:*)",
-      "Bash(rsync:*)"
+      "Bash(rsync:*)",
+      "Bash(git -C /home/rajivg/dotfiles add -A)",
+      "Bash(git -C /home/rajivg/dotfiles status)",
+      "Bash(git -C /home/rajivg/dotfiles check-ignore:*)"
     ]
   }
 }
