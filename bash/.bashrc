@@ -145,3 +145,8 @@ if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
     source /usr/share/powerline/bindings/bash/powerline.sh
 fi
 
+
+# >>> Added by Spyder >>>
+alias spyder=/opt/software/sypder-6/envs/spyder-runtime/bin/spyder
+alias uninstall-spyder=/opt/software/sypder-6/uninstall-spyder.sh
+# <<< Added by Spyder <<<
