@@ -12,7 +12,11 @@
       "Bash(rsync:*)",
       "Bash(git -C /home/rajivg/dotfiles add -A)",
       "Bash(git -C /home/rajivg/dotfiles status)",
-      "Bash(git -C /home/rajivg/dotfiles check-ignore:*)"
+      "Bash(git -C /home/rajivg/dotfiles check-ignore:*)",
+      "Bash(stow:*)",
+      "Bash(git -C /home/rajivg/dotfiles add bash/)",
+      "Bash(git -C:*)",
+      "Bash(git -C /home/rajivg/dotfiles push)"
     ]
   }
 }
