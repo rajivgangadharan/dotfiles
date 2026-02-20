@@ -1,0 +1,21 @@
+# Sensitive auth credentials
+.credentials.json
+
+# Auto-generated / runtime state
+backups/
+cache/
+debug/
+file-history/
+history.jsonl
+ide/
+paste-cache/
+plans/
+projects/
+session-env/
+shell-snapshots/
+stats-cache.json
+statsig/
+tasks/
+telemetry/
+todos/
+plugins/cache/

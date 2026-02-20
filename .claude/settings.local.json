@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep:*)",
+      "Bash(nix develop:*)",
+      "Bash(nix flake check:*)",
+      "Bash(git add:*)",
+      "Bash(git init:*)",
+      "Bash(nix flake update:*)",
+      "Bash(du:*)",
+      "Bash(ls:*)",
+      "Bash(rsync:*)"
+    ]
+  }
+}
