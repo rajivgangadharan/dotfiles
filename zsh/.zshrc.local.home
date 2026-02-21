@@ -9,29 +9,47 @@ if [[ -d "$HOME/.bun/bin" ]] && [[ ":$PATH:" != *":$HOME/.bun/bin:"* ]]; then
 fi
 [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
-# Micromamba initialization
-export MAMBA_EXE="$HOME/.local/bin/micromamba"
-export MAMBA_ROOT_PREFIX="$HOME/micromamba"
-if [[ -x "$MAMBA_EXE" ]]; then
-    __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
-    if [ $? -eq 0 ]; then
-        eval "$__mamba_setup"
-    else
-        alias micromamba="$MAMBA_EXE"
-    fi
-    unset __mamba_setup
-fi
+# Micromamba initialization (DISABLED - using Nix for Python environments)
+# Uncomment below if you need to use micromamba again
+# export MAMBA_EXE="$HOME/.local/bin/micromamba"
+# export MAMBA_ROOT_PREFIX="$HOME/micromamba"
+# if [[ -x "$MAMBA_EXE" ]]; then
+#     __mamba_setup="$("$MAMBA_EXE" shell hook --shell zsh --root-prefix "$MAMBA_ROOT_PREFIX" 2> /dev/null)"
+#     if [ $? -eq 0 ]; then
+#         eval "$__mamba_setup"
+#     else
+#         alias micromamba="$MAMBA_EXE"
+#     fi
+#     unset __mamba_setup
+# fi
 
-# Project shortcuts with environment activation
+# Nix Python development helpers
+# Quickly enter a Nix Python shell (uses XDG_CONFIG_HOME for portability)
+NIX_CONFIG_DIR="${XDG_CONFIG_HOME:-$HOME/.config}/nix"
+alias pydev="nix-shell $NIX_CONFIG_DIR/python-dev-template.nix"
+alias py39="nix-shell $NIX_CONFIG_DIR/python-dev-template.nix --argstr pythonVersion '39'"
+alias py310="nix-shell $NIX_CONFIG_DIR/python-dev-template.nix --argstr pythonVersion '310'"
+alias py311="nix-shell $NIX_CONFIG_DIR/python-dev-template.nix --argstr pythonVersion '311'"
+alias py312="nix-shell $NIX_CONFIG_DIR/python-dev-template.nix --argstr pythonVersion '312'"
+
+# Initialize new Python project with Nix
+alias nix-init-python="$NIX_CONFIG_DIR/init-python-project.sh"
+
+# Project shortcuts - now using Nix or venv
+# These will use project-local flake.nix or shell.nix if available
+# Otherwise, activate local .venv if present
 alias smarttalk="cd ~/Code/smarttalk && [[ -f .venv/bin/activate ]] && source .venv/bin/activate"
 alias clipart="cd ~/Code/biz/clipart/ && [[ -f .venv/bin/activate ]] && source .venv/bin/activate"
 
-# Micromamba environment shortcuts
-alias allm='micromamba activate agentic_llm_venv && cd ~/Code/langgraph-learn/'
-alias hfac='micromamba activate agentic_llm_venv && cd ~/Code/huggingface-agents-course/'
-alias ai='micromamba activate ai_venv && cd ~/Code/ai/'
-alias ml='micromamba activate ai_venv && cd ~/Code/ml/'
-alias rag='micromamba activate ai_venv && cd ~/Code/rag-coding-exercise'
+# AI/ML project shortcuts
+# Use 'nix develop' in these directories if they have flake.nix
+# Or use 'pydev' alias to get a Nix Python shell
+alias hfac='cd ~/Code/huggingface-agents-course/'
+alias rag='cd ~/Code/rag-coding-exercise/'
+
+# Generic project navigation
+alias aicode='cd ~/Code/ai/'
+alias mlcode='cd ~/Code/ml/'
 
 # Anaconda path (added at end to not override system python)
 if [[ -d "$HOME/anaconda3/bin" ]]; then
