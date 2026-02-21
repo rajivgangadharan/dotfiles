@@ -35,6 +35,15 @@ alias py312="nix-shell $NIX_CONFIG_DIR/python-dev-template.nix --argstr pythonVe
 # Initialize new Python project with Nix
 alias nix-init-python="$NIX_CONFIG_DIR/init-python-project.sh"
 
+# Nix environment shortcuts
+# These use the nix-envs repository (separate git repo at ~/nix-envs)
+NIX_ENVS_DIR="$HOME/nix-envs"
+alias nix-python='nix develop "$NIX_ENVS_DIR/python-env"'
+alias nix-aiml='nix develop "$NIX_ENVS_DIR/aiml-dev"'
+alias nix-rust='nix develop "$NIX_ENVS_DIR/full-stack-rust"'
+alias nix-rust-deploy='nix develop "$NIX_ENVS_DIR/full-stack-rust#deploy"'
+alias nix-tex='nix develop "$NIX_ENVS_DIR/tex"'
+
 # Project shortcuts - now using Nix or venv
 # These will use project-local flake.nix or shell.nix if available
 # Otherwise, activate local .venv if present
