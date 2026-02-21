@@ -1,8 +1,20 @@
-# Nix-based Python Development Setup
+# Nix Development Environments
 
-This directory contains templates and tools for managing Python development environments with Nix.
+This directory contains templates and specialized development environments managed with Nix.
 
 ## Quick Start
+
+### Specialized Environments (Ready-to-Use)
+
+```bash
+nix-python          # Python 3.12 development
+nix-aiml            # AI/ML with PyTorch
+nix-rust            # Full-stack Rust development
+nix-rust-deploy     # Rust deployment tools
+nix-tex             # LaTeX document preparation
+```
+
+### Create New Python Project
 
 ### New Project
 ```bash
@@ -48,6 +60,63 @@ Modern Nix Flake template for reproducible project environments.
 
 ### `init-python-project.sh`
 Helper script to initialize a new Python project with Nix.
+
+## Specialized Environments
+
+### `nix-python/` - Python 3.12 Development
+Basic Python development environment with common tools.
+
+**Features:**
+- Python 3.12
+- PDF processing (poppler-utils)
+- OCR support (tesseract)
+- System libraries (zlib, openssl, libffi, etc.)
+- Build tools (gcc, make, pkg-config)
+
+**Usage:** `nix-python`
+
+### `nix-aiml/` - AI/ML with PyTorch
+Complete AI/ML environment with enforced code quality.
+
+**Features:**
+- PyTorch, torchvision, torchaudio
+- Transformers, datasets, tokenizers, accelerate
+- Scientific computing (numpy, pandas, scipy, matplotlib)
+- JupyterLab
+- Quality tools (ruff, black, mypy, isort, pytest)
+- Pre-commit hooks (auto-installed)
+- Code metrics (radon)
+
+**Usage:** `nix-aiml`
+
+### `nix-rust/` - Full-Stack Rust
+Complete Rust development with WebAssembly and deployment.
+
+**Features:**
+- Rust 1.91.0 with rust-analyzer
+- WebAssembly tools (trunk, wasm-pack, wasm-bindgen-cli)
+- Databases (PostgreSQL 16, SQLite)
+- Deployment tools (flyctl, ansible, docker-compose)
+- Modern CLI tools (ripgrep, fd, bat, eza, delta, jq)
+- Python 3.12
+- Starship prompt (auto-configured)
+- Command runner (just)
+
+**Usage:** `nix-rust` or `nix-rust-deploy` (deployment-only)
+
+### `nix-tex/` - LaTeX Document Preparation
+Complete LaTeX environment with Emacs AUCTeX.
+
+**Features:**
+- Complete TeX Live distribution
+- Emacs with AUCTeX packages
+- PDF viewer with synctex (llpp)
+- Spell checking (aspell, hunspell)
+- Document tools (pandoc, ghostscript, imagemagick)
+- LSP support (texlab)
+- Pygments for code highlighting
+
+**Usage:** `nix-tex`
 
 ## Common Workflows
 

@@ -35,14 +35,13 @@ alias py312="nix-shell $NIX_CONFIG_DIR/python-dev-template.nix --argstr pythonVe
 # Initialize new Python project with Nix
 alias nix-init-python="$NIX_CONFIG_DIR/init-python-project.sh"
 
-# Nix environment shortcuts
-# These use the nix-envs repository (separate git repo at ~/nix-envs)
-NIX_ENVS_DIR="$HOME/nix-envs"
-alias nix-python='nix develop "$NIX_ENVS_DIR/python-env"'
-alias nix-aiml='nix develop "$NIX_ENVS_DIR/aiml-dev"'
-alias nix-rust='nix develop "$NIX_ENVS_DIR/full-stack-rust"'
-alias nix-rust-deploy='nix develop "$NIX_ENVS_DIR/full-stack-rust#deploy"'
-alias nix-tex='nix develop "$NIX_ENVS_DIR/tex"'
+# Nix specialized environment shortcuts
+# These use pre-configured environments from dotfiles
+alias nix-python='nix develop "$NIX_CONFIG_DIR/nix-python"'
+alias nix-aiml='nix develop "$NIX_CONFIG_DIR/nix-aiml"'
+alias nix-rust='nix develop "$NIX_CONFIG_DIR/nix-rust"'
+alias nix-rust-deploy='nix develop "$NIX_CONFIG_DIR/nix-rust#deploy"'
+alias nix-tex='nix develop "$NIX_CONFIG_DIR/nix-tex"'
 
 # Project shortcuts - now using Nix or venv
 # These will use project-local flake.nix or shell.nix if available
@@ -80,8 +79,9 @@ fi
 
 # NVM (Node Version Manager)
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+# Disabled immediate loading in favor of lazy loading below
+# [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
 
 # Lazy load nvm to improve startup time
 if [[ -s "$NVM_DIR/nvm.sh" ]]; then

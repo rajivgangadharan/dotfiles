@@ -16,7 +16,14 @@
       "Bash(stow:*)",
       "Bash(git -C /home/rajivg/dotfiles add bash/)",
       "Bash(git -C:*)",
-      "Bash(git -C /home/rajivg/dotfiles push)"
+      "Bash(git -C /home/rajivg/dotfiles push)",
+      "Bash($HOME/.local/bin/micromamba env list:*)",
+      "Bash(chmod:*)",
+      "Bash(readlink:*)",
+      "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd Nix-based Python development environment\n\n- Replace micromamba with Nix for Python development\n- Add portable Nix templates \\(shell.nix and flake.nix\\)\n- Add helper script to initialize Python projects\n- Update zsh config to disable micromamba and add Nix aliases\n- All paths use XDG_CONFIG_HOME for cross-machine portability\n\nNew features:\n- pydev, py39-py312 aliases for quick Python shells\n- nix-init-python to bootstrap new projects\n- Templates support multiple Python versions\n- Includes comprehensive documentation\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
+      "Bash(git commit:*)",
+      "Bash(git submodule add:*)",
+      "Bash(git reset:*)"
     ]
   }
 }
