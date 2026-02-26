@@ -255,6 +255,12 @@ bindkey "^[[3~" delete-char
 # Local Configuration
 # ====================
 
+# Load environment variable files if present
+for _env_file in "$HOME/.env" "$HOME/.env.local.home" "$HOME/.env.local.office"; do
+    [[ -f "$_env_file" ]] && source "$_env_file"
+done
+unset _env_file
+
 # Load machine-specific configuration
 # Set ZSH_LOCAL_CONFIG environment variable to choose which config to load
 # Default to .zshrc.local.home if not set
