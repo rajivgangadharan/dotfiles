@@ -3,3 +3,6 @@
 # ====================
 
 # Add office-specific configurations here
+
+# Azure ML Compute (XX.157.246.83)
+alias start-ml-compute='az ml compute start --name $COMPUTE_NAME --resource-group $RESOURCE_GROUP --workspace-name $WORKSPACE_NAME'
