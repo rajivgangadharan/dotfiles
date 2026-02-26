@@ -4,6 +4,9 @@
 
 # Add office-specific configurations here
 
+# Homebrew
+eval "$($HOME/homebrew/bin/brew shellenv)"
+
 # Azure ML Compute (XX.157.246.83)
 alias start-ml-compute='az ml compute start --name $COMPUTE_NAME --resource-group $RESOURCE_GROUP --workspace-name $WORKSPACE_NAME'
 alias connect-ml-compute='ssh azureuser@XX.157.246.83'
