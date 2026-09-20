@@ -1,0 +1,5 @@
+# Ignore everything except config.yaml
+*
+!.gitignore
+!.hermes/
+!.hermes/config.yaml

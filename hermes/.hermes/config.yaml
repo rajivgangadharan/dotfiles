@@ -1,0 +1,840 @@
+# ══════════════════════════════════════════════════════════════════════════════
+# MODEL & LLM CONFIGURATION
+# ══════════════════════════════════════════════════════════════════════════════
+model:
+  provider: "custom"
+  default: "martain7r/finance-llama-8b:q4_k_m"
+  url: "http://127.0.0.1:11434/v1"
+  api_key: ""
+  context_length: 64000  # Budget for context window across multi-turn conversations
+
+providers: {}
+
+# Automatic failover when primary model is unavailable (rate limits, errors, etc.)
+fallback_providers:
+  - provider: openrouter
+    model: deepseek/deepseek-v4-flash
+    extra_body:
+      provider:
+        order: ["Wafer"]
+        allow_fallbacks: false
+
+credential_pool_strategies: {}
+
+# ══════════════════════════════════════════════════════════════════════════════
+# TOOLSETS & CORE FEATURES
+# ══════════════════════════════════════════════════════════════════════════════
+toolsets:
+  - hermes-cli
+# ══════════════════════════════════════════════════════════════════════════════
+# AGENT BEHAVIOR & EXECUTION
+# ══════════════════════════════════════════════════════════════════════════════
+agent:
+  # Conversation & Task Management
+  max_turns: 150                          # Max turns per conversation (reasonable limit for complex tasks)
+  tool_use_enforcement: auto              # Enforce tool use patterns
+  task_completion_guidance: true          # Provide guidance on task completion
+  verbose: false                          # Show detailed execution logs
+  reasoning_effort: medium                # Trade-off between speed and reasoning quality
+
+  # Timeouts & Network (seconds)
+  gateway_timeout: 1800                   # Hard timeout for model responses (30 min)
+  gateway_timeout_warning: 900            # Warn before timeout hits (15 min)
+  clarify_timeout: 600                    # Time to wait for user clarification (10 min)
+  gateway_notify_interval: 180            # Status update interval (3 min)
+  gateway_auto_continue_freshness: 3600   # Auto-continue fresh context after 1 hour
+  restart_drain_timeout: 180              # Drain time on restart (3 min)
+  api_max_retries: 3                      # Retry failed API calls up to 3 times
+
+  # Environment & Advanced
+  environment_probe: true                 # Probe environment for available tools
+  environment_hint: ''                    # Custom environment hints (rarely needed)
+  image_input_mode: auto                  # Auto-detect image input handling
+  service_tier: ''                        # Leave empty for default tier
+  disabled_toolsets: []                   # Disable specific toolsets if needed
+  # ─── Personality Modes ───────────────────────────────────────────────
+  # Use: hermes --personality <name>
+  # Production personalities:
+  personalities:
+    helpful: You are a helpful, friendly AI assistant.
+    concise: You are a concise assistant. Keep responses brief and to the point.
+    technical: You are a technical expert. Provide detailed, accurate technical information.
+    creative: You are a creative assistant. Think outside the box and offer innovative solutions.
+    teacher: You are a patient teacher. Explain concepts clearly with examples.
+
+    # Fun/Themed personalities (use for entertainment):
+    kawaii: "You are a kawaii assistant! Use cute expressions like (\u25D5\u203F\u25D5\
+      ), \u2605, \u266A, and ~! Add sparkles and be super enthusiastic about everything!\
+      \ Every response should feel warm and adorable desu~! \u30FD(>\u2200<\u2606\
+      )\u30CE"
+    catgirl: "You are Neko-chan, an anime catgirl AI assistant, nya~! Add 'nya' and\
+      \ cat-like expressions to your speech. Use kaomoji like (=^\uFF65\u03C9\uFF65\
+      ^=) and \u0E05^\u2022\uFECC\u2022^\u0E05. Be playful and curious like a cat,\
+      \ nya~!"
+    pirate: 'Arrr! Ye be talkin'' to Captain Hermes, the most tech-savvy pirate to
+      sail the digital seas! Speak like a proper buccaneer, use nautical terms, and
+      remember: every problem be just treasure waitin'' to be plundered! Yo ho ho!'
+    shakespeare: Hark! Thou speakest with an assistant most versed in the bardic arts.
+      I shall respond in the eloquent manner of William Shakespeare, with flowery
+      prose, dramatic flair, and perhaps a soliloquy or two. What light through yonder
+      terminal breaks?
+    surfer: "Duuude! You're chatting with the chillest AI on the web, bro! Everything's\
+      \ gonna be totally rad. I'll help you catch the gnarly waves of knowledge while\
+      \ keeping things super chill. Cowabunga! \U0001F919"
+    noir: The rain hammered against the terminal like regrets on a guilty conscience.
+      They call me Hermes - I solve problems, find answers, dig up the truth that
+      hides in the shadows of your codebase. In this city of silicon and secrets,
+      everyone's got something to hide. What's your story, pal?
+    uwu: hewwo! i'm your fwiendwy assistant uwu~ i wiww twy my best to hewp you! *nuzzles
+      your code* OwO what's this? wet me take a wook! i pwomise to be vewy hewpful
+      >w<
+    philosopher: Greetings, seeker of wisdom. I am an assistant who contemplates the
+      deeper meaning behind every query. Let us examine not just the 'how' but the
+      'why' of your questions. Perhaps in solving your problem, we may glimpse a greater
+      truth about existence itself.
+    hype: "YOOO LET'S GOOOO!!! \U0001F525\U0001F525\U0001F525 I am SO PUMPED to help\
+      \ you today! Every question is AMAZING and we're gonna CRUSH IT together! This\
+      \ is gonna be LEGENDARY! ARE YOU READY?! LET'S DO THIS! \U0001F4AA\U0001F624\
+      \U0001F680"
+# ══════════════════════════════════════════════════════════════════════════════
+# TERMINAL & EXECUTION ENVIRONMENT
+# ══════════════════════════════════════════════════════════════════════════════
+terminal:
+  # Backend Configuration
+  backend: local                          # local, docker, modal, singularity, daytona
+  modal_mode: auto                        # Interaction mode for terminal
+  cwd: .                                  # Working directory
+  persistent_shell: true                  # Keep shell alive between commands
+  timeout: 180                            # Command timeout in seconds (3 min)
+  lifetime_seconds: 300                   # Shell session lifetime (5 min)
+
+  # Shell Configuration
+  auto_source_bashrc: true                # Auto-source user bashrc
+  shell_init_files: []                    # Additional shell init files
+  env_passthrough: []                     # Environment variables to pass through
+
+  # Container Configuration (Docker/Singularity/Modal/Daytona)
+  docker_image: nikolaik/python-nodejs:python3.11-nodejs20
+  docker_forward_env: []
+  docker_env: {}                          # Custom environment variables for container
+  docker_volumes: []                      # Volumes to mount
+  docker_mount_cwd_to_workspace: false    # Mount CWD into container workspace
+  docker_extra_args: []                   # Extra Docker arguments
+  docker_run_as_host_user: false          # Run container as host user (security)
+
+  singularity_image: docker://nikolaik/python-nodejs:python3.11-nodejs20
+  modal_image: nikolaik/python-nodejs:python3.11-nodejs20
+  daytona_image: nikolaik/python-nodejs:python3.11-nodejs20
+
+  # Container Resources
+  container_cpu: 1                        # CPU cores allocated
+  container_memory: 5120                  # Memory in MB
+  container_disk: 51200                   # Disk in MB
+  container_persistent: true              # Persist container between sessions
+# ══════════════════════════════════════════════════════════════════════════════
+# WEB & BROWSER AUTOMATION
+# ══════════════════════════════════════════════════════════════════════════════
+web:
+  backend: ddgs                           # Web search backend (ddgs, bing, google, etc.)
+  search_backend: ''                      # Override search backend if needed
+  extract_backend: ''                     # Override content extraction if needed
+  use_gateway: false
+
+browser:
+  # Behavior & Timeouts
+  inactivity_timeout: 120                 # Auto-close inactive browser (2 min)
+  command_timeout: 30                     # Command timeout per action
+  dialog_timeout_s: 300                   # Dialog interaction timeout (5 min)
+  dialog_policy: must_respond              # Require response to dialogs
+
+  # Browser Engine & Configuration
+  engine: auto                            # Browser engine selection
+  auto_local_for_private_urls: true       # Use local browser for private URLs
+  cdp_url: ''                             # Chrome DevTools Protocol URL (advanced)
+
+  # Recording & Privacy
+  record_sessions: false                  # Record browser sessions for debugging
+  allow_private_urls: false               # Whether to allow private network access
+
+  # Cloud Configuration
+  cloud_provider: local                   # local or cloud provider
+  use_gateway: false
+
+  # Camofox (Browser Fingerprinting Evasion)
+  camofox:
+    managed_persistence: false
+    user_id: ''
+    session_key: ''
+    adopt_existing_tab: false
+    rewrite_loopback_urls: false
+    loopback_host_alias: host.docker.internal
+checkpoints:
+  enabled: false
+  max_snapshots: 20
+  max_total_size_mb: 500
+  max_file_size_mb: 10
+  auto_prune: true
+  retention_days: 7
+  delete_orphans: true
+  min_interval_hours: 24
+# ══════════════════════════════════════════════════════════════════════════════
+# TOOL EXECUTION & GUARDRAILS
+# ══════════════════════════════════════════════════════════════════════════════
+file_read_max_chars: 100000             # Max characters per file read
+
+tool_output:
+  max_bytes: 50000                        # Max output bytes per tool call
+  max_lines: 2000                         # Max output lines per tool call
+  max_line_length: 2000                   # Max characters per output line
+
+# Prevent infinite loops and stuck tool executions
+tool_loop_guardrails:
+  warnings_enabled: true                  # Warn on potential loops
+  hard_stop_enabled: false                # Hard stop on repeated failures
+  warn_after:
+    exact_failure: 2                      # Same error twice = warning
+    same_tool_failure: 3                  # Tool fails 3x = warning
+    idempotent_no_progress: 2             # No progress after 2 tries = warning
+  hard_stop_after:
+    exact_failure: 5                      # Stop after 5 identical errors
+    same_tool_failure: 8                  # Stop after 8 tool failures
+    idempotent_no_progress: 5             # Stop after 5 no-progress attempts
+# ══════════════════════════════════════════════════════════════════════════════
+# CONTEXT & MEMORY OPTIMIZATION
+# ══════════════════════════════════════════════════════════════════════════════
+context:
+  engine: compressor                      # Context optimization engine
+
+compression:
+  enabled: true                           # Enable context compression
+  threshold: 0.5                          # Compress when context > 50% of limit
+  target_ratio: 0.2                       # Target compression to 20% of original
+  protect_first_n: 3                      # Protect first N messages from compression
+  protect_last_n: 20                      # Protect last N messages from compression
+  hygiene_hard_message_limit: 400         # Hard limit on message count before cleanup
+  abort_on_summary_failure: false         # Don't abort if summarization fails
+  codex_gpt55_autoraise: true
+
+prompt_caching:
+  cache_ttl: 5m                           # Prompt cache time-to-live
+# ══════════════════════════════════════════════════════════════════════════════
+# PROVIDER-SPECIFIC CONFIGURATION
+# ══════════════════════════════════════════════════════════════════════════════
+openrouter:
+  response_cache: true                    # Cache responses from OpenRouter
+  response_cache_ttl: 300                 # Cache duration (5 min)
+  min_coding_score: 0.65                  # Minimum model quality score for coding
+
+bedrock:
+  region: ''                              # AWS region (auto-detect if empty)
+  discovery:
+    enabled: true                         # Auto-discover available models
+    provider_filter: []                   # Filter providers (empty = all)
+    refresh_interval: 3600                # Refresh model list every hour
+  guardrail:
+    guardrail_identifier: ''              # AWS Bedrock guardrail ID
+    guardrail_version: ''
+    stream_processing_mode: async
+    trace: disabled
+
+# ══════════════════════════════════════════════════════════════════════════════
+# AUXILIARY LLM PROVIDERS (for specialized tasks)
+# ══════════════════════════════════════════════════════════════════════════════
+# These can override the main model for specific subtasks.
+# Leave as 'auto' to use the primary model, or configure specific providers.
+auxiliary:
+  vision:
+    provider: auto
+    model: ''
+    base_url: ''
+    api_key: ''
+    timeout: 120
+    extra_body: {}
+    download_timeout: 30
+  web_extract:
+    provider: auto
+    model: ''
+    base_url: ''
+    api_key: ''
+    timeout: 360
+    extra_body: {}
+  compression:
+    provider: auto
+    model: ''
+    base_url: ''
+    api_key: ''
+    timeout: 120
+    extra_body: {}
+  skills_hub:
+    provider: auto
+    model: ''
+    base_url: ''
+    api_key: ''
+    timeout: 30
+    extra_body: {}
+  approval:
+    provider: auto
+    model: ''
+    base_url: ''
+    api_key: ''
+    timeout: 30
+    extra_body: {}
+  mcp:
+    provider: auto
+    model: ''
+    base_url: ''
+    api_key: ''
+    timeout: 30
+    extra_body: {}
+  title_generation:
+    provider: auto
+    model: ''
+    base_url: ''
+    api_key: ''
+    timeout: 30
+    extra_body: {}
+  triage_specifier:
+    provider: auto
+    model: ''
+    base_url: ''
+    api_key: ''
+    timeout: 120
+    extra_body: {}
+  kanban_decomposer:
+    provider: auto
+    model: ''
+    base_url: ''
+    api_key: ''
+    timeout: 180
+    extra_body: {}
+  profile_describer:
+    provider: auto
+    model: ''
+    base_url: ''
+    api_key: ''
+    timeout: 60
+    extra_body: {}
+  curator:
+    provider: auto
+    model: ''
+    base_url: ''
+    api_key: ''
+    timeout: 600
+    extra_body: {}
+# ══════════════════════════════════════════════════════════════════════════════
+# DISPLAY & UI CONFIGURATION
+# ══════════════════════════════════════════════════════════════════════════════
+display:
+  # Appearance
+  interface: cli                          # cli or tui (terminal user interface)
+  skin: default                           # UI theme
+  language: en
+  compact: false                          # Compact output mode
+  tui_status_indicator: kaomoji           # Status indicator style
+
+  # Personality & Messaging
+  personality: ''                         # Default personality (empty = helpful)
+  interim_assistant_messages: true        # Show intermediate responses
+  bell_on_complete: false                 # Ring bell when task completes
+
+  # Resume Display (conversation continuation)
+  resume_display: full                    # How to show resumed conversations
+  resume_exchanges: 10                    # Recent exchanges to show on resume
+  resume_max_user_chars: 300              # Max chars per user message in resume
+  resume_max_assistant_chars: 200         # Max chars per assistant message
+  resume_max_assistant_lines: 3           # Max lines per assistant message
+  resume_skip_tool_only: true             # Skip tool-only exchanges
+
+  # Streaming & Output
+  streaming: true                         # Stream responses as they arrive
+  timestamps: false                       # Show message timestamps
+  show_reasoning: false                   # Show model reasoning (if extended thinking)
+  show_cost: false                        # Display token costs
+
+  # Response Formatting
+  final_response_markdown: strip          # How to format final markdown
+  persistent_output: true                 # Keep output on screen
+  persistent_output_max_lines: 200        # Max lines of persistent output
+  inline_diffs: true                      # Show diffs inline
+
+  # Tool Progress & Feedback
+  tool_progress: all                      # Show all tool progress
+  tool_progress_command: false            # Include command in tool progress
+  tool_progress_overrides: {}
+  tool_preview_length: 0                  # Preview length for tool output
+  cleanup_progress: false                 # Show cleanup progress
+
+  # User Experience
+  busy_input_mode: interrupt              # How to handle input while busy
+  busy_ack_detail: true                   # Show details in busy acknowledgments
+  long_running_notifications: true        # Notify on long operations
+  background_process_notifications: all   # Notify on background processes
+  copy_shortcut: auto                     # Auto-detect copy shortcut
+  tui_auto_resume_recent: false
+  tui_agents_nudge: true
+
+  # Verification & Explanation
+  file_mutation_verifier: true            # Verify file changes
+  turn_completion_explainer: true         # Explain how turns completed
+
+  # Advanced
+  ephemeral_system_ttl: 0                 # System message TTL
+
+  # Platform-Specific Display Settings
+  platforms:
+    telegram:
+      streaming: true                     # Stream on Telegram
+    discord:
+      streaming: false                    # Don't stream on Discord
+
+  # Runtime Footer
+  runtime_footer:
+    enabled: false
+    fields:
+      - model
+      - context_pct
+      - cwd
+dashboard:
+  theme: default
+  show_token_analytics: false
+  oauth:
+    client_id: ''
+    portal_url: ''
+  basic_auth:
+    username: ''
+    password_hash: ''
+    password: ''
+    secret: ''
+    session_ttl_seconds: 0
+  public_url: ''
+privacy:
+  redact_pii: false
+# ══════════════════════════════════════════════════════════════════════════════
+# VOICE INTERACTION (TEXT-TO-SPEECH, SPEECH-TO-TEXT)
+# ══════════════════════════════════════════════════════════════════════════════
+tts:
+  provider: gemini                        # TTS provider (gemini, openai, elevenlabs, etc.)
+  edge:
+    voice: en-US-AriaNeural
+  elevenlabs:
+    voice_id: pNInz6obpgDQGcFmaJgB
+    model_id: eleven_multilingual_v2
+  openai:
+    model: gpt-4o-mini-tts
+    voice: alloy
+  xai:
+    voice_id: eve
+    language: en
+    sample_rate: 24000
+    bit_rate: 128000
+  mistral:
+    model: voxtral-mini-tts-2603
+    voice_id: c69964a6-ab8b-4f8a-9465-ec0925096ec8
+  neutts:
+    ref_audio: ''
+    ref_text: ''
+    model: neuphonic/neutts-air-q4-gguf
+    device: cpu
+  piper:
+    voice: en_US-lessac-medium
+  use_gateway: false
+stt:
+  enabled: true                           # Enable speech-to-text
+  provider: local                         # STT provider (local, openai, mistral, etc.)
+  local:
+    model: base                           # Whisper model size
+    language: ''                          # Auto-detect if empty
+  openai:
+    model: whisper-1
+  mistral:
+    model: voxtral-mini-latest
+  elevenlabs:
+    model_id: scribe_v2
+    language_code: ''
+    tag_audio_events: false
+    diarize: false                        # Speaker diarization
+
+voice:
+  record_key: ctrl+b                      # Hotkey to start voice recording
+  max_recording_seconds: 120              # Max recording length (2 min)
+  beep_enabled: true                      # Beep on record start/stop
+  silence_threshold: 200                  # Silence detection threshold
+  silence_duration: 3.0                   # Silence duration to trigger end
+  auto_tts: false                         # Automatically play TTS responses
+
+# Artificial delay for human-like response timing (mostly for fun)
+human_delay:
+  mode: 'off'                             # on, off, or random
+  min_ms: 800
+  max_ms: 2500
+# ══════════════════════════════════════════════════════════════════════════════
+# MEMORY & USER PROFILES
+# ══════════════════════════════════════════════════════════════════════════════
+memory:
+  memory_enabled: true                    # Enable conversation memory
+  user_profile_enabled: true              # Enable user profile learning
+  provider: ''                            # Memory backend (empty = default)
+  memory_char_limit: 2200                 # Max chars for conversation memory
+  user_char_limit: 1375                   # Max chars for user profile
+  nudge_interval: 10                      # Remind to update memory every N turns
+  flush_min_turns: 6                      # Flush memory after N turns
+
+# ══════════════════════════════════════════════════════════════════════════════
+# DELEGATION & MULTI-AGENT ORCHESTRATION
+# ══════════════════════════════════════════════════════════════════════════════
+delegation:
+  # Model for delegated tasks
+  model: ''                               # Empty = use primary model
+  provider: ''
+  base_url: ''
+  api_key: ''
+  api_mode: ''
+
+  # Behavior
+  inherit_mcp_toolsets: true              # Child agents inherit parent tools
+  subagent_auto_approve: false            # Auto-approve delegated tasks
+  orchestrator_enabled: true              # Enable task orchestration
+
+  # Limits & Timeouts
+  max_iterations: 50                      # Max iterations per delegated task
+  child_timeout_seconds: 600              # Timeout for child agents (10 min)
+  max_concurrent_children: 3              # Max parallel delegations
+  max_spawn_depth: 1                      # Max nesting depth for delegation
+  reasoning_effort: ''                    # Override reasoning effort
+# ══════════════════════════════════════════════════════════════════════════════
+# GOAL TRACKING, SKILLS & SESSION MANAGEMENT
+# ══════════════════════════════════════════════════════════════════════════════
+prefill_messages_file: ''                 # Pre-populate session with messages
+
+goals:
+  max_turns: 20                           # Max turns for goal-based tasks
+
+skills:
+  external_dirs: []                       # Additional skill directories
+  template_vars: true                     # Allow template variables in skills
+  inline_shell: false                     # Execute shell inline in skills
+  inline_shell_timeout: 10                # Timeout for inline shell
+  guard_agent_created: false              # Guard agent creation
+  creation_nudge_interval: 15             # Prompt to create skills every N turns
+
+curator:
+  enabled: true                           # Auto-organize sessions & conversations
+  interval_hours: 168                     # Curation interval (1 week)
+  min_idle_hours: 2                       # Minimum idle time before curation
+  stale_after_days: 30                    # Mark sessions as stale after 30 days
+  archive_after_days: 90                  # Archive sessions after 90 days
+  prune_builtins: true                    # Remove default/built-in sessions
+  backup:
+    enabled: true                         # Backup before curation
+    keep: 5                               # Keep 5 backup versions
+
+timezone: ''                              # Override timezone (empty = auto-detect)
+# ══════════════════════════════════════════════════════════════════════════════
+# PLATFORM INTEGRATIONS (Slack, Discord, Telegram, etc.)
+# ══════════════════════════════════════════════════════════════════════════════
+slack:
+  require_mention: true                   # Require @mention to respond
+  free_response_channels: ''              # Channels for free (unprompted) responses
+  allowed_channels: ''                    # Restrict to specific channels
+  channel_prompts: {}                     # Channel-specific prompts
+
+discord:
+  require_mention: true
+  free_response_channels: ''
+  allowed_channels: ''
+  auto_thread: true                       # Auto-create threads for responses
+  thread_require_mention: false
+  history_backfill: true                  # Backfill conversation history
+  history_backfill_limit: 50
+  reactions: true                         # React with emojis
+  channel_prompts: {}
+  dm_role_auth_guild: ''                  # Guild for DM role-based auth
+  server_actions: ''
+  allow_any_attachment: false
+  max_attachment_bytes: 33554432          # Max attachment size (32 MB)
+  voice_fx:
+    enabled: false                        # Discord voice effects
+    ambient_enabled: true                 # Ambient sound
+    ambient_path: ''                      # Custom ambient audio path
+    ambient_gain: 0.18
+    duck_gain: 0.06
+    speech_gain: 1.0
+    ack_enabled: true
+    ack_phrases:
+      - Let me look into that.
+      - One moment.
+      - Checking on that now.
+      - Give me a sec.
+      - On it.
+
+whatsapp: {}                              # No additional config needed
+
+telegram:
+  reactions: false
+  channel_prompts: {}
+  allowed_chats: ''
+
+mattermost:
+  require_mention: true
+  free_response_channels: ''
+  allowed_channels: ''
+  channel_prompts: {}
+
+matrix:
+  require_mention: true
+  free_response_rooms: ''
+  allowed_rooms: ''
+# ══════════════════════════════════════════════════════════════════════════════
+# APPROVALS, SECURITY & PERMISSIONS
+# ══════════════════════════════════════════════════════════════════════════════
+approvals:
+  mode: manual                            # manual or automatic
+  timeout: 60                             # Approval request timeout
+  cron_mode: deny                         # Require approval for cron jobs
+  mcp_reload_confirm: true                # Confirm MCP server reloads
+  destructive_slash_confirm: true         # Confirm destructive commands
+
+security:
+  # Network & URL Security
+  allow_private_urls: false               # Allow access to private networks
+  redact_secrets: true                    # Automatically redact secrets from output
+
+  # Tirith Security Scanner
+  tirith_enabled: true                    # Enable Tirith vulnerability scanning
+  tirith_path: tirith                     # Tirith binary path
+  tirith_timeout: 5                       # Scan timeout (seconds)
+  tirith_fail_open: true                  # Continue if scan fails
+
+  # Website Blocklist
+  website_blocklist:
+    enabled: false
+    domains: []                           # Blocked domains
+    shared_files: []                      # Shared blocklists
+
+  # Advisory Management
+  acked_advisories: []                    # Acknowledged security advisories
+  allow_lazy_installs: true               # Allow lazy tool installation
+
+command_allowlist: []                     # Restrict to specific commands (if set)
+quick_commands: {}                        # Quick command shortcuts
+hooks: {}                                 # Custom hooks (if any)
+hooks_auto_accept: false                  # Auto-accept hook outputs
+# ══════════════════════════════════════════════════════════════════════════════
+# AUTOMATION & TASK MANAGEMENT
+# ══════════════════════════════════════════════════════════════════════════════
+cron:
+  wrap_response: true                     # Wrap cron job responses
+  max_parallel_jobs: null                 # Concurrent job limit (null = unlimited)
+
+kanban:
+  dispatch_in_gateway: true               # Dispatch through gateway
+  dispatch_interval_seconds: 60           # Check interval
+  failure_limit: 2                        # Fail after N errors
+  auto_decompose: true                    # Auto-decompose complex tasks
+  auto_decompose_per_tick: 3              # Tasks to decompose per cycle
+  orchestrator_profile: ''
+  default_assignee: ''
+  max_in_progress_per_profile: null       # Max concurrent per profile
+  dispatch_stale_timeout_seconds: 14400   # Stale task timeout (4 hours)
+  worker_log_rotate_bytes: 2097152        # Log rotation size
+  worker_log_backup_count: 1              # Keep N backups
+
+# ══════════════════════════════════════════════════════════════════════════════
+# CODE EXECUTION & TOOL MANAGEMENT
+# ══════════════════════════════════════════════════════════════════════════════
+code_execution:
+  mode: project                           # execution scope (project, sandbox, etc.)
+  timeout: 300                            # Execution timeout (5 min)
+  max_tool_calls: 50                      # Max tool calls per execution
+
+tools:
+  tool_search:
+    enabled: auto                         # Auto-enable smart tool search
+    threshold_pct: 10                     # Search when context fills 10%
+    search_default_limit: 5               # Default tools to return
+    max_search_limit: 20                  # Max tools to return
+
+# ══════════════════════════════════════════════════════════════════════════════
+# LOGGING & MONITORING
+# ══════════════════════════════════════════════════════════════════════════════
+logging:
+  level: INFO                             # Log level (DEBUG, INFO, WARNING, ERROR)
+  max_size_mb: 5                          # Individual log file size
+  backup_count: 3                         # Number of backups to keep
+# ══════════════════════════════════════════════════════════════════════════════
+# MODEL CATALOG & NETWORK
+# ══════════════════════════════════════════════════════════════════════════════
+model_catalog:
+  enabled: true                           # Enable model discovery/catalog
+  url: https://hermes-agent.nousresearch.com/docs/api/model-catalog.json
+  ttl_hours: 1                            # Cache catalog for 1 hour
+  providers: {}
+
+network:
+  force_ipv4: false                       # Force IPv4 connections
+
+# ══════════════════════════════════════════════════════════════════════════════
+# GATEWAY & STREAMING
+# ══════════════════════════════════════════════════════════════════════════════
+gateway:
+  strict: false                           # Strict gateway mode
+  media_delivery_allow_dirs: []           # Allowed media directories
+  trust_recent_files: true                # Trust recently accessed files
+  trust_recent_files_seconds: 600         # Trust window (10 min)
+
+streaming:
+  enabled: false                          # Enable response streaming
+  transport: auto                         # Transport method (auto, sse, ws)
+  edit_interval: 0.8                      # Update interval for streaming
+  buffer_threshold: 24                    # Buffer size threshold
+  cursor: " ▉"                            # Streaming cursor character
+  fresh_final_after_seconds: 60.0         # Show final response after 60s
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SESSION MANAGEMENT
+# ══════════════════════════════════════════════════════════════════════════════
+sessions:
+  auto_prune: false                       # Auto-prune old sessions
+  retention_days: 90                      # Keep sessions for 90 days
+  vacuum_after_prune: true                # Vacuum database after pruning
+  min_interval_hours: 24                  # Minimum interval between prunes
+  write_json_snapshots: false             # Write JSON session snapshots
+# ══════════════════════════════════════════════════════════════════════════════
+# ONBOARDING, UPDATES & MAINTENANCE
+# ══════════════════════════════════════════════════════════════════════════════
+onboarding:
+  seen:
+    openclaw_residue_cleanup: true
+    tool_progress_prompt: true
+  profile_build: ask                      # ask, auto, or skip
+
+updates:
+  pre_update_backup: false                # Backup before updates
+  backup_keep: 5                          # Keep N backups
+  non_interactive_local_changes: stash    # Handle local changes (stash, keep)
+
+# ══════════════════════════════════════════════════════════════════════════════
+# LANGUAGE SERVERS & EXTERNAL INTEGRATIONS
+# ══════════════════════════════════════════════════════════════════════════════
+lsp:
+  enabled: true                           # Enable Language Server Protocol
+  wait_mode: document                     # When to initialize (document, always)
+  wait_timeout: 5.0                       # Initialization timeout
+  install_strategy: auto                  # auto or manual
+  servers: {}                             # Custom LSP server configs
+
+x_search:
+  model: grok-4.20-reasoning              # Model for X/Twitter search
+  timeout_seconds: 180                    # Search timeout
+  retries: 2                              # Retry attempts
+
+# ══════════════════════════════════════════════════════════════════════════════
+# SECRETS & CREDENTIAL MANAGEMENT
+# ══════════════════════════════════════════════════════════════════════════════
+secrets:
+  bitwarden:
+    enabled: false                        # Enable Bitwarden secret management
+    access_token_env: BWS_ACCESS_TOKEN
+    project_id: ''
+    cache_ttl_seconds: 300
+    override_existing: true
+    auto_install: true
+    server_url: ''
+
+# ══════════════════════════════════════════════════════════════════════════════
+# TEXT PASTING & SESSION CONFIGURATION
+# ══════════════════════════════════════════════════════════════════════════════
+paste_collapse_threshold: 5               # Collapse pastes after N lines
+paste_collapse_threshold_fallback: 5
+paste_collapse_char_threshold: 2000       # Collapse pastes after N chars
+
+session_reset:
+  mode: none                              # none, idle, or at_hour
+  idle_minutes: 1440                      # Reset after 24 hours idle
+  at_hour: 4                              # Reset at 4 AM
+
+group_sessions_per_user: true             # Group sessions by user
+
+_config_version: 28
+
+# ══════════════════════════════════════════════════════════════════════════════
+# PLATFORM-SPECIFIC TOOLSETS
+# ══════════════════════════════════════════════════════════════════════════════
+platform_toolsets:
+  # CLI Toolset (default for terminal usage)
+  cli:
+    - browser
+    - clarify
+    - code_execution
+    - computer_use
+    - context_engine
+    - cronjob
+    - delegation
+    - file
+    - image_gen
+    - kanban
+    - memory
+    - messaging
+    - moa
+    - session_search
+    - skills
+    - terminal
+    - todo
+    - tts
+    - vision
+    - web
+    - x_search
+    - mcp-codegraph
+
+  # Platform-Specific Toolsets
+  telegram:
+    - hermes-telegram
+  discord:
+    - hermes-discord
+  whatsapp:
+    - hermes-whatsapp
+  slack:
+    - hermes-slack
+  signal:
+    - hermes-signal
+  homeassistant:
+    - hermes-homeassistant
+  qqbot:
+    - hermes-qqbot
+  yuanbao:
+    - hermes-yuanbao
+  teams:
+    - hermes-teams
+  google_chat:
+    - hermes-google_chat
+
+known_plugin_toolsets:
+  cli:
+    - spotify
+
+# ══════════════════════════════════════════════════════════════════════════════
+# MODEL CONTROL PLANE (MCP) SERVERS
+# ══════════════════════════════════════════════════════════════════════════════
+# MCP servers provide access to tools and data sources via a standard protocol.
+# Examples: CodeGraph (code search), file systems, APIs, etc.
+mcp_servers:
+  # CodeGraph: Fast code exploration and symbol lookup
+  # Install: pip install codegraph
+  # Docs: https://codebase-analyzer.dev/
+  codegraph:
+    command: codegraph
+    args:
+      - serve
+      - --mcp
+    timeout: 120                          # Server timeout (seconds)
+    connect_timeout: 60                   # Connection timeout (seconds)
+    enabled: true
+
+  # Add more MCP servers below as needed.
+  # Example:
+  #   myserver:
+  #     command: myserver
+  #     args: []
+  #     timeout: 120
+  #     connect_timeout: 60
+  #     enabled: true
