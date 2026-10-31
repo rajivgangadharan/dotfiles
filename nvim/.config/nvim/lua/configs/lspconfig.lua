@@ -32,4 +32,5 @@ vim.lsp.enable {
   "cssls",
   "marksman",
   "jsonls",
+  "ocamllsp",   -- provided by nix-ocaml environment
 }

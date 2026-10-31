@@ -54,6 +54,8 @@ return {
         "javascript",
         "typescript",
         "rust",
+        "ocaml",
+        "ocaml_interface",
         "markdown",
         "markdown_inline",
         "json",
