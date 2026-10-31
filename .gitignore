@@ -9,6 +9,7 @@ config/.config/google-chrome/**
 
 # Lock files
 *.lock
+!flake.lock
 *-lock.json
 lazy-lock.json
 
@@ -43,3 +44,6 @@ eln-cache
 .local/share/nvim/*
 nvim/.local/*
 nvim/.config/nvim/lazy-lock.json
+.env
+*/.env/*
+*/.env
