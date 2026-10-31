@@ -34,6 +34,8 @@ return {
         "stylua",
         "black",
         "prettier",
+        -- Linters
+        "ruff",
       },
     },
   },
@@ -182,6 +184,15 @@ return {
   --     vim.keymap.set("i", "<C-H>", "<Plug>(copilot-previous)", { silent = true })
   --   end,
   -- },
+
+  -- Linting
+  {
+    "mfussenegger/nvim-lint",
+    event = { "BufReadPost", "BufWritePost", "InsertLeave" },
+    config = function()
+      require "configs.lint"
+    end,
+  },
 
   -- Auto pairs
   {

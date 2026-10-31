@@ -1,0 +1,132 @@
+# Environment Variables
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# API Keys and Credentials
+.credentials
+credentials.json
+api-keys.json
+secrets.json
+.api-keys
+
+# Private Keys and Certificates
+*.pem
+*.key
+*.pfx
+*.p12
+*.jks
+*.keystore
+private-key.txt
+id_rsa*
+id_dsa*
+id_ecdsa*
+
+# AWS and Cloud Credentials
+.aws/
+.aws/credentials
+.aws/config
+.gcp-credentials
+gcp-key.json
+
+# OAuth and Token Files
+.tokens
+oauth-token.json
+refresh-token.txt
+access-token.txt
+.session
+
+# Database Credentials and Files
+*.db
+*.sqlite
+*.sqlite3
+database.yml
+database.yaml
+config/database.yml
+
+# SSH Keys
+.ssh/
+ssh-key
+ssh_key
+
+# IDE and Editor Secrets
+.vscode/settings.json
+.idea/
+*.sublime-project
+
+# NPM/Node Package Manager
+.npmrc
+.npm-debug.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Ruby/Rails
+config/secrets.yml
+config/master.key
+
+# Python
+.python-credentials
+.pypirc
+pip.conf
+
+# macOS
+.DS_Store
+
+# Dependency Folders
+node_modules/
+vendor/
+.bundle/
+
+# Build Artifacts
+dist/
+build/
+.next/
+out/
+
+# Logs
+*.log
+logs/
+
+# OS Specific Files
+Thumbs.db
+
+# Sensitive Documentation
+**/secrets/
+**/private/
+**/confidential/
+# Ignore everything by default (fail-closed)
+*
+
+# Allow the basic git structures
+!.gitignore
+!README.md
+
+# Track configuration profiles
+!config.yaml
+!profile.yaml
+!SOUL.md
+!mcp.json
+
+# Track customized/curated skills and scripts
+!skills/
+!skills/**
+!scripts/
+!scripts/**
+
+# Track core user definitions but block runtime states
+!memories/
+!memories/USER.md
+!memories/MEMORY.md
+
+# --- EXPLICIT EXCLUSIONS (Never upload these) ---
+auth.json
+sessions/
+venvs/
+hermes-agent/
+skills/.bundled_manifest
+skills/.usage.json*
+skills/.curator_state
