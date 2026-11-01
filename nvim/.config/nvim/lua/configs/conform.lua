@@ -1,7 +1,7 @@
 local options = {
   formatters_by_ft = {
     lua = { "stylua" },
-    python = { "black" },
+    python = { "ruff_format" },
     rust = { "rustfmt" },
     ocaml = { "ocamlformat" },
     javascript = { "prettier" },
@@ -10,10 +10,15 @@ local options = {
     html = { "prettier" },
     json = { "prettier" },
     markdown = { "prettier" },
+    yaml = { "prettier" },
+    sh = { "shfmt" },
+    bash = { "shfmt" },
+    nix = { "alejandra" },
+    toml = { "taplo" },
   },
 
   format_on_save = {
-    timeout_ms = 500,
+    timeout_ms = 1000,
     lsp_fallback = true,
   },
 }
