@@ -85,8 +85,25 @@ export NVM_DIR="$HOME/.nvm"
 
 # Lazy load nvm to improve startup time
 if [[ -s "$NVM_DIR/nvm.sh" ]]; then
-    # Only load nvm when actually needed
-    alias nvm='unalias nvm && source "$NVM_DIR/nvm.sh" && nvm'
-    alias npm='unalias npm && source "$NVM_DIR/nvm.sh" && npm'
-    alias node='unalias node && source "$NVM_DIR/nvm.sh" && node'
+    # Only load nvm when actually needed.
+    # Each wrapper unaliases nvm/npm/node BEFORE sourcing nvm.sh, otherwise
+    # nvm.sh's `nvm()' function definition fails ("defining function based on
+    # alias `nvm'") because the nvm alias is still in place.
+    nvm() {
+        unalias nvm npm node 2>/dev/null
+        source "$NVM_DIR/nvm.sh"
+        nvm "$@"
+    }
+    npm() {
+        unalias nvm npm node 2>/dev/null
+        source "$NVM_DIR/nvm.sh"
+        npm "$@"
+    }
+    node() {
+        unalias nvm npm node 2>/dev/null
+        source "$NVM_DIR/nvm.sh"
+        node "$@"
+    }
 fi
+export XDG_DATA_HOME=/home/rajivg/.local/share/flatpak/exports/share
+export XDG_DATA_DIRS=${XDG_DATA_DIRS}:/home/rajivg/.local/share/flatpak/exports/share

@@ -150,3 +150,4 @@ fi
 alias spyder=/opt/software/sypder-6/envs/spyder-runtime/bin/spyder
 alias uninstall-spyder=/opt/software/sypder-6/uninstall-spyder.sh
 # <<< Added by Spyder <<<
+export PATH="$HOME/.npm-global/bin:$PATH"

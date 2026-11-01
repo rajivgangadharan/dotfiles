@@ -23,7 +23,23 @@
       "Bash(git commit -m \"$\\(cat <<''EOF''\nAdd Nix-based Python development environment\n\n- Replace micromamba with Nix for Python development\n- Add portable Nix templates \\(shell.nix and flake.nix\\)\n- Add helper script to initialize Python projects\n- Update zsh config to disable micromamba and add Nix aliases\n- All paths use XDG_CONFIG_HOME for cross-machine portability\n\nNew features:\n- pydev, py39-py312 aliases for quick Python shells\n- nix-init-python to bootstrap new projects\n- Templates support multiple Python versions\n- Includes comprehensive documentation\n\nCo-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>\nEOF\n\\)\")",
       "Bash(git commit:*)",
       "Bash(git submodule add:*)",
-      "Bash(git reset:*)"
+      "Bash(git reset:*)",
+      "Bash(fi)",
+      "Bash(done)",
+      "Bash(~/dotfiles/hermes/.gitignore:*)",
+      "Bash(test:*)",
+      "Bash(git push:*)",
+      "Bash(ollama list:*)",
+      "Bash(for svc in trama-mcp options-pricing-mcp price-alert indiavix-mcp)",
+      "Bash(do)",
+      "Bash(echo:*)",
+      "Bash(python3:*)",
+      "WebSearch",
+      "Bash(hermes:*)",
+      "Bash(sudo nmcli connection modify:*)",
+      "Bash(sudo nmcli connection up:*)",
+      "Bash(ln:*)",
+      "Bash(zsh -i -c 'echo \"\"Shell loaded successfully\"\"')"
     ]
   }
 }

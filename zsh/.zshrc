@@ -259,6 +259,10 @@ bindkey "^[[3~" delete-char
 for _env_file in "$HOME/.env" "$HOME/.env.local.home" "$HOME/.env.local.office"; do
     [[ -f "$_env_file" ]] && source "$_env_file"
 done
+for _env_file in  "$HOME/.zshrc.local.home" "$HOME/.zshrc.local.office"; do
+    [[ -f "$_env_file" ]] && source "$_env_file"
+done
+
 unset _env_file
 
 # Load machine-specific configuration
@@ -279,3 +283,10 @@ fi
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+export NVM_DIR="$HOME/.nvm"
+FUNCNEST=100  # nvm uses deeply nested functions; default limit is too low
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+export PATH="$HOME/.npm-global/bin:$PATH"
+eval "$(direnv hook zsh)"
