@@ -22,3 +22,24 @@ o.splitright = true
 o.splitbelow = true
 o.spelllang = "en_us"
 o.spell = true
+o.colorcolumn = "100"
+
+-- Show trailing whitespace and non-breaking spaces
+vim.opt.list = true
+vim.opt.listchars = { trail = "·", nbsp = "␣" }
+
+-- Diagnostic display: nerd font icons, rounded floats, sorted by severity
+vim.diagnostic.config {
+  signs = {
+    text = {
+      [vim.diagnostic.severity.ERROR] = "",
+      [vim.diagnostic.severity.WARN]  = "",
+      [vim.diagnostic.severity.INFO]  = "",
+      [vim.diagnostic.severity.HINT]  = "󰌵",
+    },
+  },
+  virtual_text = { prefix = "●" },
+  float = { border = "rounded" },
+  severity_sort = true,
+  update_in_insert = false,
+}

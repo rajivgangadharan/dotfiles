@@ -242,6 +242,56 @@ return {
     end,
   },
 
+  -- Command line / notification / message UI overhaul
+  {
+    "folke/noice.nvim",
+    event = "VeryLazy",
+    dependencies = {
+      "MunifTanjim/nui.nvim",
+      {
+        "rcarriga/nvim-notify",
+        opts = {
+          timeout = 3000,
+          render = "compact",
+          stages = "fade",
+          max_width = 50,
+        },
+      },
+    },
+    opts = {
+      lsp = {
+        override = {
+          ["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+          ["vim.lsp.util.stylize_markdown"] = true,
+          ["cmp.entry.get_documentation"] = true,
+        },
+        -- hover and signature_help borders handled via vim.lsp.handlers
+        hover = { enabled = false },
+        signature = { enabled = false },
+      },
+      presets = {
+        bottom_search = true,        -- keep / and ? at the bottom
+        command_palette = true,      -- float the : command line
+        long_message_to_split = true, -- long messages go to a split
+      },
+    },
+  },
+
+  -- Smooth scrolling
+  {
+    "karb94/neoscroll.nvim",
+    event = "VeryLazy",
+    config = function()
+      require("neoscroll").setup {
+        mappings = { "<C-u>", "<C-d>", "<C-b>", "<C-f>", "zt", "zz", "zb" },
+        hide_cursor = true,
+        stop_eof = true,
+        duration_multiplier = 1.0,
+        easing = "linear",
+      }
+    end,
+  },
+
   -- Auto pairs
   {
     "windwp/nvim-autopairs",
