@@ -187,6 +187,42 @@ return {
   --   end,
   -- },
 
+  -- Rust
+  {
+    "mrcjkb/rustaceanvim",
+    version = "^5",
+    ft = { "rust" },
+    init = function()
+      vim.g.rustaceanvim = {
+        server = {
+          settings = {
+            ["rust-analyzer"] = {
+              cargo = { allFeatures = true },
+              check = { command = "clippy" },
+              procMacro = { enable = true },
+              imports = { granularity = { group = "module" } },
+              inlayHints = {
+                chainingHints = { enable = true },
+                lifetimeElisionHints = { enable = "skip_trivial" },
+                parameterHints = { enable = true },
+                typeHints = { enable = true },
+              },
+            },
+          },
+        },
+      }
+    end,
+  },
+
+  -- Cargo.toml dependency management
+  {
+    "saecki/crates.nvim",
+    event = { "BufRead Cargo.toml" },
+    config = function()
+      require("crates").setup()
+    end,
+  },
+
   -- Linting
   {
     "mfussenegger/nvim-lint",

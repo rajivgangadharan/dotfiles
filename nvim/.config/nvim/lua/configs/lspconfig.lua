@@ -3,16 +3,6 @@ local configs = require "nvchad.configs.lspconfig"
 -- Sets up base config (capabilities, on_init, on_attach autocmd) and lua_ls
 configs.defaults()
 
--- Custom config for rust_analyzer
-vim.lsp.config("rust_analyzer", {
-  settings = {
-    ["rust-analyzer"] = {
-      cargo = { allFeatures = true },
-      checkOnSave = { command = "clippy" },
-    },
-  },
-})
-
 -- Disable formatting for ts_ls (use prettier instead)
 vim.api.nvim_create_autocmd("LspAttach", {
   callback = function(args)
@@ -23,11 +13,10 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
--- Enable all servers
+-- Enable all servers (rust_analyzer managed by rustaceanvim)
 vim.lsp.enable {
   "pyright",
   "ts_ls",
-  "rust_analyzer",
   "html",
   "cssls",
   "marksman",
