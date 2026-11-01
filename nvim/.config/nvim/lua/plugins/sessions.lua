@@ -2,10 +2,10 @@ return {
     "rmagatti/auto-session",
     config = function()
         require("auto-session").setup({
-            auto_session_supress_dirs = {"~/"},
+            auto_session_suppress_dirs = {"~/"},
             session_lens = {
                 buftypes_to_ignore = {},
-                load_on_setup = true, 
+                load_on_setup = false,
                 theme_config = {border = true},
                 previewer = false,
             },

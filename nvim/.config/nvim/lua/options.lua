@@ -23,6 +23,7 @@ o.splitbelow = true
 o.spelllang = "en_us"
 o.spell = true
 o.colorcolumn = "100"
+o.undofile = true
 
 -- Show trailing whitespace and non-breaking spaces
 vim.opt.list = true

@@ -70,6 +70,7 @@ return {
         "nix",
         "toml",
         "yaml",
+        "tsx",
       },
     },
   },
@@ -90,7 +91,7 @@ return {
   -- Flutter tools
   {
     "nvim-flutter/flutter-tools.nvim",
-    lazy = false,
+    ft = { "dart" },
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
@@ -290,6 +291,14 @@ return {
         easing = "linear",
       }
     end,
+  },
+
+  -- Surround: add/change/delete surrounding chars (ysiw", cs"', ds()
+  {
+    "kylechui/nvim-surround",
+    version = "*",
+    event = "VeryLazy",
+    config = true,
   },
 
   -- Auto pairs
