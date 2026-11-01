@@ -21,9 +21,17 @@ o.mouse = "a"
 o.splitright = true
 o.splitbelow = true
 o.spelllang = "en_us"
-o.spell = true
+-- spell off by default; enabled per-filetype below for prose
 o.colorcolumn = "100"
 o.undofile = true
+
+-- Enable spell checking only for prose filetypes
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = { "markdown", "text", "gitcommit", "org" },
+  callback = function()
+    vim.opt_local.spell = true
+  end,
+})
 
 -- Show trailing whitespace and non-breaking spaces
 vim.opt.list = true

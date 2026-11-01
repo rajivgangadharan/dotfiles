@@ -35,13 +35,16 @@ return {
         "yaml-language-server",
         "taplo",
         "vscode-eslint-language-server",
+        "gopls",
         -- Formatters
         "stylua",
         "prettier",
         "shfmt",
+        "gofumpt",
         -- Linters
         "ruff",
         "shellcheck",
+        "yamllint",
       },
     },
   },
@@ -71,6 +74,7 @@ return {
         "toml",
         "yaml",
         "tsx",
+        "go",
       },
     },
   },
@@ -165,7 +169,7 @@ return {
           anti_conceal = { enabled = false },
           file_types = { "markdown", "opencode_output" },
         },
-        ft = { "markdown", "Avante", "copilot-chat", "opencode_output" },
+        ft = { "markdown", "opencode_output" },
       },
     },
   },
@@ -173,6 +177,10 @@ return {
   -- Claude Code
   {
     "greggh/claude-code.nvim",
+    cmd = "ClaudeCode",
+    keys = {
+      { "<leader>cc", "<cmd>ClaudeCode<CR>", desc = "Toggle Claude Code" },
+    },
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
@@ -301,11 +309,13 @@ return {
     config = true,
   },
 
-  -- Auto pairs
+  -- Auto pairs (map_cr=false: let blink.cmp own the <CR> in completion menus)
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
-    config = true,
+    config = function()
+      require("nvim-autopairs").setup { map_cr = false }
+    end,
   },
 
   -- Auto tags for HTML/JSX

@@ -33,4 +33,5 @@ vim.lsp.enable {
   "yamlls",
   "taplo",
   "eslint",
+  "gopls",
 }
