@@ -78,6 +78,7 @@ if [[ -f "$HOME/anaconda3/bin/conda" ]]; then
 fi
 
 # NVM (Node Version Manager)
+FUNCNEST=100  # nvm uses deeply nested function calls
 export NVM_DIR="$HOME/.nvm"
 # Disabled immediate loading in favor of lazy loading below
 # [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"

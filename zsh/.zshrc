@@ -29,9 +29,8 @@ setopt HIST_IGNORE_ALL_DUPS      # Delete old duplicate entries
 setopt HIST_FIND_NO_DUPS         # Don't display duplicates when searching
 setopt HIST_IGNORE_SPACE         # Don't record entries starting with space
 setopt HIST_SAVE_NO_DUPS         # Don't write duplicates to history file
-setopt SHARE_HISTORY             # Share history between sessions
+setopt SHARE_HISTORY             # Share history between all sessions in real-time
 setopt APPEND_HISTORY            # Append to history file
-setopt INC_APPEND_HISTORY        # Add commands immediately
 
 # ====================
 # Oh-My-Zsh Plugins
@@ -45,19 +44,12 @@ plugins=(
     docker
     docker-compose
     kubectl
-    terraform
     rust
-    golang
-    python
-    pip
-    poetry
     npm
     node
-    yarn
     colored-man-pages
     command-not-found
     extract
-    z
     sudo
     copypath
     copyfile
@@ -65,7 +57,10 @@ plugins=(
     dirhistory
 )
 
-# Load Oh-My-Zsh
+# Custom fpath must be before source oh-my-zsh.sh so compinit picks it up
+fpath+=~/.zfunc
+
+# Load Oh-My-Zsh (handles compinit internally)
 source $ZSH/oh-my-zsh.sh
 
 # ====================
@@ -112,6 +107,7 @@ add_to_path "/opt/android-studio/cmdline-tools/latest/bin"
 add_to_path "/opt/atom"
 add_to_path "$HOME/opt/terraform"
 add_to_path "$HOME/.opencode/bin"
+add_to_path "$HOME/.npm-global/bin"
 
 # ====================
 # Tool Configurations
@@ -175,16 +171,6 @@ alias gl='git pull'
 # RSYNC exclude file
 export RSYNC_EXCLUDE_FILES=/media/rajivg/ADATA/Work/exclude_from.txt
 
-# Completion settings
-fpath+=~/.zfunc
-autoload -Uz compinit
-# Only regenerate compinit cache once a day for faster startup
-if [[ -n ${ZDOTDIR}/.zcompdump(#qN.mh+24) ]]; then
-    compinit
-else
-    compinit -C
-fi
-
 # Case-insensitive completion
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
 
@@ -232,13 +218,23 @@ if command -v starship &> /dev/null; then
 fi
 
 # ====================
+# Zoxide (fast directory jumping)
+# ====================
+
+# Faster replacement for the OMZ 'z' plugin, written in Rust
+# Install: cargo install zoxide  OR  nix profile install nixpkgs#zoxide
+if command -v zoxide &> /dev/null; then
+    eval "$(zoxide init zsh)"
+fi
+
+# ====================
 # Key Bindings
 # ====================
 
 # Use vim keybindings (comment out if you prefer emacs mode)
 # bindkey -v
 
-# Useful keybindings for history search
+# History search (overridden by fzf below if installed)
 bindkey '^R' history-incremental-search-backward
 bindkey '^S' history-incremental-search-forward
 bindkey '^P' up-line-or-search
@@ -252,14 +248,23 @@ bindkey "^[[F" end-of-line
 bindkey "^[[3~" delete-char
 
 # ====================
+# fzf Integration
+# ====================
+
+# Fuzzy history (CTRL-R), file picker (CTRL-T), cd (ALT-C)
+# These override the basic ^R binding above when fzf is installed
+if [[ -f ~/.fzf.zsh ]]; then
+    source ~/.fzf.zsh
+elif [[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ]]; then
+    source /usr/share/doc/fzf/examples/key-bindings.zsh
+fi
+
+# ====================
 # Local Configuration
 # ====================
 
-# Load environment variable files if present
+# Load generic environment variable files
 for _env_file in "$HOME/.env" "$HOME/.env.local.home" "$HOME/.env.local.office"; do
-    [[ -f "$_env_file" ]] && source "$_env_file"
-done
-for _env_file in  "$HOME/.zshrc.local.home" "$HOME/.zshrc.local.office"; do
     [[ -f "$_env_file" ]] && source "$_env_file"
 done
 
@@ -274,19 +279,7 @@ if [[ -f "${ZDOTDIR:-$HOME}/.zshrc.local.$ZSH_LOCAL_CONFIG" ]]; then
 fi
 
 # ====================
-# Performance Optimizations
+# Hooks (must be last)
 # ====================
 
-# bun completions
-[ -s "/home/rajivg/.bun/_bun" ] && source "/home/rajivg/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-
-export NVM_DIR="$HOME/.nvm"
-FUNCNEST=100  # nvm uses deeply nested functions; default limit is too low
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH="$HOME/.npm-global/bin:$PATH"
 eval "$(direnv hook zsh)"

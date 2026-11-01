@@ -117,11 +117,11 @@ if ! shopt -oq posix; then
 fi
 
 export DO_PAT=""
-export PATH=$PATH:~/opt/terraform:/opt/atom:/home/rajivg/.cargo/bin:.
+export PATH=$PATH:~/opt/terraform:/opt/atom:/home/rajivg/.cargo/bin
 alias kubectl="microk8s kubectl"
 export RSYNC_EXCLUDE_FILES=/media/rajivg/ADATA/Work/exclude_from.txt
 . "$HOME/.cargo/env"
-export GITHUB_PAT=$(cat keys/github.pat)
+export GITHUB_PAT=$(cat "$HOME/keys/github.pat")
 
 export PATH=${PATH}:/home/rajivg/anaconda3/bin/conda:.
 
@@ -139,7 +139,7 @@ else
 fi
 unset __conda_setup
 # <<< conda initialize <<<
-export PATH=${PATH}:/opt/nvim-linux64/bin/:.
+export PATH=${PATH}:/opt/nvim-linux64/bin.
 # For Powerline
 if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
     source /usr/share/powerline/bindings/bash/powerline.sh
