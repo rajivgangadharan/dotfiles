@@ -127,10 +127,6 @@ fi
 # API Keys & Secrets
 # ====================
 
-# GitHub Personal Access Token (only load if file exists)
-if [[ -f "$HOME/keys/github.pat" ]]; then
-    export GITHUB_PAT=$(cat "$HOME/keys/github.pat")
-fi
 
 # Digital Ocean PAT (set your token here if needed)
 # export DO_PAT="your_token_here"
